@@ -1,6 +1,734 @@
 {
- "generated": null,
+ "generated": "2026-10-22T14:51:55.336Z",
  "days": 30,
- "channels": [],
- "videos": []
+ "channels": [
+  {
+   "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "handle": "NASA",
+   "name": "NASA",
+   "group": "Space"
+  },
+  {
+   "id": "UCIBaDdAbGlFDeS33shmlD0A",
+   "handle": "EuropeanSpaceAgency",
+   "name": "European Space Agency",
+   "group": "Space"
+  },
+  {
+   "id": "UCuTaETsuCOkJ0H_GAztWt0Q",
+   "handle": "gcn",
+   "name": "GCN",
+   "group": "Cycling and Triathlon"
+  },
+  {
+   "id": "UC710HJmp-YgNbE5BnFBRoeg",
+   "handle": "gcntech",
+   "name": "GCN Tech",
+   "group": "Cycling and Triathlon"
+  },
+  {
+   "id": "UCJVMrR290HU9pDxaP35u_cg",
+   "handle": "gtn",
+   "name": "GTN",
+   "group": "Cycling and Triathlon"
+  },
+  {
+   "id": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "handle": "Formula1",
+   "name": "Formula 1",
+   "group": "Motorsport"
+  },
+  {
+   "id": "UCwU7U7PiarcJKLjDJTnANjw",
+   "handle": "FIAWEC",
+   "name": "FIA WEC",
+   "group": "Motorsport"
+  },
+  {
+   "id": "UCLRaKJeCPEe362Z_rLaEnag",
+   "handle": "BritishAntarcticSurvey",
+   "name": "British Antarctic Survey",
+   "group": "Science"
+  },
+  {
+   "id": "UCUeZBocfxALSUdOgNJB5ySA",
+   "handle": "DrBenMiles",
+   "name": "Dr Ben Miles",
+   "group": "Science"
+  },
+  {
+   "id": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "handle": "SabineHossenfelder",
+   "name": "Sabine Hossenfelder",
+   "group": "Science"
+  },
+  {
+   "id": "UCYeF244yNGuFefuFKqxIAXw",
+   "handle": "TheRoyalInstitution",
+   "name": "The Royal Institution",
+   "group": "Science"
+  },
+  {
+   "id": "UCYO_jab_esuFRV4b17AJtAw",
+   "handle": "3blue1brown",
+   "name": "3Blue1Brown",
+   "group": "Science"
+  },
+  {
+   "id": "UC0p5jTq6Xx_DosDFxVXnWaQ",
+   "handle": "TheEconomist",
+   "name": "The Economist",
+   "group": "News and Economics"
+  }
+ ],
+ "videos": [
+  {
+   "id": "t6emJTPuLLI",
+   "c": "UC710HJmp-YgNbE5BnFBRoeg",
+   "t": "The Insane Tech Behind The Fastest Ever Pursuit | GCN Tech Show Ep. 459",
+   "p": "2026-10-22T13:10:04+00:00",
+   "d": null,
+   "x": "In this week's GCN Tech Show, we dive deep into the mind-blowing technology and engineering that powered Jonathan Milan to break the Individual Pursuit World Record. We compare his setup with historic record-breakers like Bradley Wiggins to see how skinsuits, gearing, position, and bike tech have transformed track cycling over the years. Plus, we check out ultra-lightweight tech, including 19g…"
+  },
+  {
+   "id": "OUyYPzytdNU",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "ESA Open Days 2026",
+   "p": "2026-10-22T09:55:30+00:00",
+   "d": null,
+   "x": "ESA Open Days 2026 welcomed over 23 000 visitors across its six establishments, giving the public the opportunity to discover more about Europe’s space activities, meet the people behind the missions and explore how ESA is shaping the future of space. Credits: European Space Agency (ESA) Access the video on the ESA video library: ★ Subscribe: and click twice on the bell button to receive our…"
+  },
+  {
+   "id": "PF7wSiG9w8c",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "I’m Sorry But Small Nuclear Reactors Are Basically Over",
+   "p": "2026-10-21T15:00:33+00:00",
+   "d": null,
+   "x": "Subscribe to IEEE Spectrum today for 20% off an annual subscription: and follow @ieeespectrum to stay ahead in tech and engineering. Small modular nuclear reactors were supposed to make nuclear power cheaper and faster to build. Governments from the US to the UK are now pouring billions into them. At the same time, one startup after another is going bankrupt. What’s going on? Let’s take a look.…"
+  },
+  {
+   "id": "cybiqrpbFrc",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Fred Vesti: 'Making Champions' As Mercedes Third Driver | F1 Beyond The Grid Presented By Salesforce",
+   "p": "2026-10-21T15:00:05+00:00",
+   "d": null,
+   "x": "'It's a very unforgiving job... you're helping making champions, but it's not yourself', says Fred Vesti. Through hundreds of hours and thousands of laps in the simulator, he has contributed to Mercedes' success in 2026. It seems certain that Kimi Antonelli will be crowned Drivers' World Champion, and the team are destined to become Constructors' Champions. Fred tells Tom Clarkson about his…"
+  },
+  {
+   "id": "_cGGDu8sgXY",
+   "c": "UC0p5jTq6Xx_DosDFxVXnWaQ",
+   "t": "AfD co-leader Alice Weidel on Ukraine, migration and Germany’s future | The Economist",
+   "p": "2026-10-21T10:00:38+00:00",
+   "d": null,
+   "x": "Alice Weidel is one of the most important politicians in Europe today. She is the co-leader of the Alternative for Germany (AfD), the right-wing populist party which is leading in Germany’s national polls and came top in two recent state elections. Ms Weidel is skilled at voicing Germans’ frustrations with mainstream political parties. Less clear is her alternative vision for the country. What…"
+  },
+  {
+   "id": "UleiRdWFG7o",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "U.S. Spacewalk Preview News Conference (Oct. 20, 2026)",
+   "p": "2026-10-20T18:30:12+00:00",
+   "d": null,
+   "x": "We're giving a preview of two upcoming spacewalks on Oct. 29 and Nov. 5 to finish installing solar arrays that will provide more power to the International Space Station. NASA astronaut Anil Menon and CSA (Canadian Space Agency) astronaut Joshua Kutryk will participate in both spacewalks. The spacewalks will be the 285th and 286th conducted in support of space station assembly, maintenance, and…"
+  },
+  {
+   "id": "J7uyoBG9LqM",
+   "c": "UCJVMrR290HU9pDxaP35u_cg",
+   "t": "What Is The Real Cost Of Losing? | GTN Show 480",
+   "p": "2026-10-20T16:35:28+00:00",
+   "d": null,
+   "x": "In this week's show, we're diving into the true cost of competing at Kona—from the financial hit of losing to the physical toll of pushing your body to the absolute limit in brutal conditions. Plus, we analyze the post-race numbers from the Kona Count bike tech breakdown to core temperature data straight from the field. 00:00 Intro 00:44 The Mile That Cost $1 million 04:00 Athletes Pushing The…"
+  },
+  {
+   "id": "cz9mPFRxDUE",
+   "c": "UCuTaETsuCOkJ0H_GAztWt0Q",
+   "t": "Is Paris About To Become The World's Best Cycling City? | GCN Show Ep. 719",
+   "p": "2026-10-20T16:10:12+00:00",
+   "d": null,
+   "x": "In this week's GCN Show, we look at how Paris transformed from a car-choked nightmare into one of the world's top cycling cities, and whether it can overtake Copenhagen. We also dive into new training research comparing pro cycling to other endurance sports, question whether more carbs are always better, and explore the latest 30.5-inch wheel size trend. Plus, all the latest pro racing updates…"
+  },
+  {
+   "id": "YZXBJIHQHWI",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Putting The 2026 F1 Grid On The Spot With Quick-fire Questions",
+   "p": "2026-10-20T16:00:33+00:00",
+   "d": null,
+   "x": "Food preferences, sleeping arrangements and much more - we put the grid through their paces with some quick-fire questions on a whole range of topics. For more F1® videos, visit: Visit our store: Follow F1®: #F1"
+  },
+  {
+   "id": "-HHa2cpa5Pw",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "TOYOTA WORLD CHAMPIONS! 🏆 Celebrations & Reactions | 6 Hours of Barcelona 2026 | FIA WEC",
+   "p": "2026-10-20T16:00:29+00:00",
+   "d": null,
+   "x": "Toyota are the 2026 FIA Hypercar World Endurance Manufacturers' Champions! 🏆 Watch the celebrations and emotional reactions as Toyota secure their eighth FIA WEC manufacturers' title following a stunning 1-2 finish at the 6 Hours of Barcelona. From the team's celebrations in the garage to the drivers' reactions, relive the joy of Toyota's championship triumph! The official YouTube channel of the…"
+  },
+  {
+   "id": "Zezt6EsG9WE",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA Moon Base: Rovers and Lunar Terrain Vehicles (October 2026 Update)",
+   "p": "2026-10-20T15:02:15+00:00",
+   "d": null,
+   "x": "There's a lot of ground to cover when you're building a Moon Base. From robotic rovers exploring the rugged lunar landscape to lunar terrain vehicles carrying Artemis astronauts across the surface, mobility will play a crucial role in establishing an enduring human presence on the Moon. During the early phases of Moon Base development, these vehicles will help NASA investigate the lunar South…"
+  },
+  {
+   "id": "y4fN8APrV8I",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "A 14-Year-Old’s New Theory of the Universe",
+   "p": "2026-10-20T15:00:14+00:00",
+   "d": null,
+   "x": "Beat brain rot with Matiks, the thinking sport. US viewers get 20% off the annual plan: A 14-year-old from Canada just won a prize for a new theory of dark energy. I had a look at what he submitted, and it ticks all the boxes of a typical journal paper. That’s more remarkable than it sounds. Let’s take a look. #physics #cosmology #darkenergy #sciencenews 👕T-shirts, mugs, posters and more: ➜ 💌…"
+  },
+  {
+   "id": "yZHUIxlxdFo",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Final 10 Laps | 2018 United States Grand Prix",
+   "p": "2026-10-20T13:00:21+00:00",
+   "d": null,
+   "x": "Re-live the final 10 laps of the 2018 USGP at COTA, as Kimi Raikkonen zeroes in on what would turn out to be his final win in Formula 1. For more F1® videos, visit: Visit our store: Follow F1®: #F1 #USGP"
+  },
+  {
+   "id": "AZ8nldBwOr0",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Kimi’s Title Chance + Should Drivers Decide Strategy? – United States GP Preview | F1 Nation Podcast",
+   "p": "2026-10-19T17:30:27+00:00",
+   "d": null,
+   "x": "This episode is sponsored by AWS - Global AI Partner of Formula 1. Jolyon Palmer and Alex Jacques join Tom Clarkson for some energetic debate ahead of this weekend’s United States Grand Prix in Austin. With Singapore still fresh in their minds, the guys discuss the strategy call from Lewis Hamilton that cost him a podium and whether a driver should go against their team’s strategic decisions.…"
+  },
+  {
+   "id": "i3uyoeqMid4",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "Extended Highlights | 6 Hours of Barcelona 2026 | FIA WEC",
+   "p": "2026-10-19T16:00:06+00:00",
+   "d": null,
+   "x": "Relive the best moments from the 6 Hours of Barcelona 2026 as the FIA World Endurance Championship makes its debut at the Circuit de Barcelona-Catalunya! From intense wheel-to-wheel battles and dramatic incidents to crucial pit stops and the fight for victory, catch all the action from the Hypercar and LMGT3 classes in the penultimate round of the 2026 season. The official YouTube channel of the…"
+  },
+  {
+   "id": "rH79TGultXM",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "It Shouldn’t Exist But it Does: Astronomers Find Green Star",
+   "p": "2026-10-19T15:00:17+00:00",
+   "d": null,
+   "x": "Use the promo code SABINE for 15% off your personal copy that works forever. Astronomers have found a green star. That’s not supposed to be possible, because stars hot enough to be green also mix all colours together and end up looking white. In today's video I explain why stars can be green nevertheless. Let’s take a look. Paper: #sciencenews #physics #space #astronomy #stars 👕T-shirts, mugs,…"
+  },
+  {
+   "id": "T1QGymkZGUg",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Giant UNO Challenge! Feat. Lando, Oscar & Pierre",
+   "p": "2026-10-19T15:00:01+00:00",
+   "d": null,
+   "x": "The McLaren duo are joined by Pierre Gasly for a game of super-sized UNO in the paddock! Who will come out on top? ©2026 MATTEL For more F1® videos, visit: Visit our store: Follow F1®: #F1"
+  },
+  {
+   "id": "sNsJU35ZIy0",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Extended Highlights | 2012 United States Grand Prix",
+   "p": "2026-10-19T12:30:10+00:00",
+   "d": null,
+   "x": "Roll back the years to the very first Grand Prix at COTA, where Lewis Hamilton and Sebastian Vettel duelled for victory in Austin. For more F1® videos, visit: Visit our store: Follow F1®: #F1 #USGP"
+  },
+  {
+   "id": "T3lCfL3qXoA",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "Race Highlights | 6 Hours of Barcelona 2026 | FIA WEC",
+   "p": "2026-10-19T10:56:01+00:00",
+   "d": null,
+   "x": "Catch all the best moments from the 6 Hours of Barcelona 2026 as the FIA World Endurance Championship takes on the Circuit de Barcelona-Catalunya! From thrilling overtakes and dramatic incidents to crucial strategy calls and the battle for victory, relive the biggest moments from the Hypercar and LMGT3 classes in the penultimate round of the 2026 season. The official YouTube channel of the FIA…"
+  },
+  {
+   "id": "HUuI3-ylNHw",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "Final Laps & Race Finish! | 6 Hours of Barcelona | FIA WEC 2026",
+   "p": "2026-10-18T16:33:17+00:00",
+   "d": null,
+   "x": "Watch the final laps and race finish from 6 Hours of Barcelona 2026. The official YouTube channel of the FIA World Endurance Championship. The FIA World Endurance Championship is the world’s premier international sportscar championship, contested over eight rounds across North America, Europe, Asia and the Middle East. With multiple cars across two categories (Hypercar and LMGT3) all on track at…"
+  },
+  {
+   "id": "BA38KO-nAQ8",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "'Drag Race' into Turn One! | 6 Hours of Barcelona | FIA WEC 2026",
+   "p": "2026-10-18T16:02:03+00:00",
+   "d": null,
+   "x": "Dan Harper and Marvin Kirchhöfer go side-by-side down the straight and into turn one during an intense battle in the LMGT3 class at 6 Hours of Barcelona. The official YouTube channel of the FIA World Endurance Championship. The FIA World Endurance Championship is the world’s premier international sportscar championship, contested over eight rounds across North America, Europe, Asia and the Middle…"
+  },
+  {
+   "id": "03WSa8hgN7E",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "HUGE Contact After Near Miss! | 6 Hours of Barcelona | FIA WEC 2026",
+   "p": "2026-10-18T14:28:03+00:00",
+   "d": null,
+   "x": "The #23 Aston Martin gets clattered by the #88 Ford of Logan Sargeant during 6 Hours of Barcelona. The official YouTube channel of the FIA World Endurance Championship. The FIA World Endurance Championship is the world’s premier international sportscar championship, contested over eight rounds across North America, Europe, Asia and the Middle East. With multiple cars across two categories…"
+  },
+  {
+   "id": "8Iro6DhRaO4",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "THREE Cars Spin Out After Water Seeps Out of Curb! | 6 Hours of Barcelona | FIA WEC 2026",
+   "p": "2026-10-18T14:03:41+00:00",
+   "d": null,
+   "x": "There's chaos in Barcelona as three cars spin out one after another after water appears to be seeping out the curb! The official YouTube channel of the FIA World Endurance Championship. The FIA World Endurance Championship is the world’s premier international sportscar championship, contested over eight rounds across North America, Europe, Asia and the Middle East. With multiple cars across two…"
+  },
+  {
+   "id": "ZOAmUaC1OpU",
+   "c": "UCwU7U7PiarcJKLjDJTnANjw",
+   "t": "Aston Martin Battles Through the Traffic! | 6 Hours of Barcelona | FIA WEC 2026",
+   "p": "2026-10-18T13:05:49+00:00",
+   "d": null,
+   "x": "Watch the #009 Aston Martin battle its way through the field during 6 Hours of Barcelona. The official YouTube channel of the FIA World Endurance Championship. The FIA World Endurance Championship is the world’s premier international sportscar championship, contested over eight rounds across North America, Europe, Asia and the Middle East. With multiple cars across two categories (Hypercar and…"
+  },
+  {
+   "id": "zhTOMKTc3fE",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "The Legendary 2016 Mercedes Title Race",
+   "p": "2026-10-18T13:00:35+00:00",
+   "d": null,
+   "x": "A decade on, the 2016 Formula 1 title race remains one of the most intense battles in the sports history. Take a look back at the story of the season, as Mercedes team mates Lewis Hamilton and Nico Rosberg went head-to-head in a title fight that came down to the final race! For more F1® videos, visit: Visit our store: Follow F1®: #F1"
+  },
+  {
+   "id": "RN4PjgiyDG4",
+   "c": "UCuTaETsuCOkJ0H_GAztWt0Q",
+   "t": "Most Frustrating Race in GCN History",
+   "p": "2026-10-18T09:00:23+00:00",
+   "d": null,
+   "x": "We challenged 11 GCN presenters against each other in Girona, but with a twist: everyone was restricted to an average of just 2.5 W/kg system weight! With strict disqualifications for going over their target power, the team had to rely on pure tactics, aerodynamics, and cheeky loopholes to cross the line first. Watch to find out who played it smart and took home the ultimate bragging rights!…"
+  },
+  {
+   "id": "fmobpnhhDXU",
+   "c": "UCJVMrR290HU9pDxaP35u_cg",
+   "t": "Can I Break The Ironman Kona Run Course Record?",
+   "p": "2026-10-18T09:00:10+00:00",
+   "d": null,
+   "x": "In 2022, Gustav Iden stormed to victory in Kona, setting the Ironman World Championship run course record with an astonishing time of 2:36:15. In this video, Tom sets out to beat that time and demonstrate just how ridiculously fast the pros actually run. Facing brutal 36°C heat, can Tom break the record and set a new marathon personal best? 00:00 Intro 00:34 The Kona Run Course Record 01:32 The…"
+  },
+  {
+   "id": "dNv14v5m7pU",
+   "c": "UC710HJmp-YgNbE5BnFBRoeg",
+   "t": "Can A Carbon Specialist Fix My £20 Snapped Superbike?",
+   "p": "2026-10-18T09:00:05+00:00",
+   "d": null,
+   "x": "After a DIY carbon repair attempt went disastrously wrong, we took our cracked £20 Look 785 Huez superbike frame to Carbon Cycle Solutions to see if professionals could save it. Watch as the experts strip back the damage, rebuild the structural carbon layers, and test if a ruined frame can truly be brought back to life. Discover the real process, costs, and safety of professional carbon frame…"
+  },
+  {
+   "id": "SVFXyePwxFE",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Huge Problem With Our Universe Has Simple Answer, Physicists Say",
+   "p": "2026-10-17T15:00:38+00:00",
+   "d": null,
+   "x": "Thank you to Bombas for sponsoring this video! Head to and use code SABINE at checkout for 20% off your first purchase. For a decade, two ways of measuring how fast the universe expands have given different answers, a problem known as the “Hubble tension”. Now a group of physicists says the problem isn’t the supernovae but how we read the cosmic microwave background. The culprit, they say, is…"
+  },
+  {
+   "id": "G02jGYjOKn8",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "The Story Of The 2026 F3 Season!",
+   "p": "2026-10-17T12:00:28+00:00",
+   "d": null,
+   "x": "Relive the fight for the 2026 FIA Formula 3 title from Round 1 in Melbourne to the season finale in Madrid! For more F1® videos, visit: Visit our store: Follow F1®: #F3 #RoadToF1"
+  },
+  {
+   "id": "fBPnwfjdkQ8",
+   "c": "UC710HJmp-YgNbE5BnFBRoeg",
+   "t": "The Secret To Making Disc Brakes Even Better!",
+   "p": "2026-10-17T09:00:15+00:00",
+   "d": null,
+   "x": "In this video, Alex dives deep into disc brake rotor design and explains how rotor cutouts and contact-patch solidity ratios affect braking performance, heat management, and component longevity. We speak with K-O-M founder Steve Elkins to explore why rotor materials, hole patterns, and resonance frequencies can make or break your stopping power. Plus, we look at innovative rotor designs from…"
+  },
+  {
+   "id": "imh8xJ00qTQ",
+   "c": "UCuTaETsuCOkJ0H_GAztWt0Q",
+   "t": "How Long Can We Keep Up With Pogačar?",
+   "p": "2026-10-17T09:00:02+00:00",
+   "d": null,
+   "x": "Tadej Pogačar recently set an astounding record time of 35 minutes and 38 seconds up Alpe d'Huez. To see just how hard his estimated 7 W/kg effort really is, the GCN presenters take on the virtual climb on Zwift to test their limits. How long can the team hold world-beating pace before dropping off? Chapters: ⏱️ 00:00 - The Challenge: Can GCN Hold Pogačar’s Pace? 01:02 - Setting Up on Zwift &…"
+  },
+  {
+   "id": "LKrwhjOI8Nc",
+   "c": "UCYO_jab_esuFRV4b17AJtAw",
+   "t": "There's never been a better time to go into math",
+   "p": "2026-10-16T16:15:20+00:00",
+   "d": null,
+   "x": "Sharing a few thoughts on the future of math These videos are funded directly by viewers: An equally valuable form of support is to simply share the videos. Home page: If you want a finger on the pulse of how mathematicians are feeling right now, take a look at this post on Proofs and Prompt: Timestamps 0:00 - Math student angst 3:10 - How does math work? 11:24 - A proof machine 25:12 - A…"
+  },
+  {
+   "id": "PqtXiABMj3A",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "How math reveals what your brain hides | with Kit Yates",
+   "p": "2026-10-16T15:30:40+00:00",
+   "d": null,
+   "x": "Why do some people see a white and gold dress, while others see blue and black? And how can a coin flip help us uncover what people won’t admit to in a survey? Mathematician Kit Yates explores how our understanding of the world is shaped as much by missing information as by what’s there. Through illusions, live demos and gripping real-world stories, he introduces three types of “missingness”: •…"
+  },
+  {
+   "id": "ivng4U5xeYM",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-12 Postflight News Conference (Oct. 15, 2026)",
+   "p": "2026-10-15T20:12:26+00:00",
+   "d": null,
+   "x": "After spending over seven months in space, members of NASA’s SpaceX Crew-12 will discuss their mission aboard the International Space Station during a news conference at the agency’s Johnson Space Center in Houston. NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev returned to Earth on Oct. 8, after spending…"
+  },
+  {
+   "id": "5sorengsI0I",
+   "c": "UC0p5jTq6Xx_DosDFxVXnWaQ",
+   "t": "Germany is “wrong” to finance Ukraine war: Alice Weidel interview | The Economist",
+   "p": "2026-10-15T17:00:25+00:00",
+   "d": null,
+   "x": "Germany should stop financing an “already lost war” in Ukraine, says Alice Weidel. The co-leader of the populist-right Alternative for Germany, speaks to Zanny Minton Beddoes, The Economist’s editor-in-chief. Weidel argues that peace requires taking Russia’s security interests into account, that Europe is heading for a bond-market crisis and that Syrians, Afghans–and eventually Ukrainians–have to…"
+  },
+  {
+   "id": "G0aJU3BLbWw",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Finding Our Way: Inside the Galileo Project (ESA documentary)",
+   "p": "2026-10-15T16:30:08+00:00",
+   "d": null,
+   "x": "Finding Our Way: Inside the Galileo Project takes viewers inside one of Europe’s most ambitious technological endeavours: the creation and operation of Galileo, Europe’s global navigation satellite system. Born from a vision of independence and innovation, Galileo reflects decades of determination to secure Europe’s autonomous access to precise positioning, navigation and timing. Discover the…"
+  },
+  {
+   "id": "fwyIBk4V7Ag",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Global Warming Means Fewer Tropical Cyclones, Researchers Find",
+   "p": "2026-10-15T15:00:05+00:00",
+   "d": null,
+   "x": "They can't harm you, if they can't find you! Use code SABINE at the link below and get 60% off annual plans: This year's hurricane season has been unusually quiet, and a new study suggests this might become the norm. According to researchers at Princeton, the warmer the climate gets, the fewer tropical cyclones form. But fewer doesn't necessarily mean better. Let's take a look. Paper:…"
+  },
+  {
+   "id": "-jPQmjMWy9I",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX 35th Commercial Resupply Services Rendezvous and Docking",
+   "p": "2026-10-15T14:49:15+00:00",
+   "d": null,
+   "x": "Following a successful launch on Oct. 13, 2026, an uncrewed SpaceX Dragon cargo spacecraft will plan to rendezvous with and dock to the International Space Station. The spacecraft, which is carrying over 6,300 pounds of supplies, is scheduled to dock autonomously at about 10:30 a.m. EDT (1430 UTC). In addition to cargo for the crew aboard the space station, Dragon will deliver several new science…"
+  },
+  {
+   "id": "-iUENl9y0KM",
+   "c": "UC710HJmp-YgNbE5BnFBRoeg",
+   "t": "This £1k Bike Is Faster Than Modern Superbikes | GCN Tech Show Ep. 460",
+   "p": "2026-10-15T12:46:44+00:00",
+   "d": null,
+   "x": "Can a bike built for less than £1,000 beat a top-spec superbike? This week on the GCN Tech Show, Ollie and James discuss why cheap, lightweight rim-brake bikes still compete well in hill climb events, and how you can build your own bargain climber. Plus, we dive into the latest tech, including a world-first aero XC mountain bike, Pinarello's new triathlon machine, and fresh gravel bikes from…"
+  },
+  {
+   "id": "J-sMqnzHwI0",
+   "c": "UC0p5jTq6Xx_DosDFxVXnWaQ",
+   "t": "AI won’t steal your job: Andrew Ng interview | The Economist",
+   "p": "2026-10-14T17:00:04+00:00",
+   "d": null,
+   "x": "Will AI put millions of people out of work? Andrew Ng, CEO and founder of LearnVector, argues the fears are overblown. He tells Alex Hern, The Economist’s AI writer, that AI automates only part of most jobs, that its progress will be slowed by physical bottlenecks like building data centres and that the real problem for young workers is universities are too slow to teach the skills employers want…"
+  },
+  {
+   "id": "b7VOtCSOYuc",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "The PLATO mission: Discovering other planets fit for life - with Ana Heras and Alistair Winton",
+   "p": "2026-10-14T16:10:53+00:00",
+   "d": null,
+   "x": "The PLATO mission from the European Space Agency is set to launch next year, and is hoping to identify thousands of exoplanets in our galaxy which could have the right conditions to support life. Lead project scientist for the mission Ana Heras, and engineer Alistair Winton, join the podcast this month to explain the scientific aims of this mission. Discover the different methods that are used by…"
+  },
+  {
+   "id": "5b3n-u_0QAI",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "Planetary Defenders: This Is Not an Exercise",
+   "p": "2026-10-14T15:05:17+00:00",
+   "d": null,
+   "x": "When a newly discovered asteroid posed a potential risk to Earth, a global planetary defense system was put to the test like never before. Planetary Defenders: This Is Not an Exercise tells the story of how NASA, its international partners, the astronomy community, and scientists around the world raced to observe and track the asteroid, understand its orbit into the future, calculate its impact…"
+  },
+  {
+   "id": "GekGgq6HRuk",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Big Oil’s Plan Is Working Beautifully",
+   "p": "2026-10-14T15:00:37+00:00",
+   "d": null,
+   "x": "🌎 Get an exclusive 15% discount on Saily data plans! Use the code SABINE at checkout. Download the Saily app or go to: ⛵ Oil companies have found a way to keep using fossil fuels: capture the carbon dioxide and bury it underground. Governments around the world are now pouring billions into it. But does it actually work? Let's take a look. #sciencenews #climatechange #carboncapture #energy…"
+  },
+  {
+   "id": "GjdydbyPkSI",
+   "c": "UCUeZBocfxALSUdOgNJB5ySA",
+   "t": "The Secret to Mind Control - Nobel Prize 2026 EXPLAINED",
+   "p": "2026-10-14T15:00:01+00:00",
+   "d": null,
+   "x": "Feed your neurons something better with \"The Book\" from Hungry Minds and use promo code BENMILES10 for 10% off. The Nobel Prize in Physiology or Medicine 2026 was awarded jointly to Karl Deisseroth, Peter Hegemann and Georg Nagel \"for their discoveries concerning light-gated ion channels and optogenetics\". What on earth does that mean? Key articles I spoke about Harz & Hegemann (1991),…"
+  },
+  {
+   "id": "bL9LQPTnfmE",
+   "c": "UCJVMrR290HU9pDxaP35u_cg",
+   "t": "New Bikes + Everything Else We Saw In Kona | GTN Show Ep. 479",
+   "p": "2026-10-13T14:50:24+00:00",
+   "d": null,
+   "x": "The dust has settled after a huge weekend at the Ironman World Championships in Kona, and we’re breaking down the surprise performances we didn’t see coming and what went wrong for some athletes. Plus, we discuss the hottest new tech we spotted the athletes using over the weekend. 00:00 Intro 01:25 Surprise Results From Kona 09:13 What Went Wrong? 15:55 Standout Performances 17:55 Pro Bikes…"
+  },
+  {
+   "id": "C5Tyx84KICY",
+   "c": "UCuTaETsuCOkJ0H_GAztWt0Q",
+   "t": "Has A GRAVEL Racer Finally Won The GRAVEL World Championships? | GCN Show Ep. 718",
+   "p": "2026-10-13T13:13:28+00:00",
+   "d": null,
+   "x": "In this week's GCN Show, Dan and Si report from Australia following the UCI Gravel World Championships to tackle a big debate in modern cycling: is there actually such a thing as a gravel specialist, or are road and multi-discipline pros taking over? Plus, we look at the latest tech reveals—including prototype bikes and aero cross-country mountain bikes—and cover the latest news and rider…"
+  },
+  {
+   "id": "f8FE2R7esZ0",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX 35th Commercial Resupply Services Launch",
+   "p": "2026-10-13T11:06:09+00:00",
+   "d": null,
+   "x": "Tune in as a new shipment of science and supplies lifts off to the International Space Station. NASA and SpaceX are targeting 6:33 a.m. EDT (1033 UTC), Tuesday, Oct. 13, for the next cargo launch of SpaceX's Dragon spacecraft to the space station. Dragon will lift off from Space Launch Complex 40 at Cape Canaveral Space Force Station in Florida and is scheduled to dock autonomously at around…"
+  },
+  {
+   "id": "Dv2_Xbv1s1k",
+   "c": "UC710HJmp-YgNbE5BnFBRoeg",
+   "t": "Hottest Tech From Gravel Worlds 2026",
+   "p": "2026-10-13T08:49:03+00:00",
+   "d": null,
+   "x": "We head to Nannup, Western Australia, for the 2026 UCI Gravel World Championships to inspect the custom bike setups of top pro riders. From 32-inch prototype wheel sizes and ultra-wide tyre clearances to unique Frankenstein Shimano builds and secret tubeless plug hacks, gravel tech is wilder than ever. Join us as we chat directly with the pros about their tyre pressures, gearing, and tech choices…"
+  },
+  {
+   "id": "5KKsVymQS3w",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Welcome home, Sophie Adenot",
+   "p": "2026-10-12T15:00:41+00:00",
+   "d": null,
+   "x": "After 237 days and over 3,700 orbits around Earth aboard the International Space Station, Sophie Adenot is back on Earth! Following a handover to Crew-13, Sophie and her Crew-12 crewmates undocked on 7 October and splashed down off the coast of California the next day. Now back in Europe, Sophie will begin her post-flight data collection and rehabilitation while readjusting to life on Earth after…"
+  },
+  {
+   "id": "RY5caexgbK0",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Preparing Rosalind Franklin rover for a first drive on Mars",
+   "p": "2026-10-12T10:18:09+00:00",
+   "d": null,
+   "x": "Before Rosalind Franklin can explore Mars, it has to get off its lander. Engineers are rehearsing that first journey on Earth, using a full-size rover model and Mars-like terrain. The test recreates some of the challenges Rosalind Franklin will face on the Red Planet, from reduced gravity and a 20-degree incline to uneven ground and obstacles beneath its ramps. In 2030, Rosalind Franklin will…"
+  },
+  {
+   "id": "inyAI5SYR8I",
+   "c": "UCJVMrR290HU9pDxaP35u_cg",
+   "t": "Ironman World Champs 2026 Women's Race Recap",
+   "p": "2026-10-11T14:06:04+00:00",
+   "d": null,
+   "x": "We were on the ground in Kona watching the Ironman World Championship unfold and reacting live to all the action across the swim, bike, and run courses. Plus, we hear directly from the women's podium as they share their post-race reactions and unpack an unbelievable day of racing on the Big Island! 00:00 Final Pre-Race Preparations 02:00 Swim Start 04:55 Time Checks at T1 06:38 Early Moves on the…"
+  },
+  {
+   "id": "AX4S7mbMC8M",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Sophie Adenot's return to Earth - Statement from Cologne Airport",
+   "p": "2026-10-10T19:04:11+00:00",
+   "d": null,
+   "x": "ESA astronaut Sophie Adenot has arrived back in Europe, landing in Cologne, Germany, two days after splashing down off the coast of California with her Crew-12 crewmates, following 237 days, nearly eight months, aboard the International Space Station for her εpsilon mission. From Ellington Field in Houston, Sophie boarded a French Air and Space Force Airbus A330 MRTT Phénix bound for ESA’s…"
+  },
+  {
+   "id": "Q-tcml1wzM0",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Scientists identify what it takes for AI to become conscious",
+   "p": "2026-10-10T15:00:21+00:00",
+   "d": null,
+   "x": "Click the link below or scan the QR code to get started with Brilliant’s tutor for free. You can upgrade to Premium to unlock all courses. And right now, Science with Sabine viewers can save 20% off an annual subscription at One of the biggest debates in tech at the moment is the question of whether current AI models can become conscious. Whatever “conscious” means. According to a group of…"
+  },
+  {
+   "id": "IoL51xLkMSY",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's Northrop Grumman Commercial Resupply Services 24 Departure",
+   "p": "2026-10-09T17:14:27+00:00",
+   "d": null,
+   "x": "Watch Northrop Grumman’s Cygnus XL spacecraft undock and depart from the International Space Station. Flight controllers on the ground will send commands for the space station’s Canadarm2 robotic arm to detach the Cygnus XL spacecraft from the Unity module’s Earth-facing port and maneuver it into position for release at 12:45 p.m. EDT (1645 UTC). This Cygnus XL previously delivered more than…"
+  },
+  {
+   "id": "-ujuhWrSBs0",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "Can astronomers see the universe without light? | with Alfredo Carpineti",
+   "p": "2026-10-09T17:05:07+00:00",
+   "d": null,
+   "x": "The light visible to the human eye is only a fraction of what exists out there. A myriad of hidden phenomena exist in our universe, beyond our sight and senses. How do we know this? Astronomers have been uncovering their secrets for all to see! From the most powerful explosions in the cosmos captured in gamma-rays, to the black holes we study in radio waves, the universe is filled with invisible…"
+  },
+  {
+   "id": "FExs0euUFHI",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Headache: New Milky Way Data Just Defies Explanation",
+   "p": "2026-10-09T15:00:15+00:00",
+   "d": null,
+   "x": "Click this link and use my code SABINE to get 25% off your first payment for boot.dev. For decades, astrophysicists have told us that the Milky Way sits inside a huge halo of dark matter. But new measurements of how the outer stars of our galaxy move don't seem to fit that picture, nor the main alternative, modified gravity. So what's going on? Let's take a look. Paper: #darkmatter #astrophysics…"
+  },
+  {
+   "id": "y1hqsNXZnSk",
+   "c": "UCLRaKJeCPEe362Z_rLaEnag",
+   "t": "Greenland's melting glaciers could change ocean currents and weather. We're on the case.",
+   "p": "2026-10-09T12:20:45+00:00",
+   "d": null,
+   "x": "Greenland's ice sheet is melting, and scientists are concerned this might disrupt the ocean currents that help shape our climate in Europe. This summer, the GIANT expedition took a fleet of marine and airborne robots, including the famous Boaty McBoatface, into a remote Greenland fjord aboard the UK's polar research ship, the RRS Sir David Attenborough. Over 30 days, the team gathered…"
+  },
+  {
+   "id": "x6p9Ri0DlNE",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-12 Re-Entry & Splashdown",
+   "p": "2026-10-08T16:52:21+00:00",
+   "d": null,
+   "x": "Welcome Crew-12 back to Earth with us! NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev are scheduled to splash down off the coast of California at 11:34 a.m. EDT (1534 UTC) on Thursday, Oct. 8. We'll have live coverage from re-entry to recovery. Crew-12 spent 235 days on the International Space Station and…"
+  },
+  {
+   "id": "dqI0Ds4F2nA",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Crew-12 Splashdown with Sophie Adenot | εpsilon mission (Official broadcast)",
+   "p": "2026-10-08T16:46:57+00:00",
+   "d": null,
+   "x": "On 8 October 2026, ESA astronaut Sophie Adenot and her Crew-12 crewmates will splash down off the coast of California at around 15:34 GMT/17:34 CEST, marking the end of their mission aboard the International Space Station. ★ Subscribe: and click twice on the bell button to receive our notifications. We are Europe's gateway to space. Our mission is to shape the development of Europe's space…"
+  },
+  {
+   "id": "YtUPFVaUWj4",
+   "c": "UCLRaKJeCPEe362Z_rLaEnag",
+   "t": "The penguins aren't alright | Chinstrap penguin population plummets | British Antarctic Survey",
+   "p": "2026-10-07T15:00:49+00:00",
+   "d": null,
+   "x": "All is not well on Penguin Mordor - as Professor Norman Ratcliffe explains. For years, Zavodovski Island near Antarctica was the largest penguin colony in the world - but new research has shown it’s lost over 500,000 chinstrap penguins since 2011. That’s over a quarter of the colony. The team sailed 15 days to reach this remote, volcanic island near Antarctica, using drones, aerial photography…"
+  },
+  {
+   "id": "xdwFncdu8t0",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "The Experts Were Wrong About AI. Again.",
+   "p": "2026-10-07T15:00:03+00:00",
+   "d": null,
+   "x": "👉 Grab your free seat to the GPT 6 Astra Crash Course: 🔐 100% Discount for the first 1000 people 💥 Master GPT 6 Astra, Build Powerful AI Agent Workflows & Unlock the Astra Power Playbook — All for Free! 🎁 Bonuses worth $5100+ if you join and attend For years, experts have tried to predict how fast artificial intelligence would progress, and they've been wrong again and again. Benchmarks they…"
+  },
+  {
+   "id": "roKSIWtGMVU",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "The space detectives arrive | The Incredible Adventures of the Hera Mission",
+   "p": "2026-10-07T14:27:36+00:00",
+   "d": null,
+   "x": "Meet Hera, our very own asteroid detective. Together with two CubeSats – Milani the rock decoder and Juventas the radar visionary – Hera is off on an adventure to explore Didymos, a double asteroid system that is typical of the thousands that pose an impact risk to planet Earth. After their two year cosmic roadtrip, Hera and its little CubeSat companions have finally arrived at Didymos and…"
+  },
+  {
+   "id": "S4Fnl8Z7X74",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Crew-12 Undocking with Sophie Adenot | εpsilon mission (Official broadcast)",
+   "p": "2026-10-07T12:32:22+00:00",
+   "d": null,
+   "x": "On 7 October 2026, ESA astronaut Sophie Adenot and her Crew-12 crewmates will undock from the International Space Station at around 12:05 GMT/14:05 CEST to begin their journey back to Earth. ★ Subscribe: and click twice on the bell button to receive our notifications. We are Europe's gateway to space. Our mission is to shape the development of Europe's space capability and ensure that investment…"
+  },
+  {
+   "id": "dGSqblvgLIE",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-12 Undocking",
+   "p": "2026-10-07T12:32:13+00:00",
+   "d": null,
+   "x": "Watch the four members of NASA's SpaceX Crew-12 mission — NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev — set off to return to Earth. The SpaceX Dragon spacecraft will undock from the International Space Station at approximately 8:05 a.m. EDT (1205 UTC). Splashdown is scheduled to occur off the coast of…"
+  },
+  {
+   "id": "JB5HKi8Pxqs",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-12 Hatch Close",
+   "p": "2026-10-07T10:40:46+00:00",
+   "d": null,
+   "x": "Watch as NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev begin final preparations for their return to Earth aboard a SpaceX Dragon spacecraft. After the four enter the spacecraft, the hatch is scheduled to close at 6:20 a.m. EDT (1020 UTC). The Dragon is scheduled to undock at 8:05 a.m. EDT (1205 UTC).…"
+  },
+  {
+   "id": "PkLG02MHV-8",
+   "c": "UCIBaDdAbGlFDeS33shmlD0A",
+   "t": "Crew-12 Hatch Close with Sophie Adenot | εpsilon mission (Official broadcast)",
+   "p": "2026-10-07T10:40:41+00:00",
+   "d": null,
+   "x": "On 7 October 2026, ESA astronaut Sophie Adenot and her Crew-12 crewmates will undock from the International Space Station at around 12:05 GMT/14:05 CEST to begin their journey back to Earth. ★ Subscribe: and click twice on the bell button to receive our notifications. We are Europe's gateway to space. Our mission is to shape the development of Europe's space capability and ensure that investment…"
+  },
+  {
+   "id": "yILp9vsw1eI",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Physics Nobel 2026: You Will Hate Me for Saying This",
+   "p": "2026-10-06T17:22:00+00:00",
+   "d": null,
+   "x": "Go to to get 40% off the Vantage plan and see through sensationalized reporting. Stay fully informed on events around the world with Ground News. The Nobel Prize in physics 2026 has been awarded! Today I have a quick look at who won it and for what and what we have learned from it. #NobelPrize #physics #sciencenews 👕T-shirts, mugs, posters and more: ➜ 💌 Support me on Donorbox ➜ 👉 Transcript…"
+  },
+  {
+   "id": "wuXip1SCJGs",
+   "c": "UCUeZBocfxALSUdOgNJB5ySA",
+   "t": "A 100% Fatal Disease Just Found a Treatment",
+   "p": "2026-10-06T15:00:32+00:00",
+   "d": null,
+   "x": "Join Revolut and get $20 here! Offer expires 6 months from 10/06/2026. Exclusions apply. $20 bonus paid by Revolut subject to the terms and conditions found: Revolut x Partner Sign Up Bonus | Revolut United States In April, the first patients were dosed with a new drug for prion disease, a condition that no patient in recorded medical history has ever survived. If it works, Alzheimer's and…"
+  },
+  {
+   "id": "KiBboUqdD-4",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "Can AI solve the hardest problems in mathematics? | PuzzlingScience with Yang-Hui He",
+   "p": "2026-10-05T16:04:25+00:00",
+   "d": null,
+   "x": "Can AI help us solve some of the hardest problems in mathematics? In this episode of Puzzling Science, mathematical physicist Yang-Hui He explores how artificial intelligence is changing mathematical research. While attempting to solve a jigsaw puzzle with the help of AI, Yang discusses the rise of AI-assisted mathematics, why mathematicians need to verify AI-generated results, and how systems…"
+  },
+  {
+   "id": "ehba2U4oNJo",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Human Thought Can Depend on Quantum Superpositions, Physicists Shows",
+   "p": "2026-10-04T15:00:06+00:00",
+   "d": null,
+   "x": "Upgrade Your Shaving Experience With Henson (100 Free Blades): Nearly everything published about quantum physics in the brain is nonsense. This time a physicist in Istanbul has come up with something different, and the key move is that quantum effects don't need to last long to leave a permanent mark. No exotic new physics required, and there's a concrete way to test it. Let's take a look. Paper:…"
+  },
+  {
+   "id": "RU6gEobXVHA",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA’s SpaceX Crew-12 Farewell and International Space Station Change of Command",
+   "p": "2026-10-04T14:33:39+00:00",
+   "d": null,
+   "x": "Watch as the members of NASA's SpaceX Crew-12 mission – NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev – sum up their experiences aboard the International Space Station and say goodbye to the space station crew. Meir will also transfer command of the orbiting laboratory to Roscosmos cosmonaut Pyotr…"
+  },
+  {
+   "id": "3rxQyfOfjuU",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Mystery Photon Might Be First Evidence for Quantum Gravity",
+   "p": "2026-10-03T15:00:15+00:00",
+   "d": null,
+   "x": "Upgrade your online protection with an all-in-one security app! Get an exclusive NordVPN deal + 4 months extra ➼ Risk-free thanks to NordVPN's 30-day money-back guarantee! In October 2022, a detector in Russia caught a single photon with an energy far beyond anything our particle colliders can produce. According to physics as we know it, it should never have made it to Earth. Now a team of…"
+  },
+  {
+   "id": "ZzFlID8ha8o",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "We recreated Tesla's 1892 show | with David Ricketts & Michael Cutts",
+   "p": "2026-10-02T16:00:30+00:00",
+   "d": null,
+   "x": "Thank you for your patience whilst our team fixed the footage. Enjoy the show! --- Loud, crackling Tesla coils. Glowing plasma toroids. Beautifully strange Victorian discharge tubes. And, by the end, a full jazz duet played entirely in sparks. In the same theatre where Nikola Tesla first demonstrated his resonant transformer in 1892, Innovator-in-Residence David Ricketts and the Ri's Michael…"
+  },
+  {
+   "id": "XjrQkohPxOQ",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Make AI Believe in God to Keep Humans Safe, Scientist Argues",
+   "p": "2026-10-02T15:00:37+00:00",
+   "d": null,
+   "x": "Link: Code: SABINE: 35% off SciSpace plans Correction: At 00:35, I was referring to Hugging Face and should have said \"last month\". AI is getting more capable and more dangerous by the day, and nobody knows how to keep it on our side. One computer scientist has an answer as creative as simple: give AI a religion. Specifically, tell it that we're all living inside a computer simulation run by an…"
+  },
+  {
+   "id": "PXsm_pf-f5s",
+   "c": "UCLRaKJeCPEe362Z_rLaEnag",
+   "t": "Getting ready to fly to Antarctica | inside the ferry flights at British Antarctic Survey",
+   "p": "2026-10-02T07:41:57+00:00",
+   "d": null,
+   "x": "Every year, as spring returns to the frozen South, the British Antarctic Survey embarks on an extraordinary global migration: flying a fleet of small red aircraft halfway across the world to launch a new season of polar science. At the start of this journey is a workshop in Calgary, where the crew and engineers prepare. We go behind the scenes of their intensive maintenance, and emotional…"
+  },
+  {
+   "id": "FCCJRyhxZSo",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-13 Arrival & Welcome Remarks",
+   "p": "2026-10-02T02:02:18+00:00",
+   "d": null,
+   "x": "Watch as four explorers arrive at the International Space Station. After lifting off from Cape Canaveral Space Force Station on Thursday, Oct. 1, at 11:10 a.m. EDT (1510 UTC), Crew-13's spacecraft is scheduled to dock at the orbiting lab at 7 p.m. EDT (2300 UTC), with hatches opening at about 8:45 p.m. EDT (0045 UTC Oct. 2). The crew will also give welcome remarks around 9:20 p.m. EDT (0120 UTC…"
+  },
+  {
+   "id": "QSJVOZOUmek",
+   "c": "UCLA_DiR1FfKNvjuUpBHmylQ",
+   "t": "NASA's SpaceX Crew-13 Postlaunch News Conference (Oct. 1, 2026)",
+   "p": "2026-10-01T18:03:15+00:00",
+   "d": null,
+   "x": "After the successful launch of NASA’s SpaceX Crew-13 mission, leaders discuss the mission and answer questions from media. Participants include: - NASA Administrator Jared Isaacman - Dr. Lori Glaze, associate administrator, Human Spaceflight Mission Directorate, NASA Headquarters - Dana Weigel, manager, Low Earth Orbit Program, NASA Johnson - Mathieu Caron, director, Astronauts, Life Sciences,…"
+  },
+  {
+   "id": "Z0xPGVMtZK4",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "One Million Dollars for Telling the Truth. Who Might Win It?",
+   "p": "2026-10-01T15:00:08+00:00",
+   "d": null,
+   "x": "They can't harm you, if they can't find you! Use code SABINE at the link below and get 60% off annual plans: A billionaire investor has put up a million dollars a year for scientists who stuck with unpopular results and turned out to be right. I think it's a timely idea and a good one. I also have a list of people who might deserve it, and one name on that list comes with a complication you have…"
+  },
+  {
+   "id": "wwB4hB9QJX8",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "This $15 Billion Nuclear Fusion Machine Can’t Work, Physicists Say",
+   "p": "2026-09-30T15:00:17+00:00",
+   "d": null,
+   "x": "👉 Grab your free seat to the GPT 6 Astra Crash Course: 🔐 100% Discount for the first 1000 people 💥 Master GPT 6 Astra, Build Powerful AI Agent Workflows & Unlock the Astra Power Playbook — All for Free! 🎁 Bonuses worth $5100+ if you join and attend Fusion startups keep postponing their dates, but it's becoming clear who is doing well and who isn't. Helion is valued at fifteen billion dollars,…"
+  },
+  {
+   "id": "5QbwWNZdAi0",
+   "c": "UCYeF244yNGuFefuFKqxIAXw",
+   "t": "Do cells have goals? | with Melanie Challenger, Nick Lane & Philip Ball",
+   "p": "2026-09-28T16:00:35+00:00",
+   "d": null,
+   "x": "Is purpose something our brains invented, or is it built into life itself? Three thinkers take on one of science's oldest unresolved questions: what does it mean to be alive? Author Melanie Challenger is joined by biochemist Nick Lane and science writer Philip Ball for a live inquiry that begins with Richard Dawkins's claim that nature exists without purpose, and asks whether recent biology…"
+  }
+ ]
 }
