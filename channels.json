@@ -6,6 +6,7 @@
     { "handle": "gcn", "name": "GCN", "group": "Cycling and Triathlon" },
     { "handle": "gcntech", "name": "GCN Tech", "group": "Cycling and Triathlon" },
     { "handle": "gtn", "name": "GTN", "group": "Cycling and Triathlon" },
+    { "handle": "gmbn", "name": "GMBN", "group": "Cycling and Triathlon" },
     { "handle": "Formula1", "name": "Formula 1", "group": "Motorsport" },
     { "handle": "FIAWEC", "name": "FIA WEC", "group": "Motorsport" },
     { "handle": "BritishAntarcticSurvey", "name": "British Antarctic Survey", "group": "Science" },
