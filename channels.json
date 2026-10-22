@@ -1,0 +1,18 @@
+{
+  "_note": "Edit this list to add or remove channels. 'handle' is the part after the @ in the YouTube address. 'name' is what the guide displays. 'group' sets the heading in the Channels directory. If a handle ever fails to resolve, add an \"id\": \"UC...\" line (the channel's ID) to that entry.",
+  "channels": [
+    { "handle": "NASA", "name": "NASA", "group": "Space" },
+    { "handle": "EuropeanSpaceAgency", "name": "European Space Agency", "group": "Space" },
+    { "handle": "gcn", "name": "GCN", "group": "Cycling and Triathlon" },
+    { "handle": "gcntech", "name": "GCN Tech", "group": "Cycling and Triathlon" },
+    { "handle": "gtn", "name": "GTN", "group": "Cycling and Triathlon" },
+    { "handle": "Formula1", "name": "Formula 1", "group": "Motorsport" },
+    { "handle": "FIAWEC", "name": "FIA WEC", "group": "Motorsport" },
+    { "handle": "BritishAntarcticSurvey", "name": "British Antarctic Survey", "group": "Science" },
+    { "handle": "DrBenMiles", "name": "Dr Ben Miles", "group": "Science" },
+    { "handle": "SabineHossenfelder", "name": "Sabine Hossenfelder", "group": "Science" },
+    { "handle": "TheRoyalInstitution", "name": "The Royal Institution", "group": "Science" },
+    { "handle": "3blue1brown", "name": "3Blue1Brown", "group": "Science" },
+    { "handle": "TheEconomist", "name": "The Economist", "group": "News and Economics" }
+  ]
+}

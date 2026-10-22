@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>SlowTV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#003366">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SlowTV">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#f2eee0;--ink:#111;--muted:#666;--link:#0000cc;--navy:#003366;--grey:#d4d0c8;--line:#999;--red:#b00000}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Verdana,Geneva,Arial,sans-serif}
+a{color:var(--link)}
+[hidden]{display:none!important}
+.wrap{max-width:1100px;margin:0 auto;background:#fff;border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh;display:flex;flex-direction:column}
+main{padding:14px;flex:1}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+
+/* masthead */
+.mast{background:var(--navy);color:#fff;padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;border-bottom:3px solid #ffcc00}
+.logo{font:italic bold 32px/1 Georgia,"Times New Roman",serif;letter-spacing:-1px;text-shadow:2px 2px 0 #000}
+.logo a{color:#fff;text-decoration:none}
+.logo b{color:#ffcc00}
+.tag{font-size:11px;color:#cfd8ff;margin-top:4px}
+.meter{background:#001d3d;border:1px solid #6688aa;padding:6px 8px;width:260px;max-width:100%;font-size:11px}
+.meter .row{display:flex;justify-content:space-between;gap:8px}
+.meter .bar{height:12px;background:#000;border:1px solid #666;margin-top:4px;position:relative;overflow:hidden}
+.meter .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#33cc33}
+.meter .bar::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:repeating-linear-gradient(to right,transparent 0,transparent 6px,#000 6px,#000 7px)}
+.meter.low .bar i{background:#ffcc00}
+.meter.out .bar i{background:#cc0000}
+
+/* menu */
+.menu{background:var(--grey);border-bottom:1px solid #808080;padding:6px 14px;font-size:13px}
+.menu a{font-weight:bold;text-decoration:none;padding:4px 6px;display:inline-block}
+.menu a.on{color:#000;text-decoration:underline}
+.menu span{color:#808080}
+
+h2{font:bold 19px Georgia,"Times New Roman",serif;color:var(--navy);border-bottom:2px solid var(--navy);margin:0 0 10px;padding-bottom:3px}
+h3{font:bold 15px Georgia,"Times New Roman",serif;color:var(--navy);margin:16px 0 4px}
+.crumb{margin:0 0 8px;font-size:13px}
+
+/* week navigation + guide */
+.weeknav{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 8px;font-size:13px}
+.weeknav .cur{font-weight:bold}
+.weeknav .off{color:#aaa}
+.guide{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+.guide th,.guide td{border:1px solid var(--line);padding:4px 5px;vertical-align:top}
+.guide thead th{background:var(--navy);color:#fff;text-align:center;font-weight:bold;line-height:1.3}
+.guide thead th.today{background:#7a5c00}
+.guide thead th.corner{width:132px;text-align:left}
+.guide th.chn{background:#e8e8f4;text-align:left;font-weight:normal}
+.guide th.chn a{font-weight:bold;text-decoration:none}
+.guide th.chn small{display:block;color:var(--muted);font-size:10px}
+.guide td.today{background:#fffbe0}
+.guide td.future{background:#f4f4f4}
+.pg{display:block;margin:0 0 7px;text-decoration:none;color:var(--link);font-weight:bold;overflow-wrap:anywhere}
+.pg:hover .tt{text-decoration:underline}
+.pg.seen{color:#777;font-weight:normal}
+.tm,.du{color:var(--muted);font-weight:normal;font-size:11px}
+.pg .tt{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.legend{margin:10px 0 0;font-size:12px;color:var(--muted)}
+
+/* lists */
+ul.plist{list-style:none;margin:0 0 10px;padding:0}
+ul.plist li{padding:5px 0;border-bottom:1px dotted #bbb}
+ul.plist .pg{display:inline;margin:0}
+ul.plist .pg .tt{display:inline}
+ul.dir{margin:0 0 6px;padding-left:22px}
+ul.dir li{margin:3px 0}
+
+/* programme page */
+.ptitle{font-size:21px}
+table.info{border-collapse:collapse;margin:6px 0 10px}
+table.info th{text-align:left;padding:2px 14px 2px 0;color:var(--muted);font-weight:normal;vertical-align:top}
+table.info td{padding:2px 0}
+.desc{max-width:720px;margin:8px 0}
+.thumb{display:block;max-width:100%;height:auto;border:1px solid var(--line);margin:8px 0}
+.note{border:1px solid #c9b458;background:#fff8cc;padding:8px 10px;margin:10px 0;font-size:13px;max-width:720px}
+.warn{color:var(--red)}
+.btn{font:bold 13px Verdana,Geneva,Arial,sans-serif;padding:7px 16px;background:var(--grey);color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;cursor:pointer;text-decoration:none;display:inline-block;min-height:34px}
+.btn:active{border-color:#404040 #fff #fff #404040}
+.btn.go{font-size:15px;padding:10px 22px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+
+/* player stage */
+.stage{position:relative;width:100%;max-width:960px;padding-top:56.25%;background:#000;margin:10px 0 6px}
+.stage iframe,.stage #yt{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+.pausebar{position:absolute;left:0;right:0;bottom:0;height:38%;min-height:104px;background:#101010;color:#fff;padding:8px 12px;z-index:3;display:flex;flex-direction:column;justify-content:center;gap:8px;font-size:12px}
+.pausebar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pausebar input[type=range]{flex:1;min-width:120px}
+.pausebar .btn{padding:4px 12px;min-height:30px}
+.endcard{position:absolute;left:0;right:0;top:0;bottom:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;z-index:5;padding:16px}
+.endcard h3{color:#ffcc00;margin-top:0}
+.endcard a:not(.btn){color:#9cf}
+.stagefoot{font-size:13px;margin:4px 0 0}
+
+/* off air */
+.offair{border:2px solid #000;margin:12px 0;background:#000;color:#fff;max-width:560px}
+.bars{height:100px;background:linear-gradient(to right,#c0c0c0 0,#c0c0c0 14.28%,#c0c000 14.28%,#c0c000 28.57%,#00c0c0 28.57%,#00c0c0 42.85%,#00c000 42.85%,#00c000 57.14%,#c000c0 57.14%,#c000c0 71.42%,#c00000 71.42%,#c00000 85.71%,#0000c0 85.71%,#0000c0 100%)}
+.offair .msg{padding:12px 14px;text-align:center}
+.offair h3{margin:0 0 4px;font:bold 22px "Courier New",Courier,monospace;letter-spacing:3px;color:#fff}
+
+/* settings */
+fieldset{border:1px solid var(--line);margin:0 0 14px;padding:10px 12px;max-width:720px}
+legend{font-weight:bold;color:var(--navy);padding:0 6px}
+select,textarea{font:13px Verdana,Geneva,Arial,sans-serif;max-width:100%}
+textarea{width:100%;height:84px}
+label{display:block;margin:6px 0}
+
+footer{border-top:1px solid var(--line);background:var(--grey);padding:8px 14px;font-size:11px;color:#333}
+
+@media (max-width:899px){
+  .guide,.guide tbody,.guide tr,.guide th,.guide td{display:block;width:100%}
+  .guide thead{display:none}
+  .guide tr{margin:0 0 12px;border:1px solid var(--line)}
+  .guide tr.row-empty{display:none}
+  .guide th.chn{background:var(--navy);color:#fff;border:0;font-size:14px}
+  .guide th.chn a{color:#fff}
+  .guide th.chn small{color:#b8c8ff}
+  .guide td{border:0;border-top:1px dotted var(--line);font-size:14px;padding:6px 8px}
+  .guide td.empty{display:none}
+  .guide td::before{content:attr(data-day);display:block;font-size:11px;font-weight:bold;color:var(--navy);text-transform:uppercase;margin-bottom:2px}
+  .guide td.future{background:#fff}
+  .pg{padding:5px 0;margin:0}
+  .pg .tt{display:inline;-webkit-line-clamp:unset}
+  .logo{font-size:28px}
+}
+@media (max-width:520px){
+  main{padding:10px}
+  .btn.go{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="logo"><a href="#/">Slow<b>TV</b></a></div>
+      <div class="tag">Programmes you chose. Nothing else.</div>
+    </div>
+    <div class="meter" id="meter">
+      <div class="row"><span>Viewed today: <b id="m-used">0m</b> of <b id="m-limit">2h 00m</b></span><span id="m-left"></span></div>
+      <div class="bar"><i id="m-bar"></i></div>
+    </div>
+  </header>
+  <nav class="menu" id="menu">
+    <a href="#/" data-nav="guide">TV Guide</a> <span>|</span>
+    <a href="#/channels" data-nav="channels">Channels</a> <span>|</span>
+    <a href="#/settings" data-nav="settings">Settings</a>
+  </nav>
+  <main id="view"><noscript>SlowTV needs JavaScript to run.</noscript></main>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+
+/* ------------------------------------------------------------------ */
+/*  Configuration                                                      */
+/* ------------------------------------------------------------------ */
+const PLAYER_HOST = 'https://www.youtube-nocookie.com'; // use https://www.youtube.com if embeds misbehave
+const DAY_STARTS_AT = 4;            // the "viewing day" rolls over at 04:00 local time
+const LIMITS = [30, 60, 90, 120, 150, 180, 240];
+const STORE_KEY = 'slowtv.v1';
+const KEEP_DAYS = 30;
+const LOW_SECONDS = 300;            // meter turns amber at 5 minutes left
+
+/* ------------------------------------------------------------------ */
+/*  Small helpers                                                      */
+/* ------------------------------------------------------------------ */
+const $ = (sel, root = document) => root.querySelector(sel);
+const DAY = 864e5;
+const p2 = n => String(n).padStart(2, '0');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const fDay = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+const fLong = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const hm = ts => { const d = new Date(ts); return p2(d.getHours()) + ':' + p2(d.getMinutes()); };
+function dur(sec) {
+  sec = Math.max(0, Math.round(sec));
+  if (sec < 60) return sec + 's';
+  const m = Math.round(sec / 60), h = Math.floor(m / 60);
+  return h ? h + 'h ' + p2(m % 60) + 'm' : m + 'm';
+}
+function clock(sec) {
+  sec = Math.max(0, Math.floor(sec));
+  const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+  return (h ? h + ':' + p2(m) : m) + ':' + p2(s);
+}
+function mondayOf(ts) {
+  const d = new Date(ts);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return d;
+}
+const keyOf = d => d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate());
+const dayKey = () => keyOf(new Date(Date.now() - DAY_STARTS_AT * 3600e3));
+function nextDayKey() {
+  const d = new Date(Date.now() - DAY_STARTS_AT * 3600e3);
+  d.setDate(d.getDate() + 1);
+  return keyOf(d);
+}
+const PLAY = '&#9654;&#xFE0E;';
+
+/* ------------------------------------------------------------------ */
+/*  Saved state (watched list, resume points, today's viewing time)    */
+/* ------------------------------------------------------------------ */
+const defaults = () => ({ watched: {}, pos: {}, day: '', used: 0, limit: 120, pending: null, thumbs: false, cutEnd: false });
+function load() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORE_KEY));
+    return Object.assign(defaults(), raw && typeof raw === 'object' ? raw : {});
+  } catch (e) { return defaults(); }
+}
+let S = load();
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) { /* private mode etc. */ } }
+
+function rollover() {
+  const k = dayKey();
+  if (S.day === k) return;
+  S.day = k;
+  S.used = 0;
+  if (S.pending && S.pending.from <= k) { S.limit = S.pending.minutes; S.pending = null; }
+  const old = Date.now() - 90 * DAY;
+  for (const id of Object.keys(S.watched)) if (S.watched[id] < old) delete S.watched[id];
+  for (const id of Object.keys(S.pos)) if (!S.pos[id] || S.pos[id].t < old) delete S.pos[id];
+  save();
+}
+const leftSec = () => Math.max(0, S.limit * 60 - S.used);
+
+function updateMeter() {
+  const lim = S.limit * 60, used = Math.min(S.used, lim), left = leftSec();
+  $('#m-used').textContent = dur(used);
+  $('#m-limit').textContent = dur(lim);
+  $('#m-bar').style.width = (lim ? used / lim * 100 : 100) + '%';
+  $('#m-left').textContent = left > 0 ? dur(left) + ' left' : 'off air';
+  const m = $('#meter');
+  m.classList.toggle('low', left > 0 && left <= LOW_SECONDS);
+  m.classList.toggle('out', left <= 0);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Feed data                                                          */
+/* ------------------------------------------------------------------ */
+let FEED = { generated: null, channels: [], videos: [], ch: {}, vid: {}, failed: false };
+async function loadFeed() {
+  let raw = { generated: null, channels: [], videos: [] };
+  let failed = false;
+  try {
+    const r = await fetch('data/feed.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    raw = await r.json();
+  } catch (e) { failed = true; }
+  const cutoff = Date.now() - KEEP_DAYS * DAY;
+  const videos = (raw.videos || []).map(v => Object.assign({}, v, { ts: Date.parse(v.p) }))
+    .filter(v => v.ts >= cutoff).sort((a, b) => b.ts - a.ts);
+  const channels = raw.channels || [];
+  FEED = {
+    generated: raw.generated || null, channels, videos, failed,
+    ch: Object.fromEntries(channels.map(c => [c.id, c])),
+    vid: Object.fromEntries(videos.map(v => [v.id, v])),
+  };
+}
+
+/* ------------------------------------------------------------------ */
+/*  Views                                                              */
+/* ------------------------------------------------------------------ */
+function pgLink(v, withTime) {
+  const seen = !!S.watched[v.id];
+  return '<a class="pg' + (seen ? ' seen' : '') + '" href="#/v/' + esc(v.id) + '" title="' + esc(v.t) + '">' +
+    (withTime ? '<span class="tm">' + hm(v.ts) + '</span> ' : '') +
+    (seen ? '&#10003; ' : '') + '<span class="tt">' + esc(v.t) + '</span>' +
+    (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '') + '</a>';
+}
+
+function emptyGuideMessage() {
+  if (FEED.failed) return '<div class="note"><b>The guide data couldn’t be loaded.</b> If you opened this page straight from a file on your computer, use the hosted address instead (see the README).</div>';
+  if (!FEED.channels.length) return '<div class="note"><b>The guide is empty so far.</b> It fills the first time the refresh job runs (see the README, step “Run it for the first time”).</div>';
+  return '';
+}
+
+function viewGuide(view, off) {
+  const msg = emptyGuideMessage();
+  if (msg) { view.innerHTML = '<h2>TV Guide</h2>' + msg; return; }
+  const nowMon = mondayOf(Date.now());
+  const mon = new Date(nowMon); mon.setDate(mon.getDate() - 7 * off);
+  const nextMon = new Date(mon); nextMon.setDate(nextMon.getDate() + 7);
+  const sun = new Date(nextMon); sun.setDate(sun.getDate() - 1);
+  const oldest = FEED.videos.length ? Math.round((nowMon - mondayOf(FEED.videos[FEED.videos.length - 1].ts)) / (7 * DAY)) : 0;
+  const days = [...Array(7)].map((_, i) => { const d = new Date(mon); d.setDate(d.getDate() + i); return d; });
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  const cells = {};
+  for (const v of FEED.videos) {
+    if (v.ts < mon.getTime() || v.ts >= nextMon.getTime()) continue;
+    const dow = (new Date(v.ts).getDay() + 6) % 7;
+    if (!cells[v.c]) cells[v.c] = [[], [], [], [], [], [], []];
+    cells[v.c][dow].push(v);
+  }
+
+  const head = days.map(d => {
+    const isToday = d.getTime() === today.getTime();
+    const parts = fDay.format(d).split(' ');
+    return '<th class="' + (isToday ? 'today' : '') + '">' + esc(parts[0].replace(',', '')) + '<br>' + esc(parts.slice(1).join(' ')) + '</th>';
+  }).join('');
+
+  const rows = FEED.channels.map(c => {
+    const row = cells[c.id];
+    const tds = days.map((d, i) => {
+      const list = row ? row[i].slice().sort((a, b) => a.ts - b.ts) : [];
+      const cls = [d.getTime() === today.getTime() ? 'today' : '', d.getTime() > today.getTime() ? 'future' : '', list.length ? '' : 'empty'].filter(Boolean).join(' ');
+      return '<td class="' + cls + '" data-day="' + esc(fDay.format(d)) + '">' + list.map(v => pgLink(v, true)).join('') + '</td>';
+    }).join('');
+    return '<tr class="' + (row ? '' : 'row-empty') + '"><th scope="row" class="chn"><a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a><small>' + esc(c.group || '') + '</small></th>' + tds + '</tr>';
+  }).join('');
+
+  const earlier = off < oldest ? '<a href="#/week/' + (off + 1) + '">&laquo; Earlier week</a>' : '<span class="off">&laquo; Earlier week</span>';
+  const later = off > 0 ? '<a href="#/week/' + (off - 1) + '">Later week &raquo;</a>' : '<span class="off">Later week &raquo;</span>';
+  const total = FEED.videos.filter(v => v.ts >= mon.getTime() && v.ts < nextMon.getTime()).length;
+
+  view.innerHTML = '<h2>TV Guide</h2>' +
+    '<div class="weeknav">' + earlier + '<span class="cur">' + (off === 0 ? 'This week: ' : 'Week of ') + esc(fDay.format(mon)) + ' &ndash; ' + esc(fDay.format(sun)) + '</span>' + later + '</div>' +
+    (total ? '' : '<p class="muted">Nothing was broadcast on your channels this week.</p>') +
+    '<table class="guide"><thead><tr><th class="corner">Channel</th>' + head + '</tr></thead><tbody>' + rows + '</tbody></table>' +
+    '<p class="legend"><b>Bold</b> = not yet watched &nbsp;&middot;&nbsp; <span style="color:#777">&#10003; grey</span> = watched &nbsp;&middot;&nbsp; times are when each programme was broadcast, running time in brackets &nbsp;&middot;&nbsp; Shorts are hidden.</p>';
+}
+
+function viewChannels(view) {
+  const msg = emptyGuideMessage();
+  if (msg) { view.innerHTML = '<h2>Channels</h2>' + msg; return; }
+  const groups = [];
+  for (const c of FEED.channels) {
+    const g = c.group || 'Other';
+    let grp = groups.find(x => x.name === g);
+    if (!grp) { grp = { name: g, list: [] }; groups.push(grp); }
+    grp.list.push(c);
+  }
+  view.innerHTML = '<h2>Channels</h2><p class="muted">Your set list. Pick one to see everything it has broadcast in the last ' + KEEP_DAYS + ' days.</p>' +
+    groups.map(g => '<h3>' + esc(g.name) + '</h3><ul class="dir">' + g.list.map(c => {
+      const mine = FEED.videos.filter(v => v.c === c.id);
+      const unseen = mine.filter(v => !S.watched[v.id]).length;
+      return '<li><a href="#/channel/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a> <span class="muted small">(' + unseen + ' unwatched of ' + mine.length + ')</span></li>';
+    }).join('') + '</ul>').join('');
+}
+
+function viewChannel(view, id) {
+  const c = FEED.ch[id];
+  if (!c) { view.innerHTML = '<h2>Channel not found</h2><p><a href="#/channels">&laquo; Channels</a></p>'; return; }
+  const mine = FEED.videos.filter(v => v.c === id);
+  let html = '<p class="crumb"><a href="#/channels">&laquo; Channels</a></p><h2>' + esc(c.name) + '</h2>' +
+    '<p class="muted">' + esc(c.group || '') + ' &middot; the last ' + KEEP_DAYS + ' days</p>';
+  if (!mine.length) html += '<p>Nothing in the last ' + KEEP_DAYS + ' days.</p>';
+  let lastDay = '';
+  for (const v of mine) {
+    const dk = fLong.format(new Date(v.ts));
+    if (dk !== lastDay) {
+      if (lastDay) html += '</ul>';
+      html += '<h3>' + esc(dk) + '</h3><ul class="plist">';
+      lastDay = dk;
+    }
+    html += '<li>' + pgLink(v, true) + '</li>';
+  }
+  if (lastDay) html += '</ul>';
+  view.innerHTML = html;
+}
+
+/* ---------- programme page + player ---------- */
+
+let P = null;          // the active player session, if any
+let ytLoading = null;
+
+function loadYT() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  if (ytLoading) return ytLoading;
+  ytLoading = new Promise((resolve, reject) => {
+    window.onYouTubeIframeAPIReady = () => resolve();
+    const s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    s.onerror = () => { ytLoading = null; reject(new Error('player script blocked')); };
+    document.head.appendChild(s);
+  });
+  return ytLoading;
+}
+
+function viewProgramme(view, id) {
+  const v = FEED.vid[id];
+  if (!v) {
+    view.innerHTML = '<h2>Programme not found</h2><p>It may have dropped out of the ' + KEEP_DAYS + '-day window.</p><p><a href="#/">&laquo; Back to the TV Guide</a></p>';
+    return;
+  }
+  const c = FEED.ch[v.c] || { name: 'Unknown channel', id: '' };
+  const seen = !!S.watched[id];
+  view.innerHTML =
+    '<p class="crumb"><a href="#/">&laquo; TV Guide</a></p>' +
+    '<h2 class="ptitle">' + esc(v.t) + '</h2>' +
+    '<table class="info">' +
+      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</td></tr>' +
+      '<tr><th>Broadcast</th><td>' + esc(fLong.format(new Date(v.ts))) + ', ' + hm(v.ts) + '</td></tr>' +
+      (v.d ? '<tr><th>Running time</th><td>' + dur(v.d) + '</td></tr>' : '') +
+      '<tr><th>Status</th><td>' + (seen ? '&#10003; Watched' : 'Not yet watched') + '</td></tr>' +
+    '</table>' +
+    (S.thumbs ? '<img class="thumb" alt="" width="320" height="180" src="https://i.ytimg.com/vi/' + esc(id) + '/mqdefault.jpg">' : '') +
+    (v.x ? '<p class="desc">' + esc(v.x) + '</p>' : '') +
+    '<div id="deck"></div>';
+  renderDeck(v);
+}
+
+function renderDeck(v) {
+  const deck = $('#deck');
+  const left = leftSec();
+  if (left <= 0) {
+    deck.innerHTML =
+      '<div class="offair"><div class="bars"></div><div class="msg"><h3>OFF AIR</h3>' +
+      '<div>You have used your ' + esc(dur(S.limit * 60)) + ' for today.<br>Programmes resume at 0' + DAY_STARTS_AT + ':00.</div></div></div>' +
+      '<div class="actions"><button class="btn" id="b-mark">' + (S.watched[v.id] ? 'Mark as not watched' : 'Mark as watched') + '</button></div>';
+  } else {
+    const resumeAt = S.pos[v.id] && S.pos[v.id].s > 10 ? S.pos[v.id].s : 0;
+    deck.innerHTML =
+      '<div class="note">You have <b>' + esc(dur(left)) + '</b> of viewing left today.' +
+      (v.d && v.d > left ? '<br><b class="warn">This programme is longer than the time you have left. It will stop when your time runs out.</b>' : '') +
+      (resumeAt ? '<br>It will resume from ' + clock(resumeAt) + '.' : '') + '</div>' +
+      '<div class="actions"><button class="btn go" id="b-play">' + PLAY + ' Play programme</button>' +
+      '<button class="btn" id="b-mark">' + (S.watched[v.id] ? 'Mark as not watched' : 'Mark as watched') + '</button></div>';
+    $('#b-play').addEventListener('click', () => startPlayback(v));
+    loadYT().catch(() => {}); // warm up so Play starts instantly
+  }
+  $('#b-mark').addEventListener('click', () => {
+    if (S.watched[v.id]) delete S.watched[v.id]; else S.watched[v.id] = Date.now();
+    save();
+    viewProgramme($('#view'), v.id);
+  });
+}
+
+function stageHTML() {
+  return '<div class="stage" id="stage"><div id="yt"></div>' +
+    '<div class="pausebar" id="pausebar" hidden>' +
+      '<div class="row"><b>PAUSED</b>' +
+      '<button class="btn" id="pb-resume">' + PLAY + ' Resume</button>' +
+      '<button class="btn" id="pb-back">&laquo; 10s</button>' +
+      '<button class="btn" id="pb-fwd">30s &raquo;</button></div>' +
+      '<div class="row"><input type="range" id="pb-seek" min="0" max="1000" value="0" aria-label="Position"><span id="pb-time">0:00</span></div>' +
+    '</div>' +
+    '<div class="endcard" id="endcard" hidden><div id="ec-body"></div></div>' +
+  '</div>' +
+  '<p class="stagefoot"><a href="#/">&#9632; Stop and return to the guide</a></p>';
+}
+
+async function startPlayback(v) {
+  const deck = $('#deck');
+  if (leftSec() <= 0) { renderDeck(v); return; }
+  deck.innerHTML = '<p class="muted">Loading the player&hellip;</p>';
+  try { await loadYT(); } catch (e) {
+    deck.innerHTML = '<div class="note">Couldn’t load YouTube’s player (is a content blocker or the network in the way?). <a href="#/v/' + esc(v.id) + '">Try again</a>.</div>';
+    return;
+  }
+  if ($('#deck') !== deck) return; // navigated away while loading
+  deck.innerHTML = stageHTML();
+  P = { vid: v.id, player: null, playing: false, tick: null, pauseTimer: null, lastNow: 0, lastT: 0, n: 0 };
+  wireStage();
+  const vars = { autoplay: 1, playsinline: 1, rel: 0, modestbranding: 1, iv_load_policy: 3, enablejsapi: 1 };
+  if (S.pos[v.id] && S.pos[v.id].s > 10) vars.start = Math.floor(S.pos[v.id].s);
+  if (/^https?:$/.test(location.protocol)) vars.origin = location.origin;
+  P.player = new YT.Player('yt', {
+    videoId: v.id, host: PLAYER_HOST, width: '100%', height: '100%', playerVars: vars,
+    events: { onReady: e => { try { e.target.playVideo(); } catch (x) {} }, onStateChange: onState, onError: onPlayerError },
+  });
+}
+
+function wireStage() {
+  $('#pb-resume').addEventListener('click', () => { try { P.player.playVideo(); } catch (e) {} });
+  $('#pb-back').addEventListener('click', () => seekBy(-10));
+  $('#pb-fwd').addEventListener('click', () => seekBy(30));
+  $('#pb-seek').addEventListener('input', e => {
+    try {
+      const d = P.player.getDuration();
+      if (d) { P.player.seekTo(d * e.target.value / 1000, true); pauseUI(); }
+    } catch (x) {}
+  });
+}
+function seekBy(delta) {
+  if (!P) return;
+  try {
+    const d = P.player.getDuration() || 1e9;
+    P.player.seekTo(Math.max(0, Math.min(d - 1, P.player.getCurrentTime() + delta)), true);
+    setTimeout(pauseUI, 250);
+  } catch (e) {}
+}
+function pauseUI() {
+  if (!P) return;
+  try {
+    const t = P.player.getCurrentTime(), d = P.player.getDuration();
+    $('#pb-time').textContent = clock(t) + ' / ' + clock(d);
+    if (d) $('#pb-seek').value = Math.round(t / d * 1000);
+  } catch (e) {}
+}
+function showPause() { if (!P) return; pauseUI(); const b = $('#pausebar'); if (b) b.hidden = false; }
+function hidePause() { const b = $('#pausebar'); if (b) b.hidden = true; }
+
+function safeTime() { try { return P.player.getCurrentTime(); } catch (e) { return 0; } }
+
+// Adds the time actually watched since the last check. Only counts while the
+// picture is really advancing, so a sleeping phone or a stalled stream is free.
+function accumulate() {
+  if (!P || !P.playing) return;
+  const now = Date.now();
+  let t = null;
+  try { t = P.player.getCurrentTime(); } catch (e) {}
+  const wall = (now - P.lastNow) / 1000;
+  if (t != null) {
+    if (t - P.lastT > 0) S.used += Math.min(wall, 120);
+    P.lastT = t;
+  }
+  P.lastNow = now;
+}
+
+function savePos() {
+  if (!P || !P.player) return;
+  try {
+    const t = P.player.getCurrentTime(), d = P.player.getDuration();
+    if (t > 10 && d && t < d - 30) S.pos[P.vid] = { s: Math.floor(t), t: Date.now() };
+    else if (d && t >= d - 30) delete S.pos[P.vid];
+  } catch (e) {}
+}
+
+function onTick() {
+  if (!P) return;
+  accumulate();
+  if (++P.n % 5 === 0) { savePos(); save(); }
+  updateMeter();
+  if (leftSec() <= 0) { limitHit(); return; }
+  if (S.cutEnd) {
+    try {
+      const d = P.player.getDuration(), t = P.player.getCurrentTime();
+      if (d > 120 && d - t < 15) endProgramme();
+    } catch (e) {}
+  }
+}
+
+function onState(e) {
+  if (!P) return;
+  const s = e.data, PS = YT.PlayerState;
+  clearTimeout(P.pauseTimer);
+  if (s === PS.PLAYING) {
+    P.playing = true;
+    P.lastNow = Date.now();
+    P.lastT = safeTime();
+    hidePause();
+    if (!P.tick) P.tick = setInterval(onTick, 1000);
+    return;
+  }
+  if (P.playing) { accumulate(); P.playing = false; }
+  if (P.tick) { clearInterval(P.tick); P.tick = null; }
+  savePos(); save(); updateMeter();
+  if (leftSec() <= 0) { limitHit(); return; }
+  if (s === PS.ENDED) endProgramme();
+  else if (s === PS.PAUSED) P.pauseTimer = setTimeout(showPause, 700);
+}
+
+function showCard(html) {
+  const c = $('#endcard'), b = $('#ec-body');
+  if (!c || !b) return;
+  b.innerHTML = html;
+  c.hidden = false;
+  hidePause();
+}
+
+function endProgramme() {
+  if (!P) return;
+  const id = P.vid;
+  accumulate();
+  S.watched[id] = Date.now();
+  delete S.pos[id];
+  save();
+  updateMeter();
+  showCard('<h3>End of programme</h3><p>You have watched <b>' + esc(dur(S.used)) + '</b> today.<br>' +
+    (leftSec() > 0 ? esc(dur(leftSec())) + ' left.' : 'That is your limit for today.') + '</p>' +
+    '<p><a class="btn" href="#/">Back to the TV Guide</a></p>');
+  P.endedShown = true;
+  const p = P; P = null;
+  clearInterval(p.tick); clearTimeout(p.pauseTimer);
+  try { p.player.destroy(); } catch (e) {}
+}
+
+function limitHit() {
+  save();
+  teardown();
+  route(); // the programme page now shows the OFF AIR card
+}
+
+function onPlayerError(e) {
+  if (!P) return;
+  const code = e.data, id = P.vid;
+  let msg;
+  if (code === 101 || code === 150) msg = 'The channel doesn’t allow this programme to be played outside YouTube.';
+  else if (code === 100) msg = 'This programme is no longer available.';
+  else if (code === 153) msg = 'The player couldn’t verify this page. Open the hosted address rather than a file on disk.';
+  else msg = 'The player reported an error (' + esc(code) + ').';
+  if (P.tick) { clearInterval(P.tick); P.tick = null; P.playing = false; }
+  showCard('<h3>Can’t play this one</h3><p>' + msg + '</p><p><a class="btn" href="#/">Back to the TV Guide</a></p>' +
+    ((code === 101 || code === 150) ? '<p class="small"><a href="https://www.youtube.com/watch?v=' + encodeURIComponent(id) + '" target="_blank" rel="noopener">Open on YouTube instead</a> (outside this portal)</p>' : ''));
+}
+
+function teardown() {
+  if (!P) return;
+  const p = P;
+  accumulate();
+  savePos();
+  save();
+  clearInterval(p.tick); clearTimeout(p.pauseTimer);
+  P = null;
+  try { p.player.destroy(); } catch (e) {}
+}
+
+window.addEventListener('pagehide', () => { if (P) { accumulate(); savePos(); } save(); });
+
+/* ---------- settings ---------- */
+
+function exportCode() {
+  return 'SLOWTV1:' + btoa(JSON.stringify({ v: 1, watched: S.watched, pos: S.pos, day: S.day, used: Math.round(S.used) }));
+}
+function importCode(text) {
+  let o;
+  try {
+    const t = String(text).replace(/\s+/g, '');
+    if (!t.startsWith('SLOWTV1:')) throw 0;
+    o = JSON.parse(atob(t.slice(8)));
+  } catch (e) { return 'That doesn’t look like a SlowTV transfer code.'; }
+  const okId = id => /^[\w-]{11}$/.test(id);
+  let n = 0;
+  for (const id of Object.keys(o.watched || {})) {
+    const t = o.watched[id];
+    if (okId(id) && typeof t === 'number' && t > (S.watched[id] || 0)) { S.watched[id] = t; n++; }
+  }
+  for (const id of Object.keys(o.pos || {})) {
+    const p = o.pos[id];
+    if (okId(id) && p && typeof p.s === 'number' && typeof p.t === 'number' && (!S.pos[id] || p.t > S.pos[id].t)) S.pos[id] = { s: p.s, t: p.t };
+  }
+  if (o.day === S.day && typeof o.used === 'number' && o.used > S.used && o.used < 86400) S.used = o.used;
+  save(); updateMeter();
+  return 'Imported. Watched marks and resume points merged; today’s viewing time is now the higher of the two devices.';
+}
+
+function viewSettings(view) {
+  const shown = S.pending ? S.pending.minutes : S.limit;
+  view.innerHTML =
+    '<h2>Settings</h2>' +
+    '<fieldset><legend>Daily viewing limit</legend>' +
+      '<select id="s-limit">' + LIMITS.map(m => '<option value="' + m + '"' + (m === shown ? ' selected' : '') + '>' + dur(m * 60) + ' a day</option>').join('') + '</select>' +
+      '<p class="small muted">Lowering the limit takes effect straight away. Raising it only takes effect from tomorrow, so you can’t talk yourself into more time halfway through the evening. The day rolls over at 0' + DAY_STARTS_AT + ':00.</p>' +
+      '<p id="s-pend" class="small">' + (S.pending ? '<b>Pending:</b> ' + dur(S.pending.minutes * 60) + ' a day from ' + esc(S.pending.from) + '. Today’s limit stays at ' + dur(S.limit * 60) + '.' : 'Current limit: ' + dur(S.limit * 60) + ' a day.') + '</p>' +
+    '</fieldset>' +
+    '<fieldset><legend>Display</legend>' +
+      '<label><input type="checkbox" id="s-thumbs"' + (S.thumbs ? ' checked' : '') + '> Show a thumbnail on the programme page (off by default; thumbnails are what make you click)</label>' +
+      '<label><input type="checkbox" id="s-cut"' + (S.cutEnd ? ' checked' : '') + '> End each programme 15 seconds early to hide YouTube’s end cards (this cuts off the last few seconds)</label>' +
+    '</fieldset>' +
+    '<fieldset><legend>Move your data between devices</legend>' +
+      '<p class="small muted">Your watched list, resume points and today’s viewing time live only on this device. To carry them to another device, copy the code below and paste it into Settings there.</p>' +
+      '<div class="actions"><button class="btn" id="s-export">Show my transfer code</button></div>' +
+      '<textarea id="s-code" placeholder="Transfer code appears here, or paste one from another device" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>' +
+      '<div class="actions"><button class="btn" id="s-import">Import pasted code</button></div>' +
+      '<p id="s-msg" class="small"></p>' +
+    '</fieldset>' +
+    '<fieldset><legend>Tidy up</legend>' +
+      '<div class="actions"><button class="btn" id="s-clear">Clear all watched marks</button></div>' +
+    '</fieldset>' +
+    '<h3>How this works</h3>' +
+    '<ul class="small"><li>Only the channels in your list appear, and only their last ' + KEEP_DAYS + ' days. Shorts are hidden.</li>' +
+    '<li>No autoplay, no “up next”, no recommendations, no comments or counts. When a programme ends, it ends.</li>' +
+    '<li>Time is counted only while a programme is actually playing.</li>' +
+    '<li>On an iPhone or iPad: Safari &rarr; Share &rarr; Add to Home Screen. The home-screen app keeps its own saved data, separate from Safari, so stick to one of them.</li></ul>';
+
+  $('#s-limit').addEventListener('change', e => {
+    const m = Number(e.target.value);
+    if (m < S.limit) { S.limit = m; S.pending = null; }
+    else if (m > S.limit) S.pending = { minutes: m, from: nextDayKey() };
+    else S.pending = null;
+    save(); updateMeter(); viewSettings(view);
+  });
+  $('#s-thumbs').addEventListener('change', e => { S.thumbs = e.target.checked; save(); });
+  $('#s-cut').addEventListener('change', e => { S.cutEnd = e.target.checked; save(); });
+  $('#s-export').addEventListener('click', () => {
+    const t = $('#s-code'); t.value = exportCode(); t.focus(); t.select();
+    $('#s-msg').textContent = 'Copy this code, then paste it into Settings on your other device.';
+  });
+  $('#s-import').addEventListener('click', () => { $('#s-msg').textContent = importCode($('#s-code').value); });
+  $('#s-clear').addEventListener('click', () => {
+    if (confirm('Clear every watched mark and resume point?')) { S.watched = {}; S.pos = {}; save(); $('#s-msg').textContent = 'Cleared.'; }
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/*  Router                                                             */
+/* ------------------------------------------------------------------ */
+function renderFooter() {
+  const f = $('#foot');
+  let t = 'SlowTV &middot; your channels, the last ' + KEEP_DAYS + ' days, nothing else.';
+  if (FEED.generated) {
+    const g = new Date(FEED.generated);
+    t += ' &middot; Guide updated ' + esc(fDay.format(g)) + ', ' + hm(g.getTime()) + '.';
+    if (Date.now() - g.getTime() > 3 * DAY) t += ' <b style="color:#900">The guide hasn’t refreshed for a few days; check the Actions tab on GitHub.</b>';
+  }
+  f.innerHTML = t;
+}
+
+function route() {
+  teardown();
+  rollover();
+  const parts = location.hash.replace(/^#\/?/, '').split('/');
+  const a = parts[0] || '', b = decodeURIComponent(parts[1] || '');
+  const view = $('#view');
+  let nav = 'guide';
+  if (a === 'channels' || a === 'channel') nav = 'channels';
+  else if (a === 'settings') nav = 'settings';
+  document.querySelectorAll('#menu a').forEach(x => x.classList.toggle('on', x.dataset.nav === nav));
+
+  if (a === 'v') viewProgramme(view, b);
+  else if (a === 'channel') viewChannel(view, b);
+  else if (a === 'channels') viewChannels(view);
+  else if (a === 'settings') viewSettings(view);
+  else if (a === 'week') viewGuide(view, Math.max(0, Math.min(parseInt(b, 10) || 0, 8)));
+  else viewGuide(view, 0);
+
+  updateMeter();
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener('hashchange', route);
+loadFeed().then(() => { renderFooter(); route(); });
+})();
+</script>
+</body>
+</html>
