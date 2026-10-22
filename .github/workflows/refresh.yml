@@ -1,0 +1,62 @@
+name: Refresh and deploy
+
+on:
+  schedule:
+    - cron: '23 5 * * *'      # every day at about 05:23 UTC
+  workflow_dispatch:           # lets you press "Run workflow" by hand
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch the latest uploads
+        continue-on-error: true   # still publish the site if YouTube refuses; the log shows why
+        run: node scripts/refresh.mjs
+
+      - name: Save the refreshed data back to the repository
+        run: |
+          git config user.name "slowtv-bot"
+          git config user.email "slowtv-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Refresh guide $(date -u +%F)"
+          git push
+
+      - name: Assemble the website
+        run: |
+          mkdir -p _site/data
+          cp index.html manifest.webmanifest _site/
+          cp apple-touch-icon.png icon-192.png icon-512.png _site/
+          cp data/feed.json _site/data/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
