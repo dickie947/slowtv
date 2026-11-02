@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T13:38:36.737Z",
+ "generated": "2026-11-02T16:48:29.221Z",
  "days": 30,
  "channels": [
   {
@@ -88,6 +88,22 @@
   }
  ],
  "videos": [
+  {
+   "id": "PUa5i_U8yYE",
+   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
+   "t": "Physics is Unravelling, And It Will Get Worse",
+   "p": "2026-11-02T16:00:37+00:00",
+   "d": null,
+   "x": "Use the promo code SABINE for 15% off your personal copy that works forever. After mathematics, AI is now coming for physics, writing papers on new particles, dark matter and the fine structure constant. OpenAI claims progress on a major physics problem, but physicists say it doesn’t matter. Maybe the real problem isn’t the AI. Let’s take a look. Paper: #ai #sciencenews #physics #technology…"
+  },
+  {
+   "id": "7jY6kOjWEP4",
+   "c": "UCB_qr75-ydFVKSF9Dmo6izg",
+   "t": "Kimi Claims His Crown! | Mexico City GP Review | F1 Nation Podcast",
+   "p": "2026-11-02T15:04:59+00:00",
+   "d": null,
+   "x": "Kimi Claims His Crown | Mexico City GP Review | F1 Nation Podcast This episode is sponsored by AWS - Global AI Partner of Formula 1 As Kimi Antonelli becomes the youngest F1 World Champion in history, Tom Clarkson and James Hinchcliffe review the Mexico City Grand Prix. 9th place would have been enough for Antonelli to take the title, but he fought his way to the podium. What does that say about…"
+  },
   {
    "id": "y84PTw_HkqY",
    "c": "UCB_qr75-ydFVKSF9Dmo6izg",
@@ -1287,14 +1303,6 @@
    "p": "2026-10-04T14:33:39+00:00",
    "d": null,
    "x": "Watch as the members of NASA's SpaceX Crew-12 mission – NASA astronauts Jessica Meir and Jack Hathaway, ESA (European Space Agency) astronaut Sophie Adenot, and Roscosmos cosmonaut Andrey Fedyaev – sum up their experiences aboard the International Space Station and say goodbye to the space station crew. Meir will also transfer command of the orbiting laboratory to Roscosmos cosmonaut Pyotr…"
-  },
-  {
-   "id": "3rxQyfOfjuU",
-   "c": "UC1yNl2E66ZzKApQdRuTQ4tw",
-   "t": "Mystery Photon Might Be First Evidence for Quantum Gravity",
-   "p": "2026-10-03T15:00:15+00:00",
-   "d": null,
-   "x": "Upgrade your online protection with an all-in-one security app! Get an exclusive NordVPN deal + 4 months extra ➼ Risk-free thanks to NordVPN's 30-day money-back guarantee! In October 2022, a detector in Russia caught a single photon with an energy far beyond anything our particle colliders can produce. According to physics as we know it, it should never have made it to Earth. Now a team of…"
   }
  ]
 }
