@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T16:56:28.667Z",
+ "generated": "2026-11-02T17:01:17.697Z",
  "lists": {
   "PLE067A7397E1AF108": {
    "title": "Suspensions",
@@ -7,96 +7,120 @@
     {
      "id": "jSFmUmVWBp0",
      "t": "What Is Camber? A Simple Explanation",
-     "d": null,
+     "d": 128,
      "ok": true
     },
     {
      "id": "IUcZ63unEyU",
      "t": "Steering Axis Inclination - Explained",
-     "d": null,
+     "d": 154,
      "ok": true
     },
     {
      "id": "Gh7gWJAvOvs",
      "t": "What Is Caster? Wheel Alignment",
-     "d": null,
+     "d": 136,
      "ok": true
     },
     {
      "id": "83_GTZeuF6M",
      "t": "Toe-in and Toe-out - Explained",
-     "d": null,
+     "d": 93,
      "ok": true
     },
     {
      "id": "jOiOO7qloXQ",
      "t": "How Car Suspensions Work - Springs vs Shocks",
-     "d": null,
+     "d": 525,
      "ok": true
     },
     {
      "id": "DsEmK1M87VQ",
      "t": "Double Wishbone Suspension - Explained",
-     "d": null,
+     "d": 363,
      "ok": true
     },
     {
      "id": "1fvJMxErfms",
      "t": "MacPherson Strut Suspension - Simple Explanation",
-     "d": null,
+     "d": 316,
      "ok": true
     },
     {
      "id": "mAiH776Ycyk",
      "t": "Solid Axle Suspension - How Truck Suspensions Work",
-     "d": null,
+     "d": 322,
      "ok": true
     },
     {
      "id": "_liGnV3PTiQ",
      "t": "How Anti-Roll Bars Work - How To Improve Car Handling",
-     "d": null,
+     "d": 208,
      "ok": true
     },
     {
      "id": "hiaMpG4Y640",
      "t": "How Magnetic Suspensions Work - Magnetic Ride Control",
-     "d": null,
+     "d": 349,
      "ok": true
     },
     {
      "id": "-VFlqPE1gBw",
      "t": "Camber Kit - Explained",
-     "d": null,
+     "d": 336,
      "ok": true
     },
     {
      "id": "HAX0mRYeUfM",
      "t": "2015 Ford Mustang - IRS vs Live Axle",
-     "d": null,
+     "d": 334,
      "ok": true
     },
     {
      "id": "zVNHkGq9fDc",
      "t": "Active Sway Bar Suspension - Explained",
-     "d": null,
+     "d": 174,
      "ok": true
     },
     {
      "id": "yU2c03KkF6k",
      "t": "Roll Center & Vehicle Body Roll - Explained",
-     "d": null,
+     "d": 339,
      "ok": true
     },
     {
      "id": "hGZRairqHNI",
      "t": "What's The Best Suspension - Soft or Stiff Springs?",
-     "d": null,
+     "d": 369,
+     "ok": true
+    },
+    {
+     "id": "hWijfooeSyU",
+     "t": "Wheel Spacers & Adapters - Good Or Bad?",
+     "d": 358,
+     "ok": true
+    },
+    {
+     "id": "j8CCFF3kJPc",
+     "t": "Benefit Of Wheel Spacers On A Subaru BRZ",
+     "d": 258,
+     "ok": true
+    },
+    {
+     "id": "SUDMEd1bMZI",
+     "t": "Scrub Radius - Suspension Design - Explained",
+     "d": 373,
+     "ok": true
+    },
+    {
+     "id": "pyA1DVle8VA",
+     "t": "Why Modifying Your Suspension Often Isn't Worth It (Road Cars)",
+     "d": 878,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:16.856Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:06.556Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -104,96 +128,96 @@
     {
      "id": "1GZtShToroc",
      "t": "DOHC vs SOHC vs OHV - Which Is Best?",
-     "d": null,
+     "d": 352,
      "ok": true
     },
     {
      "id": "G6S4D14VS7w",
      "t": "How VTEC Works - Honda Horsepower!",
-     "d": null,
+     "d": 240,
      "ok": true
     },
     {
      "id": "Ol3nWQbatrQ",
      "t": "3 Stage VTEC - Explained",
-     "d": null,
+     "d": 221,
      "ok": true
     },
     {
      "id": "1lZqsZq23pU",
      "t": "Ignition Systems - Explained",
-     "d": null,
+     "d": 326,
      "ok": true
     },
     {
      "id": "oIU-lGc3DL4",
      "t": "Carburetors - Explained",
-     "d": null,
+     "d": 213,
      "ok": true
     },
     {
      "id": "nbCe68ck6qg",
      "t": "How Fuel Injection Works - Direct vs Port Injectors",
-     "d": null,
+     "d": 263,
      "ok": true
     },
     {
      "id": "9v2ld2u2lKQ",
      "t": "Cylinder Deactivation - Explained",
-     "d": null,
+     "d": 155,
      "ok": true
     },
     {
      "id": "Q56k37FsRcA",
      "t": "Radiators - Explained",
-     "d": null,
+     "d": 181,
      "ok": true
     },
     {
      "id": "sn4yszblY4s",
      "t": "Starting a Car - Explained",
-     "d": null,
+     "d": 139,
      "ok": true
     },
     {
      "id": "7K4W4hA6aV4",
      "t": "Flywheel - Explained",
-     "d": null,
+     "d": 183,
      "ok": true
     },
     {
      "id": "e72Xkf_5VXo",
      "t": "Exhaust Systems - Explained",
-     "d": null,
+     "d": 201,
      "ok": true
     },
     {
      "id": "HADOcrcMikA",
      "t": "Catalytic Converters - Explained",
-     "d": null,
+     "d": 278,
      "ok": true
     },
     {
      "id": "-JOyjuBwaBE",
      "t": "Oxygen Sensor - Explained",
-     "d": null,
+     "d": 235,
      "ok": true
     },
     {
      "id": "30JJSXWKIC8",
      "t": "Mufflers - Explained",
-     "d": null,
+     "d": 206,
      "ok": true
     },
     {
      "id": "BYOYeQeznmY",
      "t": "Why Doesn't My Car Have Heat?",
-     "d": null,
+     "d": 623,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:18.055Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:07.659Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -201,96 +225,246 @@
     {
      "id": "1p91gmhlPNo",
      "t": "Car Engines - Explained",
-     "d": null,
+     "d": 361,
      "ok": true
     },
     {
      "id": "8Rsl8jzlgno",
      "t": "Gasoline vs Diesel - Which Is Best?",
-     "d": null,
+     "d": 358,
      "ok": true
     },
     {
      "id": "umxGxsN5vQM",
      "t": "Rotary Engine - Explained",
-     "d": null,
+     "d": 242,
      "ok": true
     },
     {
      "id": "qLns7ibeUps",
      "t": "What Is A HEMI Engine?",
-     "d": null,
+     "d": 296,
      "ok": true
     },
     {
      "id": "z-7AkC3gh4w",
      "t": "Two-Stroke Engine - Explained",
-     "d": null,
+     "d": 278,
      "ok": true
     },
     {
      "id": "gum3yyJhlfs",
      "t": "Engine Layouts - Explained (V6, I6, V8, W12)",
-     "d": null,
+     "d": 193,
      "ok": true
     },
     {
      "id": "aonbwOxooGA",
      "t": "How Engine Balancing Works - Smooth Running Cars",
-     "d": null,
+     "d": 406,
      "ok": true
     },
     {
      "id": "9Bdc9CuBOzc",
      "t": "Primary Engine Balance - Explained",
-     "d": null,
+     "d": 150,
      "ok": true
     },
     {
      "id": "gdHQ8aTfiQQ",
      "t": "Secondary Engine Balance - Explained",
-     "d": null,
+     "d": 299,
      "ok": true
     },
     {
      "id": "yRWL9czmk_E",
      "t": "Inline Four Cylinders - The Most Popular Car Engine",
-     "d": null,
+     "d": 222,
      "ok": true
     },
     {
      "id": "hwigSbyQ7AI",
      "t": "Balancing Shafts - Explained",
-     "d": null,
+     "d": 247,
      "ok": true
     },
     {
      "id": "w5NZsc1oQpU",
      "t": "6 Cylinder Engine - Straight Six - Explained",
-     "d": null,
+     "d": 295,
      "ok": true
     },
     {
      "id": "VL69r96VfuU",
      "t": "Boxer Engine - Flat Four Engine - Explained",
-     "d": null,
+     "d": 302,
      "ok": true
     },
     {
      "id": "YMoDcKXiKME",
      "t": "V6 Engine - Explained",
-     "d": null,
+     "d": 369,
      "ok": true
     },
     {
      "id": "1H-GWcwO4vw",
      "t": "V8 Engine - Explained",
-     "d": null,
+     "d": 326,
+     "ok": true
+    },
+    {
+     "id": "_TssXF8yQek",
+     "t": "Flatplane vs Crossplane V8 Engines - Which Is Best?",
+     "d": 296,
+     "ok": true
+    },
+    {
+     "id": "-s5bSQIQQsY",
+     "t": "Ferrari V8 vs Corvette V8 - Why do they sound different?",
+     "d": 223,
+     "ok": true
+    },
+    {
+     "id": "z45fM2N-4C4",
+     "t": "How The Atkinson Cycle Works - Car Engines",
+     "d": 404,
+     "ok": true
+    },
+    {
+     "id": "VBUyR7xQvhY",
+     "t": "Inline 5 Cylinder Engine - Explained",
+     "d": 232,
+     "ok": true
+    },
+    {
+     "id": "6hClmLhIeis",
+     "t": "V10 Engine - V10 Cars - Explained",
+     "d": 191,
+     "ok": true
+    },
+    {
+     "id": "Oc5_B4Qua_I",
+     "t": "Inline 3 Cylinder Engine - Explained",
+     "d": 189,
+     "ok": true
+    },
+    {
+     "id": "Y0LKWt3Ttic",
+     "t": "VR6 Engine - Explained",
+     "d": 928,
+     "ok": true
+    },
+    {
+     "id": "nBO7qdrWKSQ",
+     "t": "V12 Engine - V12 Cars - Explained",
+     "d": 355,
+     "ok": true
+    },
+    {
+     "id": "0kKo4Zw9ynw",
+     "t": "W16 Engine - Bugatti Veyron - Explained",
+     "d": 336,
+     "ok": true
+    },
+    {
+     "id": "rXVJG9n6BAs",
+     "t": "Gasoline Vs Diesel - 4 Major Differences",
+     "d": 567,
+     "ok": true
+    },
+    {
+     "id": "o8Cta2cC2Co",
+     "t": "What Is Engine Braking? What Is A Jake Brake?",
+     "d": 290,
+     "ok": true
+    },
+    {
+     "id": "sd6pJtR4PaY",
+     "t": "How Rotary Engines Work - Mazda RX-7 Wankel - Detailed Explanation",
+     "d": 748,
+     "ok": true
+    },
+    {
+     "id": "v3uGJGzUYCI",
+     "t": "4 Reasons Why The Rotary Engine Is Dead",
+     "d": 313,
+     "ok": true
+    },
+    {
+     "id": "lrKUpHO_T6g",
+     "t": "Do Rotary Engines Have VTEC? Wankel VIS",
+     "d": 180,
+     "ok": true
+    },
+    {
+     "id": "8u7bzoaWyZI",
+     "t": "The Epic 4-Rotor Rotary Engine - Never Used In A Production Car",
+     "d": 370,
+     "ok": true
+    },
+    {
+     "id": "bE_1JYrlYYU",
+     "t": "The Best Way To Compare Car Engines - BMEP",
+     "d": 1014,
+     "ok": true
+    },
+    {
+     "id": "gC2-JKO0c2I",
+     "t": "What Is Horsepower & Why It's A Dumb Unit - America vs Metric",
+     "d": 742,
+     "ok": true
+    },
+    {
+     "id": "Mcp76132_SY",
+     "t": "The 2022 Subaru BRZ Doesn't Need A Turbo - 2.4L Boxer Engine Explained",
+     "d": 933,
+     "ok": true
+    },
+    {
+     "id": "gwjbElCKkYs",
+     "t": "If Combustion Engines Have A Future, What Is It?",
+     "d": 936,
+     "ok": true
+    },
+    {
+     "id": "f7e4u7bZfKI",
+     "t": "Cadillac's Most Powerful Engine Ever - CT5-V Blackwing V8",
+     "d": 830,
+     "ok": true
+    },
+    {
+     "id": "jagNsS9MxFQ",
+     "t": "The Best Way To Compare Engine Efficiency - BSFC",
+     "d": 825,
+     "ok": true
+    },
+    {
+     "id": "-3gzQVGEqF4",
+     "t": "Mazda Brought Back The Rotary Engine!",
+     "d": 847,
+     "ok": true
+    },
+    {
+     "id": "DGL5g91KwLA",
+     "t": "Toyota Developed A Liquid Hydrogen Combustion Engine!",
+     "d": 1110,
+     "ok": true
+    },
+    {
+     "id": "8Wtee7IwJZ4",
+     "t": "Boost vs RPM vs Displacement - What's Best For Horsepower?",
+     "d": 1015,
+     "ok": true
+    },
+    {
+     "id": "aIveTlr3hv8",
+     "t": "Porsche's 6-Stroke Engine Is Genius!",
+     "d": 883,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:19.275Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:08.871Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -298,96 +472,156 @@
     {
      "id": "vaL6LFQHD-k",
      "t": "Purpose of a Turbocharger - Explained",
-     "d": null,
+     "d": 143,
      "ok": true
     },
     {
      "id": "zenMEj0cAC4",
      "t": "How Turbochargers Work",
-     "d": null,
+     "d": 226,
      "ok": true
     },
     {
      "id": "c_IFh_6bpUo",
      "t": "Turbo Lag - The Problem With Turbocharged Cars",
-     "d": null,
+     "d": 187,
      "ok": true
     },
     {
      "id": "wyJn40ExwZY",
      "t": "Anti-Lag System By Ignition Delay - No More Turbo Lag",
-     "d": null,
+     "d": 301,
      "ok": true
     },
     {
      "id": "5g6cHs5vMRE",
      "t": "How Anti-Lag Systems Work - No More Turbo Lag - Bypass Valve",
-     "d": null,
+     "d": 296,
      "ok": true
     },
     {
      "id": "VHXYoY8BvoE",
      "t": "Superchargers - Explained",
-     "d": null,
+     "d": 293,
      "ok": true
     },
     {
      "id": "R1tYzxX6fzQ",
      "t": "Centrifugal Superchargers - Explained",
-     "d": null,
+     "d": 164,
      "ok": true
     },
     {
      "id": "8cwE6oF7x4E",
      "t": "Twin-Screw Superchargers - Explained",
-     "d": null,
+     "d": 147,
      "ok": true
     },
     {
      "id": "3wFuR1x-Hes",
      "t": "How Twin Turbos Work - All The Boost!",
-     "d": null,
+     "d": 210,
      "ok": true
     },
     {
      "id": "DRcmgibm-aA",
      "t": "How Turbo Diesels Work - Sequential Turbocharging",
-     "d": null,
+     "d": 210,
      "ok": true
     },
     {
      "id": "hdjsNPeCLQs",
      "t": "Variable Geometry Turbocharger - Less Lag, More Torque!",
-     "d": null,
+     "d": 399,
      "ok": true
     },
     {
      "id": "T7JTRRlSEYI",
      "t": "Twin Scroll Turbocharger - Explained",
-     "d": null,
+     "d": 356,
      "ok": true
     },
     {
      "id": "4birhPB5Twk",
      "t": "How Twinchargers Work: Supercharger + Turbocharger",
-     "d": null,
+     "d": 233,
      "ok": true
     },
     {
      "id": "J06nj5-B_AE",
      "t": "Variable Twin Scroll Turbocharger - The Future Of Gasoline Turbos?",
-     "d": null,
+     "d": 266,
      "ok": true
     },
     {
      "id": "OYELqgyMcYY",
      "t": "Turbocharger Comparison - Twin Turbo vs Twin Scroll vs VGT vs Single Turbo",
-     "d": null,
+     "d": 392,
+     "ok": true
+    },
+    {
+     "id": "oJGqmSP-tto",
+     "t": "Turbocharger Deactivation Concept - Explained",
+     "d": 440,
+     "ok": true
+    },
+    {
+     "id": "pn-uCAgB4H8",
+     "t": "How Turbocharger Wastegates Work - Internal Vs External",
+     "d": 202,
+     "ok": true
+    },
+    {
+     "id": "UUFf4n0MUq8",
+     "t": "Turbochargers vs Superchargers - Which Is Better?",
+     "d": 556,
+     "ok": true
+    },
+    {
+     "id": "j_m7vqsF2xM",
+     "t": "How Do Centrifugal Superchargers Work?",
+     "d": 501,
+     "ok": true
+    },
+    {
+     "id": "FrFeaNGDnOk",
+     "t": "Can Turbo Blankets Be Proven To Increase Performance?",
+     "d": 1021,
+     "ok": true
+    },
+    {
+     "id": "oHEulOcU7jY",
+     "t": "What's The Best Supercharger? Roots vs Centrifugal vs Twin-Screw vs Electric",
+     "d": 685,
+     "ok": true
+    },
+    {
+     "id": "HYzWoAJYFe4",
+     "t": "Cadillac’s Giant 4-Cylinder Engine Has A New Dual Volute Turbo",
+     "d": 609,
+     "ok": true
+    },
+    {
+     "id": "unh37N31My4",
+     "t": "The Perfect Turbocharger? Porsche Did It First",
+     "d": 613,
+     "ok": true
+    },
+    {
+     "id": "w4jo5WOy9Fk",
+     "t": "Corvette ZR1's Anti-Lag System – Massive Turbos, Minimal Lag",
+     "d": 816,
+     "ok": true
+    },
+    {
+     "id": "R_NO0kApAqc",
+     "t": "Electric Turbos Are Here — Is It A Good Thing?",
+     "d": 1081,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:20.502Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:10.159Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -395,96 +629,168 @@
     {
      "id": "pJj8NvDUSFs",
      "t": "Clutches - Explained",
-     "d": null,
+     "d": 230,
      "ok": true
     },
     {
      "id": "SQvFg4WbdZ4",
      "t": "Multi-Plate Clutches - Explained",
-     "d": null,
+     "d": 339,
      "ok": true
     },
     {
      "id": "QIobzoSGhy4",
      "t": "How Torque Converters Work - Automatic Transmissions",
-     "d": null,
+     "d": 280,
      "ok": true
     },
     {
      "id": "2Ld6xhJuGBk",
      "t": "Automatic vs Manual Transmission - Explained",
-     "d": null,
+     "d": 485,
      "ok": true
     },
     {
      "id": "bgGgH0j0KQE",
      "t": "Car Gears - Explained",
-     "d": null,
+     "d": 748,
      "ok": true
     },
     {
      "id": "dbvATt89Ico",
      "t": "First Gear Torque - Explained",
-     "d": null,
+     "d": 164,
      "ok": true
     },
     {
      "id": "oOciX6kdexE",
      "t": "How Dual Clutch Transmissions Work - Simple Explanation",
-     "d": null,
+     "d": 513,
      "ok": true
     },
     {
      "id": "SQLeKdZWGI4",
      "t": "Continuously Variable Transmission - Explained",
-     "d": null,
+     "d": 201,
      "ok": true
     },
     {
      "id": "FnXLZg_O1rk",
      "t": "What Is Rev Matching?",
-     "d": null,
+     "d": 235,
      "ok": true
     },
     {
      "id": "_cbZlhduYJY",
      "t": "5 Things You Should Never Do In A Manual Transmission Vehicle",
-     "d": null,
+     "d": 512,
      "ok": true
     },
     {
      "id": "6zzEtxJkC7Y",
      "t": "5 Things You Should Never Do In An Automatic Transmission Vehicle",
-     "d": null,
+     "d": 730,
      "ok": true
     },
     {
      "id": "tescWzTlGQ0",
      "t": "What Is Double Clutching?",
-     "d": null,
+     "d": 422,
      "ok": true
     },
     {
      "id": "xeoLRWCNGcA",
      "t": "What Is Heel & Toe? (Downshifting)",
-     "d": null,
+     "d": 269,
      "ok": true
     },
     {
      "id": "54I5RU-RNhQ",
      "t": "How To Launch A Manual Transmission Car",
-     "d": null,
+     "d": 619,
      "ok": true
     },
     {
      "id": "mj1Vk7SE-TI",
      "t": "DSG Transmission - Explained",
-     "d": null,
+     "d": 617,
+     "ok": true
+    },
+    {
+     "id": "07kBbD93MFg",
+     "t": "Outtakes & Bloopers - DSG Transmission",
+     "d": 305,
+     "ok": true
+    },
+    {
+     "id": "KPBCCuFLCXk",
+     "t": "Top Fuel Centrifugal Clutch - Explained",
+     "d": 238,
+     "ok": true
+    },
+    {
+     "id": "D9d4qXreb8Q",
+     "t": "Centrifugal Clutch - Explained",
+     "d": 141,
+     "ok": true
+    },
+    {
+     "id": "Y25ordkIfgM",
+     "t": "Did Ford Ruin Their Manual Transmission? (Mustang)",
+     "d": 990,
+     "ok": true
+    },
+    {
+     "id": "oQQ3nfIf6EE",
+     "t": "Manual vs Dual Clutch - What's The Best Transmission?",
+     "d": 815,
+     "ok": true
+    },
+    {
+     "id": "1U_w_yGNpYQ",
+     "t": "How To Power Shift Correctly - Go Faster Without Destroying Transmissions",
+     "d": 620,
+     "ok": true
+    },
+    {
+     "id": "W1xoKGtpfp8",
+     "t": "The Manual Isn't Dead Yet - 10 Modern Features Of Cadillac's Last Manual",
+     "d": 1136,
+     "ok": true
+    },
+    {
+     "id": "p9SbDvMhCFs",
+     "t": "Money Shifting The 2023 Nissan Z - What Happens?!",
+     "d": 650,
+     "ok": true
+    },
+    {
+     "id": "Hvb6J96KiSM",
+     "t": "Koenigsegg Reinvents The Manual! How The CC850 Transmission Works",
+     "d": 1142,
+     "ok": true
+    },
+    {
+     "id": "3AnlSrs-LS4",
+     "t": "The Subaru WRX Proves Everyone Wrong About CVT Transmissions",
+     "d": 999,
+     "ok": true
+    },
+    {
+     "id": "dxmxIsoV_Xo",
+     "t": "Don’t Hate — eCVTs Are Genius Transmissions!",
+     "d": 821,
+     "ok": true
+    },
+    {
+     "id": "c-dNL_M_-2s",
+     "t": "Can Ferrari’s Clever Solution Save The Manual?",
+     "d": 1163,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:21.777Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:11.311Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -492,90 +798,90 @@
     {
      "id": "WwMYGF2avrs",
      "t": "Front Wheel Drive - FWD - Explained",
-     "d": null,
+     "d": 280,
      "ok": true
     },
     {
      "id": "mWtFkEwF61I",
      "t": "Rear Wheel Drive - RWD - Explained",
-     "d": null,
+     "d": 214,
      "ok": true
     },
     {
      "id": "oYMMdjbmQXc",
      "t": "Ackerman Steering - Explained",
-     "d": null,
+     "d": 225,
      "ok": true
     },
     {
      "id": "ZN6xHc7Nz-E",
      "t": "How 4WD Works - Four Wheel Drive",
-     "d": null,
+     "d": 474,
      "ok": true
     },
     {
      "id": "K1qj8dHTmP4",
      "t": "Transfer Case - Explained",
-     "d": null,
+     "d": 653,
      "ok": true
     },
     {
      "id": "UL9LmT3fzbQ",
      "t": "AWD Cars - All Wheel Drive - Explained",
-     "d": null,
+     "d": 352,
      "ok": true
     },
     {
      "id": "Z1Y14AejfQU",
      "t": "How Car Steering Works - Rack & Pinion",
-     "d": null,
+     "d": 390,
      "ok": true
     },
     {
      "id": "1TBoEqqcbf0",
      "t": "Active Rear Steering - 4 Wheel Steering - Explained",
-     "d": null,
+     "d": 181,
      "ok": true
     },
     {
      "id": "5p4NiX4A8hw",
      "t": "Front Engine Cars - FWD vs RWD vs AWD",
-     "d": null,
+     "d": 518,
      "ok": true
     },
     {
      "id": "M_ZVf6KfqiY",
      "t": "Mid Engine Cars - RWD vs AWD",
-     "d": null,
+     "d": 238,
      "ok": true
     },
     {
      "id": "qGr61sGjY6A",
      "t": "Rear Engine Cars - RWD vs AWD",
-     "d": null,
+     "d": 240,
      "ok": true
     },
     {
      "id": "ia463NahG5Q",
      "t": "4Hi vs 4Lo vs 2Hi - 4X4 Offroad Testing",
-     "d": null,
+     "d": 512,
      "ok": true
     },
     {
      "id": "EjYrHQ83mbM",
      "t": "Toyota GR Corolla's Brilliant AWD System - How It Splits Torque!",
-     "d": null,
+     "d": 744,
      "ok": true
     },
     {
      "id": "_IMH-2eai54",
      "t": "2,300 Horsepower - How Koenigsegg Gemera's Insane Powertrain Works!",
-     "d": null,
+     "d": 877,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:22.944Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:12.380Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -583,96 +889,96 @@
     {
      "id": "OjrY7G8o99U",
      "t": "How Disc Brakes Work - Fixed vs Floating",
-     "d": null,
+     "d": 148,
      "ok": true
     },
     {
      "id": "LX4mqzoe3BY",
      "t": "Drum Brakes - Explained",
-     "d": null,
+     "d": 114,
      "ok": true
     },
     {
      "id": "Vx4Gigi8uL8",
      "t": "Braking Distance - Explained",
-     "d": null,
+     "d": 355,
      "ok": true
     },
     {
      "id": "kc9eavLa_cI",
      "t": "Anti-lock Brake System - Explained",
-     "d": null,
+     "d": 135,
      "ok": true
     },
     {
      "id": "k5-JosTPQ-c",
      "t": "Traction Control - Explained",
-     "d": null,
+     "d": 58,
      "ok": true
     },
     {
      "id": "PS95v3ooCkg",
      "t": "Stability Control - Explained",
-     "d": null,
+     "d": 177,
      "ok": true
     },
     {
      "id": "HEIk0hJ7eGk",
      "t": "Brake Caliper Location - Explained",
-     "d": null,
+     "d": 382,
      "ok": true
     },
     {
      "id": "78wbht355R8",
      "t": "Drilled, Slotted & Vented Brake Rotors - What's Best?",
-     "d": null,
+     "d": 299,
      "ok": true
     },
     {
      "id": "tOlBec2APvs",
      "t": "Performance Brake Calipers - 3 Ways To Improve Braking (Besides Red Paint)",
-     "d": null,
+     "d": 164,
      "ok": true
     },
     {
      "id": "sOzd5o8B7eA",
      "t": "Performance Brake Pads - 7 Key Characteristics",
-     "d": null,
+     "d": 255,
      "ok": true
     },
     {
      "id": "6LJiPDAr9f8",
      "t": "Steel Vs Rubber Brake Lines - Are Stainless Steel Lines Silly?",
-     "d": null,
+     "d": 256,
      "ok": true
     },
     {
      "id": "ZCj83_uF9dE",
      "t": "Porsche Reinvents The Brake Rotor - No Rust, Low Dust, No Fade!",
-     "d": null,
+     "d": 719,
      "ok": true
     },
     {
      "id": "VBd9y3mxzCM",
      "t": "How Can Brakes Cost $10,000? The Brilliance Of Carbon Ceramics",
-     "d": null,
+     "d": 718,
      "ok": true
     },
     {
      "id": "G-GEUkiMuLk",
      "t": "Why Threshold Braking Is Impossible - ABS Wins!",
-     "d": null,
+     "d": 988,
      "ok": true
     },
     {
      "id": "_oIJixuvRoQ",
      "t": "The Sketchy Truth About Aftermarket Brake Pads",
-     "d": null,
+     "d": 854,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:24.184Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:13.546Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -680,96 +986,114 @@
     {
      "id": "zOlkBOk_HzM",
      "t": "Formula One - Explained",
-     "d": null,
+     "d": 384,
      "ok": true
     },
     {
      "id": "nvZ2PUBKmSI",
      "t": "Front Wing - Formula 1 - Explained",
-     "d": null,
+     "d": 321,
      "ok": true
     },
     {
      "id": "zwYybcpBeZI",
      "t": "How Pushrod Suspensions Work - Formula 1 Explained",
-     "d": null,
+     "d": 445,
      "ok": true
     },
     {
      "id": "pkcWMl9dpcg",
      "t": "Pullrod Suspension - Explained",
-     "d": null,
+     "d": 204,
      "ok": true
     },
     {
      "id": "YNlGwXdGpAI",
      "t": "Formula One Brakes - Explained",
-     "d": null,
+     "d": 299,
      "ok": true
     },
     {
      "id": "l3SJlGqc0P0",
      "t": "Formula One Radiator Technique - Explained",
-     "d": null,
+     "d": 495,
      "ok": true
     },
     {
      "id": "haqh5a8yFgQ",
      "t": "Drag Reduction System - Explained",
-     "d": null,
+     "d": 328,
      "ok": true
     },
     {
      "id": "3DIJMLrGz8Q",
      "t": "Diffuser - Explained",
-     "d": null,
+     "d": 349,
      "ok": true
     },
     {
      "id": "E1APhLQVtlE",
      "t": "Sequential Gearbox - Explained",
-     "d": null,
+     "d": 616,
      "ok": true
     },
     {
      "id": "SJs_64Aj4Ho",
      "t": "F1 Engine - Explained",
-     "d": null,
+     "d": 498,
      "ok": true
     },
     {
      "id": "sdUljmk-lJA",
      "t": "Average Piston Speed - Explained",
-     "d": null,
+     "d": 458,
      "ok": true
     },
     {
      "id": "k8lyBFmkAKw",
      "t": "2014 F1 Engine - ERS - Explained",
-     "d": null,
+     "d": 538,
      "ok": true
     },
     {
      "id": "ckCd9D-eBm4",
      "t": "Mercedes F1 Engine - How Mercedes Dominated 2014",
-     "d": null,
+     "d": 342,
      "ok": true
     },
     {
      "id": "KjrNcuc89Pc",
      "t": "How Tiny Formula 1 Engines Make 1000 HP!",
-     "d": null,
+     "d": 1127,
      "ok": true
     },
     {
      "id": "KxDQBVzXWt4",
      "t": "Why Are 2026 Formula 1 Engines Going To Lose So Much Power?",
-     "d": null,
+     "d": 912,
+     "ok": true
+    },
+    {
+     "id": "14XsdciOtBQ",
+     "t": "Formula 1 V10 - The Greatest Engine Of All Time?",
+     "d": 959,
+     "ok": true
+    },
+    {
+     "id": "AwwCSkCEi-Y",
+     "t": "Is Formula 1 About To Get Really Slow?",
+     "d": 985,
+     "ok": true
+    },
+    {
+     "id": "AuEF4ooBxZ4",
+     "t": "Red Bull Created A 15,000 RPM Hypercar - The V10 Is Back!",
+     "d": 1246,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:25.356Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:14.644Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -777,175 +1101,217 @@
     {
      "id": "Hv0jYDWp0ZA",
      "t": "Differentials - Explained",
-     "d": null,
+     "d": 363,
      "ok": true
     },
     {
      "id": "gwJEU7p9U2Q",
      "t": "Open vs Locked Differential - Explained",
-     "d": null,
+     "d": 179,
      "ok": true
     },
     {
      "id": "_HOa0aRZYpw",
      "t": "Open vs Locked Differential - Torque Transfer - Explained",
-     "d": null,
+     "d": 546,
      "ok": true
     },
     {
      "id": "ujsxq9WBllU",
      "t": "Limited Slip Differential - Explained",
-     "d": null,
+     "d": 371,
      "ok": true
     },
     {
      "id": "6DmItXixE30",
      "t": "1 Way - 2 Way - 1.5 Way LSD - Explained",
-     "d": null,
+     "d": 404,
      "ok": true
     },
     {
      "id": "w2bRb17jJ1U",
      "t": "Viscous Limited Slip Differential - Explained",
-     "d": null,
+     "d": 235,
      "ok": true
     },
     {
      "id": "wiq1Rk5wqds",
      "t": "Torsen Limited Slip Differential - Explained",
-     "d": null,
+     "d": 647,
      "ok": true
     },
     {
      "id": "lDsQAs0Ldes",
      "t": "Torsen LSD - Torque Transfer - Explained",
-     "d": null,
+     "d": 487,
      "ok": true
     },
     {
      "id": "qwwFZAbYGW0",
      "t": "Torque Vectoring Differential - Explained",
-     "d": null,
+     "d": 341,
      "ok": true
     },
     {
      "id": "jm-_Ncjunuc",
      "t": "What Is The Best AWD System?",
-     "d": null,
+     "d": 754,
      "ok": true
     },
     {
      "id": "2-_Dzd74GUE",
      "t": "Volkswagen's Clever Differential Allows For AWD Drifting - 2022 VW Golf R",
-     "d": null,
+     "d": 833,
      "ok": true
     },
     {
      "id": "XeTDwFchFdw",
      "t": "The Holy Grail Of AWD Systems | Rivian R1T",
-     "d": null,
+     "d": 811,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:26.574Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:15.759Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
-   "title": "Vehicle Dynamics, Tires, &amp; Aerodynamics",
+   "title": "Vehicle Dynamics, Tires, & Aerodynamics",
    "items": [
     {
      "id": "JjCcFsGLpaM",
      "t": "Traction Circle - Explained",
-     "d": null,
+     "d": 331,
      "ok": true
     },
     {
      "id": "9cUIhVEJEaM",
      "t": "How Weight Affects Acceleration - Metric Units",
-     "d": null,
+     "d": 304,
      "ok": true
     },
     {
      "id": "M0I5d8Z41N0",
      "t": "How Weight Affects Acceleration - English Units",
-     "d": null,
+     "d": 274,
      "ok": true
     },
     {
      "id": "8OifbH5siF0",
      "t": "Winter Tires Explained - Bridgestone Blizzak WS80",
-     "d": null,
+     "d": 280,
      "ok": true
     },
     {
      "id": "eWTsXrPWl5Q",
      "t": "Aerodynamic Drag - Explained",
-     "d": null,
+     "d": 423,
      "ok": true
     },
     {
      "id": "DYpxcE7rBw8",
      "t": "Spoilers and Rear Wings - Explained",
-     "d": null,
+     "d": 175,
      "ok": true
     },
     {
      "id": "c9BgfCbZTLM",
      "t": "Downforce - Explained",
-     "d": null,
+     "d": 311,
      "ok": true
     },
     {
      "id": "fjrOsp6S8rA",
      "t": "Cornering Speed - Tires and Downforce",
-     "d": null,
+     "d": 425,
      "ok": true
     },
     {
      "id": "QA6AtmX20pI",
      "t": "Race Car Aerodynamics - Nissan GT-R Nismo GT3",
-     "d": null,
+     "d": 215,
      "ok": true
     },
     {
      "id": "knsR7hcSjyk",
      "t": "4 Reasons FWD Cars Need Spoilers",
-     "d": null,
+     "d": 287,
      "ok": true
     },
     {
      "id": "9bs2cEyK7Uo",
      "t": "Slip Angles - Tire Traction - Explained",
-     "d": null,
+     "d": 191,
      "ok": true
     },
     {
      "id": "1NTdXhLnA_w",
      "t": "Deriving Car Slip Angles - Tire Slip - WARNING: Maths",
-     "d": null,
+     "d": 490,
      "ok": true
     },
     {
      "id": "CsVg2DE0ef8",
      "t": "Understeer vs Oversteer - Explained",
-     "d": null,
+     "d": 215,
      "ok": true
     },
     {
      "id": "vJhhUQ4OpLA",
      "t": "Is A 50/50 Weight Distribution Ideal?",
-     "d": null,
+     "d": 250,
      "ok": true
     },
     {
      "id": "PHbw6dOev2I",
      "t": "Vehicle Weight Transfer and Load Transfer",
-     "d": null,
+     "d": 480,
+     "ok": true
+    },
+    {
+     "id": "xM8jwyrdy04",
+     "t": "Too Much Negative Camber - Wheel Alignment",
+     "d": 305,
+     "ok": true
+    },
+    {
+     "id": "0vSO1LDERMg",
+     "t": "Stretched Tires Are Silly",
+     "d": 144,
+     "ok": true
+    },
+    {
+     "id": "SsmmRXsCTm8",
+     "t": "Are Studded Snow Tires Actually Better? Ice Testing!",
+     "d": 784,
+     "ok": true
+    },
+    {
+     "id": "LJIFgG-dTKQ",
+     "t": "The Fastest Car In The World? Koenigsegg Jesko Absolut",
+     "d": 698,
+     "ok": true
+    },
+    {
+     "id": "pSete8Q1kM8",
+     "t": "The Gordon Murray T.50s Can Drive Upside Down",
+     "d": 777,
+     "ok": true
+    },
+    {
+     "id": "SnnVqs-fQ0U",
+     "t": "The Problem With Electric Power Steering - Hydraulic vs Electric!",
+     "d": 824,
+     "ok": true
+    },
+    {
+     "id": "mGM4ASvcm6M",
+     "t": "I Drove 200 MPH On A Public Road - Scary!",
+     "d": 754,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-02T16:56:27.866Z"
+   "source": "page",
+   "fetched": "2026-11-02T17:01:16.897Z"
   }
  }
 }
