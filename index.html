@@ -149,7 +149,6 @@ footer{border-top:1px solid var(--line);background:var(--grey);padding:8px 14px;
   <header class="mast">
     <div>
       <div class="logo"><a href="#/">Slow<b>TV</b></a></div>
-      <div class="tag">Programmes you chose. Nothing else.</div>
     </div>
     <div class="meter" id="meter">
       <div class="row"><span>Viewed today: <b id="m-used">0m</b> of <b id="m-limit">2h 00m</b></span><span id="m-left"></span></div>
@@ -996,7 +995,7 @@ function viewSettings(view) {
 /* ------------------------------------------------------------------ */
 function renderFooter() {
   const f = $('#foot');
-  let t = 'SlowTV &middot; your channels, the last ' + KEEP_DAYS + ' days, nothing else.';
+  let t = 'SlowTV';
   if (FEED.generated) {
     const g = new Date(FEED.generated);
     t += ' &middot; Guide updated ' + esc(fDay.format(g)) + ', ' + hm(g.getTime()) + '.';
