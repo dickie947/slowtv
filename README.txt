@@ -81,6 +81,26 @@ group   = the heading in the Channels directory.
 If a handle ever fails to resolve, add the channel's ID to that entry:  "id": "UC..."
 
 
+FORMULA 1 CALENDAR ENTRIES
+--------------------------
+
+The Formula 1 row also lists each session (FP1, FP2, FP3, Qualifying, Race) from the race calendar. A session's entry is greyed and italic until its highlights are expected, which is the session's end plus 60 minutes. After that, tapping it shows a button that opens the F1 app's video section, deducts 15 minutes from today's viewing time, and marks the session watched.
+
+The calendar is typed into index.html near the top of the script (look for F1_ROUNDS). It currently covers the six rounds left in 2026. Times are UTC; the page shows them in your device's own time zone. Practice and qualifying times came from one source (Sky Sports) and race times from two, so check them against formula1.com. The settings just above F1_ROUNDS (the link address, the 15 minutes, the 60-minute delay) can be changed in the same place.
+
+The F1 app link cannot open a specific highlight, only the app's video section.
+
+
+WEEKLY BROADCAST CHANNEL
+------------------------
+
+A channel called Weekly Broadcast simulates an old TV schedule: two episodes a week (a double bill, 20:30 and 21:30), premiering Tuesday with a repeat on Sunday, starting Tuesday 3 November 2026. Seasons run in the order they were first broadcast (so one series' season 2 can follow another series' season 1). Missed episodes stay on the guide for 30 days. A "Schedule" link in the menu shows the whole plan.
+
+The list of series is typed into index.html (look for WEEKLY and "series:"). Each series has a short note telling you to open your own streaming app; SlowTV does not link to any service. Tapping an episode's button deducts its running time from today's viewing time and marks it watched. Watching the Sunday repeat counts as watching the premiere.
+
+Band of Brothers (from 1 March) and From the Earth to the Moon (from 15 June) are rewatched every year and pause the main run while they play. Cosmos is held until 5 January 2027 so you have time to find the DVD.
+
+
 HOW THE VIEWING LIMIT WORKS
 ---------------------------
 

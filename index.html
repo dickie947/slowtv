@@ -65,6 +65,10 @@ h3{font:bold 15px Georgia,"Times New Roman",serif;color:var(--navy);margin:16px 
 .pg{display:block;margin:0 0 7px;text-decoration:none;color:var(--link);font-weight:bold;overflow-wrap:anywhere}
 .pg:hover .tt{text-decoration:underline}
 .pg.seen{color:#777;font-weight:normal}
+.pg.soon{color:#555;font-weight:normal;font-style:italic}
+.sched{border-collapse:collapse;font-size:13px;min-width:560px;width:100%;max-width:900px}
+.sched th,.sched td{border:1px solid var(--line);padding:4px 6px;text-align:left}
+.sched th{background:var(--navy);color:#fff}
 .tm,.du{color:var(--muted);font-weight:normal;font-size:11px}
 .pg .tt{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .legend{margin:10px 0 0;font-size:12px;color:var(--muted)}
@@ -155,6 +159,7 @@ footer{border-top:1px solid var(--line);background:var(--grey);padding:8px 14px;
   <nav class="menu" id="menu">
     <a href="#/" data-nav="guide">TV Guide</a> <span>|</span>
     <a href="#/channels" data-nav="channels">Channels</a> <span>|</span>
+    <a href="#/schedule" data-nav="schedule" class="sch" hidden>Schedule</a> <span class="sch" hidden>|</span>
     <a href="#/settings" data-nav="settings">Settings</a>
   </nav>
   <main id="view"><noscript>SlowTV needs JavaScript to run.</noscript></main>
@@ -172,6 +177,52 @@ const PLAYER_HOST = 'https://www.youtube-nocookie.com'; // use https://www.youtu
 const DAY_STARTS_AT = 4;            // the "viewing day" rolls over at 04:00 local time
 const LIMITS = [30, 60, 90, 120, 150, 180, 240];
 const STORE_KEY = 'slowtv.v1';
+
+/* ---- Formula 1 calendar entries ----------------------------------------
+   Sessions from the F1 calendar appear in the Formula 1 row of the guide and
+   open the F1 app's video section. Times are UTC (the page shows them in your
+   device's own time zone). Practice and qualifying times come from Sky Sports;
+   race times were cross-checked against a second source. Check against
+   formula1.com before relying on them. Each session is [label, start, minutes].  */
+/* ---- Weekly Broadcast: a channel that drips out a set number of episodes a week --------
+   One episode premieres each week at `time` (device clock), starting on `start`,
+   with a repeat on `repeatDay` (0 = Sunday). Seasons run one after another.
+   order: 'broadcast' sorts season blocks by the year each season first aired;
+          'series' runs one series at a time.
+   Each series: { key:'tng', name:'Star Trek: The Next Generation', short:'TNG', mins:44,
+                  service:{ label:'Paramount+', url:'https://...' },     // service is optional
+                  seasons:[ { n:1, year:1987, aired:'1987-09-28', episodes:['Title 1','Title 2', ...] } ] }
+   Episodes can also be { e:24, t:'Title', m:90 } to give an episode number and its own running time.
+   A season can have name:'Miniseries' (shown instead of S1E01) and notBefore:'YYYY-MM-DD' (held until then).
+   A series with annual:'MM-DD' is rewatched every year instead of joining the main run: its episodes take the
+   weeks starting on the first broadcast day on or after that date, and the main run pauses meanwhile.
+   A series without a service (all of them, for now) can carry note:'...' which is shown on its episode pages. */
+const WEEKLY = {
+  channelName: 'Weekly Broadcast',
+  group: 'Classic TV',
+  start: '2026-11-03',   // first premiere (a Tuesday)
+  time: '20:30',
+  repeatDay: 0,
+  perWeek: 2,            // episodes per week: shown as a double bill, one hour apart
+  order: 'broadcast',
+  series: [{"key":"tng","name":"Star Trek: The Next Generation","short":"TNG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1987,"aired":"1987-09-28","episodes":[{"e":1,"t":"Encounter at Farpoint","m":90},"The Naked Now","Code of Honor","The Last Outpost","Where No One Has Gone Before","Lonely Among Us","Justice","The Battle","Hide and Q","Haven","The Big Goodbye","Datalore","Angel One","11001001","Too Short a Season","When the Bough Breaks","Home Soil","Coming of Age","Heart of Glory","The Arsenal of Freedom","Symbiosis","Skin of Evil","We'll Always Have Paris","Conspiracy","The Neutral Zone"]},{"n":2,"year":1988,"aired":"1988-11-21","episodes":["The Child","Where Silence Has Lease","Elementary, Dear Data","The Outrageous Okona","Loud as a Whisper","The Schizoid Man","Unnatural Selection","A Matter of Honor","The Measure of a Man","The Dauphin","Contagion","The Royale","Time Squared","The Icarus Factor","Pen Pals","Q Who","Samaritan Snare","Up the Long Ladder","Manhunt","The Emissary","Peak Performance","Shades of Gray"]},{"n":3,"year":1989,"aired":"1989-09-25","episodes":["Evolution","The Ensigns of Command","The Survivors","Who Watches the Watchers","The Bonding","Booby Trap","The Enemy","The Price","The Vengeance Factor","The Defector","The Hunted","The High Ground","Deja Q","A Matter of Perspective","Yesterday's Enterprise","The Offspring","Sins of the Father","Allegiance","Captain's Holiday","Tin Man","Hollow Pursuits","The Most Toys","Sarek","Ménage à Troi","Transfigurations","The Best of Both Worlds, Part I"]},{"n":4,"year":1990,"aired":"1990-09-24","episodes":["The Best of Both Worlds, Part II","Family","Brothers","Suddenly Human","Remember Me","Legacy","Reunion","Future Imperfect","Final Mission","The Loss","Data's Day","The Wounded","Devil's Due","Clues","First Contact","Galaxy's Child","Night Terrors","Identity Crisis","The Nth Degree","Qpid","The Drumhead","Half a Life","The Host","The Mind's Eye","In Theory","Redemption, Part I"]},{"n":5,"year":1991,"aired":"1991-09-23","episodes":["Redemption, Part II","Darmok","Ensign Ro","Silicon Avatar","Disaster","The Game","Unification, Part I","Unification, Part II","A Matter of Time","New Ground","Hero Worship","Violations","The Masterpiece Society","Conundrum","Power Play","Ethics","The Outcast","Cause and Effect","The First Duty","Cost of Living","The Perfect Mate","Imaginary Friend","I, Borg","The Next Phase","The Inner Light","Time's Arrow, Part I"]},{"n":6,"year":1992,"aired":"1992-09-21","episodes":["Time's Arrow, Part II","Realm of Fear","Man of the People","Relics","Schisms","True Q","Rascals","A Fistful of Datas","The Quality of Life","Chain of Command, Part I","Chain of Command, Part II","Ship in a Bottle","Aquiel","Face of the Enemy","Tapestry","Birthright, Part I","Birthright, Part II","Starship Mine","Lessons","The Chase","Frame of Mind","Suspicions","Rightful Heir","Second Chances","Timescape","Descent, Part I"]},{"n":7,"year":1993,"aired":"1993-09-20","episodes":["Descent, Part II","Liaisons","Interface","Gambit, Part I","Gambit, Part II","Phantasms","Dark Page","Attached","Force of Nature","Inheritance","Parallels","The Pegasus","Homeward","Sub Rosa","Lower Decks","Thine Own Self","Masks","Eye of the Beholder","Genesis","Journey's End","Firstborn","Bloodlines","Emergence","Preemptive Strike",{"e":25,"t":"All Good Things...","m":90}]}]},{"key":"bsg","name":"Battlestar Galactica (2004)","short":"BSG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":90,"year":2003,"aired":"2003-12-08","episodes":[{"e":1,"t":"Night 1","m":87},{"e":2,"t":"Night 2","m":87}],"name":"Miniseries"},{"n":1,"year":2004,"aired":"2004-10-18","episodes":["33","Water","Bastille Day","Act of Contrition","You Can't Go Home Again","Litmus","Six Degrees of Separation","Flesh and Bone","Tigh Me Up, Tigh Me Down","The Hand of God","Colonial Day","Kobol's Last Gleaming (Part 1)","Kobol's Last Gleaming (Part 2)"]},{"n":2,"year":2005,"aired":"2005-07-15","episodes":["Scattered","Valley of Darkness","Fragged","Resistance","The Farm","Home (Part 1)","Home (Part 2)","Final Cut","Flight of the Phoenix","Pegasus","Resurrection Ship (Part 1)","Resurrection Ship (Part 2)","Epiphanies","Black Market","Scar","Sacrifice","The Captain's Hand","Downloaded","Lay Down Your Burdens (Part 1)","Lay Down Your Burdens (Part 2)"]},{"n":3,"year":2006,"aired":"2006-10-06","episodes":["Occupation","Precipice","Exodus (Part 1)","Exodus (Part 2)","Collaborators","Torn","A Measure of Salvation","Hero","Unfinished Business","The Passage","The Eye of Jupiter","Rapture","Taking a Break from All Your Worries","The Woman King","A Day in the Life","Dirty Hands","Maelstrom","The Son Also Rises","Crossroads (Part 1)","Crossroads (Part 2)"]},{"n":91,"year":2007,"aired":"2007-11-24","episodes":[{"e":1,"t":"Razor","m":90}],"name":"Razor"},{"n":4,"year":2008,"aired":"2008-04-04","episodes":["He That Believeth in Me","Six of One","The Ties That Bind","Escape Velocity","The Road Less Traveled","Faith","Guess What's Coming to Dinner?","Sine Qua Non","The Hub","Revelations","Sometimes a Great Notion","A Disquiet Follows My Soul","The Oath","Blood on the Scales","No Exit","Deadlock","Someone to Watch Over Me","Islanded in a Stream of Stars","Daybreak (Part 1)","Daybreak (Part 2)","Daybreak (Part 3)"]},{"n":92,"year":2009,"aired":"2009-10-27","episodes":[{"e":1,"t":"The Plan","m":110}],"name":"The Plan"}]},{"key":"ff","name":"Firefly","short":"Firefly","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2002,"aired":"2002-09-20","episodes":["Serenity","The Train Job","Bushwhacked","Shindig","Safe","Our Mrs. Reynolds","Jaynestown","Out of Gas","Ariel","War Stories","Trash","The Message","Heart of Gold","Objects in Space"]}]},{"key":"hcf","name":"Halt and Catch Fire","short":"HCF","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":2,"year":2015,"aired":"2015-05-31","episodes":["SETI","New Coke","The Way In","Play with Friends","Extract and Defend","10Broad36","Working for the Clampdown","Limbo","Kali","Heaven Is a Place"]},{"n":3,"year":2016,"aired":"2016-08-21","episodes":["Valley of the Heart's Delight","One Way or Another","Flipping the Switch","Rules of Honorable Play","Yerba Buena","And She Was","The Threshold","You Are Not Safe","NIM","NeXT"]},{"n":4,"year":2017,"aired":"2017-08-19","episodes":["So It Goes","Signal to Noise","Miscellaneous","Tonya and Nancy","Nowhere Man","A Connection is Made","Who Needs a Guy","Goodwill","Search","Ten of Swords"]}]},{"key":"bob","name":"Band of Brothers","short":"BoB","mins":60,"annual":"03-01","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2001,"aired":"2001-09-09","episodes":["Currahee","Day of Days","Carentan","Replacements","Crossroads","Bastogne","The Breaking Point","The Last Patrol","Why We Fight","Points"]}]},{"key":"ftm","name":"From the Earth to the Moon","short":"FTEtM","mins":60,"annual":"06-15","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1998,"aired":"1998-04-05","episodes":["Can We Do This?","Apollo One","We Have Cleared the Tower","1968","Spider","Mare Tranquilitatis","That's All There Is","We Interrupt This Program","For Miles and Miles","Galileo Was Right","The Original Wives Club","Le Voyage Dans La Lune"]}]},{"key":"gk","name":"Generation Kill","short":"GK","mins":65,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2008,"aired":"2008-07-13","episodes":["Get Some","The Cradle of Civilization","Screwby","Combat Jack","A Burning Dog","Stay Frosty","Bomb in the Garden"]}]},{"key":"pac","name":"The Pacific","short":"Pacific","mins":60,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2010,"aired":"2010-03-14","episodes":["Part One","Part Two","Part Three","Part Four","Part Five","Part Six","Part Seven","Part Eight","Part Nine","Part Ten"]}]},{"key":"xf","name":"The X-Files (mythology, then Doggett onward)","short":"X-Files","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1993,"aired":"1993-09-10","episodes":[{"e":1,"t":"Pilot"},{"e":2,"t":"Deep Throat"},{"e":10,"t":"Fallen Angel"},{"e":17,"t":"E.B.E."},{"e":24,"t":"The Erlenmeyer Flask"}]},{"n":2,"year":1994,"aired":"1994-09-16","episodes":[{"e":1,"t":"Little Green Men"},{"e":5,"t":"Duane Barry"},{"e":6,"t":"Ascension"},{"e":8,"t":"One Breath"},{"e":10,"t":"Red Museum"},{"e":16,"t":"Colony"},{"e":17,"t":"End Game"},{"e":25,"t":"Anasazi"}]},{"n":3,"year":1995,"aired":"1995-09-22","episodes":[{"e":1,"t":"The Blessing Way"},{"e":2,"t":"Paper Clip"},{"e":9,"t":"Nisei"},{"e":10,"t":"731"},{"e":15,"t":"Piper Maru"},{"e":16,"t":"Apocrypha"},{"e":24,"t":"Talitha Cumi"}]},{"n":4,"year":1996,"aired":"1996-10-04","episodes":[{"e":1,"t":"Herrenvolk"},{"e":7,"t":"Musings of a Cigarette Smoking Man"},{"e":8,"t":"Tunguska"},{"e":9,"t":"Terma"},{"e":14,"t":"Memento Mori"},{"e":17,"t":"Tempus Fugit"},{"e":18,"t":"Max"},{"e":21,"t":"Zero Sum"},{"e":23,"t":"Demons"},{"e":24,"t":"Gethsemane"}]},{"n":5,"year":1997,"aired":"1997-11-02","episodes":[{"e":1,"t":"Redux"},{"e":2,"t":"Redux II"},{"e":6,"t":"Christmas Carol"},{"e":7,"t":"Emily"},{"e":13,"t":"Patient X"},{"e":14,"t":"The Red and the Black"},{"e":20,"t":"The End"}]},{"n":6,"year":1998,"aired":"1998-11-08","episodes":[{"e":1,"t":"The Beginning"},{"e":9,"t":"S.R. 819"},{"e":11,"t":"Two Fathers"},{"e":12,"t":"One Son"},{"e":22,"t":"Biogenesis"}]},{"n":7,"year":1999,"aired":"1999-11-07","episodes":[{"e":1,"t":"The Sixth Extinction"},{"e":2,"t":"The Sixth Extinction II: Amor Fati"},{"e":10,"t":"Sein und Zeit"},{"e":11,"t":"Closure"},{"e":15,"t":"En Ami"},{"e":22,"t":"Requiem"}]},{"n":8,"year":2000,"aired":"2000-11-05","episodes":["Within","Without","Patience","Roadrunners","Invocation","Redrum","Via Negativa","Surekill","Salvage","Badlaa","The Gift","Medusa","Per Manum","This Is Not Happening","Deadalive","Three Words","Empedocles","Vienen","Alone","Essence","Existence"]},{"n":9,"year":2001,"aired":"2001-11-11","episodes":["Nothing Important Happened Today","Nothing Important Happened Today II","Dæmonicus","4-D","Lord of the Flies","Trust No 1","John Doe","Hellbound","Provenance","Providence","Audrey Pauley","Underneath","Improbable","Scary Monsters","Jump the Shark","William","Release","Sunshine Days","The Truth (Part 1)","The Truth (Part 2)"]},{"n":10,"year":2016,"aired":"2016-01-24","episodes":["My Struggle","Founder's Mutation","Mulder and Scully Meet the Were-Monster","Home Again","Babylon","My Struggle II"]},{"n":11,"year":2018,"aired":"2018-01-03","episodes":["My Struggle III","This","Plus One","The Lost Art of Forehead Sweat","Ghouli","Kitten","Rm9sbG93ZXJz","Familiar","Nothing Lasts Forever","My Struggle IV"]}]},{"key":"cos","name":"Cosmos: A Personal Voyage","short":"Cosmos","mins":60,"note":"No UK streaming service carries this. Use the 2009 UK DVD set.","seasons":[{"n":1,"year":1980,"aired":"1980-09-28","episodes":["The Shores of the Cosmic Ocean","One Voice in the Cosmic Fugue","Harmony of the Worlds","Heaven and Hell","Blues for a Red Planet","Travellers' Tales","The Backbone of Night","Journeys in Space and Time","The Lives of the Stars","The Edge of Forever","The Persistence of Memory","Encyclopaedia Galactica","Who Speaks for Earth?"],"notBefore":"2027-01-05"}]}],
+};
+const LOOKAHEAD_WEEKS = 8;
+const WEEKDAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];                             // how far ahead the guide and channel pages look
+
+const F1_HANDLE = 'formula1';                          // handle of the F1 channel in channels.json
+const F1_APP_URL = 'https://www.formula1.com/en/video/'; // the F1 app registers this address; keep the trailing slash
+const EVENT_COST_MIN = 15;                             // time deducted when you open the F1 app
+const EVENT_RUNNING_MIN = 15;                          // typical length of a highlights video
+const HIGHLIGHTS_DELAY_MIN = 60;                       // highlights expected this long after a session ends
+const F1_ROUNDS = [
+  { name: 'United States GP', sessions: [['FP1','2026-10-23T17:30:00Z',60],['FP2','2026-10-23T21:00:00Z',60],['FP3','2026-10-24T17:30:00Z',60],['Qualifying','2026-10-24T21:00:00Z',60],['Race','2026-10-25T20:00:00Z',120]] },
+  { name: 'Mexico City GP', sessions: [['FP1','2026-10-30T18:30:00Z',60],['FP2','2026-10-30T22:00:00Z',60],['FP3','2026-10-31T17:30:00Z',60],['Qualifying','2026-10-31T21:00:00Z',60],['Race','2026-11-01T20:00:00Z',120]] },
+  { name: 'São Paulo GP', sessions: [['FP1','2026-11-06T15:30:00Z',60],['FP2','2026-11-06T19:00:00Z',60],['FP3','2026-11-07T14:30:00Z',60],['Qualifying','2026-11-07T18:00:00Z',60],['Race','2026-11-08T17:00:00Z',120]] },
+  { name: 'Las Vegas GP', sessions: [['FP1','2026-11-20T00:30:00Z',60],['FP2','2026-11-20T04:00:00Z',60],['FP3','2026-11-21T00:30:00Z',60],['Qualifying','2026-11-21T04:00:00Z',60],['Race','2026-11-22T04:00:00Z',120]] },
+  { name: 'Qatar GP', sessions: [['FP1','2026-11-27T13:30:00Z',60],['FP2','2026-11-27T17:00:00Z',60],['FP3','2026-11-28T14:30:00Z',60],['Qualifying','2026-11-28T18:00:00Z',60],['Race','2026-11-29T16:00:00Z',120]] },
+  { name: 'Abu Dhabi GP', sessions: [['FP1','2026-12-04T09:30:00Z',60],['FP2','2026-12-04T13:00:00Z',60],['FP3','2026-12-05T10:30:00Z',60],['Qualifying','2026-12-05T14:00:00Z',60],['Race','2026-12-06T13:00:00Z',120]] },
+];
 const KEEP_DAYS = 30;
 const LOW_SECONDS = 300;            // meter turns amber at 5 minutes left
 
@@ -261,9 +312,16 @@ async function loadFeed() {
     raw = await r.json();
   } catch (e) { failed = true; }
   const cutoff = Date.now() - KEEP_DAYS * DAY;
-  const videos = (raw.videos || []).map(v => Object.assign({}, v, { ts: Date.parse(v.p) }))
+  let videos = (raw.videos || []).map(v => Object.assign({}, v, { ts: Date.parse(v.p) }))
     .filter(v => v.ts >= cutoff).sort((a, b) => b.ts - a.ts);
   const channels = raw.channels || [];
+  const f1 = channels.find(c => String(c.handle || '').toLowerCase() === F1_HANDLE);
+  if (f1) videos = videos.concat(buildEvents(f1.id).filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
+  if (weeklyOn()) {
+    PLAN = weeklyPlan();
+    channels.push({ id: 'wk', handle: 'weekly', name: WEEKLY.channelName, group: WEEKLY.group });
+    videos = videos.concat(PLAN.entries.filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
+  }
   FEED = {
     generated: raw.generated || null, channels, videos, failed,
     ch: Object.fromEntries(channels.map(c => [c.id, c])),
@@ -274,12 +332,117 @@ async function loadFeed() {
 /* ------------------------------------------------------------------ */
 /*  Views                                                              */
 /* ------------------------------------------------------------------ */
+let PLAN = null;
+const weeklyOn = () => WEEKLY.series.length > 0;
+function weeklyPlan() {
+  const norm = (x, i) => (typeof x === 'string' ? { e: i + 1, t: x } : { e: x.e == null ? i + 1 : x.e, t: x.t || '', m: x.m });
+  const blocks = [], yearly = [];
+  WEEKLY.series.forEach((sr, si) => {
+    if (sr.annual) yearly.push(sr);
+    else (sr.seasons || []).forEach(se => blocks.push({ s: sr, si, se, eps: se.episodes.map(norm) }));
+  });
+  const key = b => b.se.aired || (b.se.year + '-01-01');
+  blocks.sort(WEEKLY.order === 'series'
+    ? (a, b) => a.si - b.si || a.se.n - b.se.n
+    : (a, b) => (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : a.si - b.si || a.se.n - b.se.n));
+  const [y, m, d] = WEEKLY.start.split('-').map(Number);
+  const [hh, mm] = WEEKLY.time.split(':').map(Number);
+  const startDow = new Date(y, m - 1, d).getDay();
+  const repOff = (WEEKLY.repeatDay - startDow + 7) % 7 || 7;
+  const PER = Math.max(1, WEEKLY.perWeek || 1);
+  const at = (week, extra, slot) => new Date(y, m - 1, d + week * 7 + (extra || 0), hh, mm + 60 * (slot || 0));
+  const day0 = Date.UTC(y, m - 1, d) / 864e5;
+
+  // weeks given over to annual rewatches: each starts on the first broadcast day on or after MM-DD
+  const taken = {}, runs = [];
+  for (const sr of yearly) {
+    const [am, ad] = sr.annual.split('-').map(Number);
+    const eps = sr.seasons[0].episodes.map(norm);
+    for (let yr = y; yr <= y + 40; yr++) {
+      const dow = new Date(Date.UTC(yr, am - 1, ad)).getUTCDay();
+      const w0 = (Date.UTC(yr, am - 1, ad) / 864e5 + (startDow - dow + 7) % 7 - day0) / 7;
+      if (w0 < 0) continue;
+      runs.push({ s: sr, year: yr, first: w0, count: Math.ceil(eps.length / PER) });
+      eps.forEach((ep, i) => { if (!taken[w0 * PER + i]) taken[w0 * PER + i] = { s: sr, year: yr, ep }; });
+    }
+  }
+
+  const queue = [];
+  blocks.forEach(b => b.eps.forEach(ep => queue.push({ b, ep })));
+  const mainCount = queue.length;
+  const entries = [], byId = {};
+  const push = (wk, id, label, sr, mins, meta, slot) => {
+    for (const rep of [false, true]) {
+      const when = at(wk, rep ? repOff : 0, slot);
+      const e = Object.assign({ id: rep ? id + '-r' : id, base: id, c: 'wk', wk: true, rep, ts: when.getTime(), p: when.toISOString(),
+        t: (rep ? 'Repeat: ' : '') + label, d: mins * 60, x: '', ready: when.getTime(), s: sr, week: wk }, meta);
+      entries.push(e); byId[e.id] = e;
+    }
+  };
+  let w = 0, sl = 0;
+  while (sl < 20000) {
+    w = Math.floor(sl / PER);
+    const k = sl % PER;
+    const t = taken[sl];
+    if (t) {
+      push(w, 'wk-' + t.s.key + '-y' + t.year + '-e' + p2(t.ep.e),
+        t.s.short + ' ' + t.year + ' E' + p2(t.ep.e) + (t.ep.t ? ' · ' + t.ep.t : ''), t.s, t.ep.m || t.s.mins || 44,
+        { where: t.year + ' rewatch, episode ' + t.ep.e, title: t.ep.t }, k);
+    } else if (queue.length) {
+      const now = at(w).getTime();
+      const idx = queue.findIndex(q => !q.b.se.notBefore || new Date(q.b.se.notBefore + 'T00:00:00').getTime() <= now);
+      if (idx >= 0) {
+        const { b, ep } = queue.splice(idx, 1)[0];
+        const se = b.se;
+        const tag = se.name ? se.name : 'S' + se.n + 'E' + p2(ep.e);
+        push(w, 'wk-' + b.s.key + '-s' + p2(se.n) + 'e' + p2(ep.e), b.s.short + ' ' + tag + (ep.t ? ' · ' + ep.t : ''), b.s, ep.m || b.s.mins || 44,
+          { where: (se.name || 'Season ' + se.n) + ', episode ' + ep.e, title: ep.t }, k);
+        if (b.first == null) b.first = w;
+        b.last = w;
+      }
+    } else break;
+    sl++;
+  }
+  w = Math.floor((sl - 1) / PER) + 1;
+  for (const b of blocks) { b.count = b.eps.length; b.firstDate = at(b.first); b.lastDate = at(b.last); }
+  return { per: PER, blocks, runs: runs.filter(r => r.first < w), total: w, mainCount, entries, byId, at, end: at(w - 1) };
+}
+
+function buildEvents(channelId) {
+  const out = [];
+  for (const r of F1_ROUNDS) {
+    const slug = r.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    for (const [label, start, mins] of r.sessions) {
+      const ts = Date.parse(start);
+      out.push({
+        id: 'ev-' + slug + '-' + label.toLowerCase(),
+        c: channelId, ev: true, ts, p: start,
+        t: r.name + ': ' + label,
+        d: EVENT_RUNNING_MIN * 60, x: '',
+        end: ts + mins * 60e3,
+        ready: ts + mins * 60e3 + HIGHLIGHTS_DELAY_MIN * 60e3,
+        round: r.name, session: label,
+      });
+    }
+  }
+  return out;
+}
+function readyLabel(v) {
+  const r = new Date(v.ready), s = new Date(v.ts);
+  return (r.toDateString() !== s.toDateString() ? fDay.format(r).replace(',', '') + ' ' : '') + hm(v.ready);
+}
+function weeksAhead() {
+  if (!FEED.videos.length) return 0;
+  return Math.min(LOOKAHEAD_WEEKS, Math.max(0, Math.round((mondayOf(FEED.videos[0].ts) - mondayOf(Date.now())) / (7 * DAY))));
+}
+
 function pgLink(v, withTime) {
-  const seen = !!S.watched[v.id];
-  return '<a class="pg' + (seen ? ' seen' : '') + '" href="#/v/' + esc(v.id) + '" title="' + esc(v.t) + '">' +
+  const seen = !!S.watched[v.base || v.id];
+  const soon = !!(v.ev || v.wk) && Date.now() < v.ready;
+  return '<a class="pg' + (seen ? ' seen' : '') + (soon ? ' soon' : '') + '" href="#/v/' + esc(v.id) + '" title="' + esc(v.t) + '">' +
     (withTime ? '<span class="tm">' + hm(v.ts) + '</span> ' : '') +
     (seen ? '&#10003; ' : '') + '<span class="tt">' + esc(v.t) + '</span>' +
-    (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '') + '</a>';
+    (soon ? (v.wk ? '' : ' <span class="du">(highlights from ' + esc(readyLabel(v)) + ')</span>') : (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '')) + '</a>';
 }
 
 function emptyGuideMessage() {
@@ -324,14 +487,14 @@ function viewGuide(view, off) {
   }).join('');
 
   const earlier = off < oldest ? '<a href="#/week/' + (off + 1) + '">&laquo; Earlier week</a>' : '<span class="off">&laquo; Earlier week</span>';
-  const later = off > 0 ? '<a href="#/week/' + (off - 1) + '">Later week &raquo;</a>' : '<span class="off">Later week &raquo;</span>';
+  const later = off > -weeksAhead() ? '<a href="#/week/' + (off - 1) + '">Later week &raquo;</a>' : '<span class="off">Later week &raquo;</span>';
   const total = FEED.videos.filter(v => v.ts >= mon.getTime() && v.ts < nextMon.getTime()).length;
 
   view.innerHTML = '<h2>TV Guide</h2>' +
     '<div class="weeknav">' + earlier + '<span class="cur">' + (off === 0 ? 'This week: ' : 'Week of ') + esc(fDay.format(mon)) + ' &ndash; ' + esc(fDay.format(sun)) + '</span>' + later + '</div>' +
     (total ? '' : '<p class="muted">Nothing was broadcast on your channels this week.</p>') +
     '<table class="guide"><thead><tr><th class="corner">Channel</th>' + head + '</tr></thead><tbody>' + rows + '</tbody></table>' +
-    '<p class="legend"><b>Bold</b> = not yet watched &nbsp;&middot;&nbsp; <span style="color:#777">&#10003; grey</span> = watched &nbsp;&middot;&nbsp; times are when each programme was broadcast, running time in brackets &nbsp;&middot;&nbsp; Shorts are hidden.</p>';
+    '<p class="legend"><b>Bold</b> = not yet watched &nbsp;&middot;&nbsp; <span style="color:#777">&#10003; grey</span> = watched &nbsp;&middot;&nbsp; times are when each programme was broadcast, running time in brackets &nbsp;&middot;&nbsp; Shorts are hidden &nbsp;&middot;&nbsp; <i>Italic</i> = highlights not expected yet. Formula 1 sessions come from the race calendar and open the F1 app.</p>';
 }
 
 function viewChannels(view) {
@@ -346,7 +509,7 @@ function viewChannels(view) {
   }
   view.innerHTML = '<h2>Channels</h2><p class="muted">Your set list. Pick one to see everything it has broadcast in the last ' + KEEP_DAYS + ' days.</p>' +
     groups.map(g => '<h3>' + esc(g.name) + '</h3><ul class="dir">' + g.list.map(c => {
-      const mine = FEED.videos.filter(v => v.c === c.id);
+      const mine = FEED.videos.filter(v => v.c === c.id && !((v.ev || v.wk) && Date.now() < v.ready) && !v.rep);
       const unseen = mine.filter(v => !S.watched[v.id]).length;
       return '<li><a href="#/channel/' + esc(c.id) + '"><b>' + esc(c.name) + '</b></a> <span class="muted small">(' + unseen + ' unwatched of ' + mine.length + ')</span></li>';
     }).join('') + '</ul>').join('');
@@ -355,7 +518,7 @@ function viewChannels(view) {
 function viewChannel(view, id) {
   const c = FEED.ch[id];
   if (!c) { view.innerHTML = '<h2>Channel not found</h2><p><a href="#/channels">&laquo; Channels</a></p>'; return; }
-  const mine = FEED.videos.filter(v => v.c === id);
+  const mine = FEED.videos.filter(v => v.c === id && v.ts <= Date.now() + LOOKAHEAD_WEEKS * 7 * DAY);
   let html = '<p class="crumb"><a href="#/channels">&laquo; Channels</a></p><h2>' + esc(c.name) + '</h2>' +
     '<p class="muted">' + esc(c.group || '') + ' &middot; the last ' + KEEP_DAYS + ' days</p>';
   if (!mine.length) html += '<p>Nothing in the last ' + KEEP_DAYS + ' days.</p>';
@@ -397,6 +560,8 @@ function viewProgramme(view, id) {
     view.innerHTML = '<h2>Programme not found</h2><p>It may have dropped out of the ' + KEEP_DAYS + '-day window.</p><p><a href="#/">&laquo; Back to the TV Guide</a></p>';
     return;
   }
+  if (v.wk) { viewWeekly(view, v); return; }
+  if (v.ev) { viewEvent(view, v); return; }
   const c = FEED.ch[v.c] || { name: 'Unknown channel', id: '' };
   const seen = !!S.watched[id];
   view.innerHTML =
@@ -412,6 +577,135 @@ function viewProgramme(view, id) {
     (v.x ? '<p class="desc">' + esc(v.x) + '</p>' : '') +
     '<div id="deck"></div>';
   renderDeck(v);
+}
+
+function viewWeekly(view, v) {
+  const key = v.base, seen = !!S.watched[key];
+  const aired = Date.now() >= v.ready;
+  const left = leftSec(), mins = Math.round(v.d / 60), svc = v.s.service;
+  const pr = PLAN.byId[key], rp = PLAN.byId[key + '-r'];
+  const whenOf = e => esc(fLong.format(new Date(e.ts))) + ', ' + hm(e.ts);
+  const markBtn = '<button class="btn" id="b-mark">' + (seen ? 'Mark as not watched' : 'Mark as watched') + '</button>';
+  let deck;
+  if (!aired) {
+    deck = '<div class="note">This episode isn’t on air yet. It broadcasts <b>' + whenOf(v) + '</b>. Come back then.</div>';
+  } else if (left <= 0) {
+    deck = '<div class="offair"><div class="bars"></div><div class="msg"><h3>OFF AIR</h3>' +
+      '<div>You have used your ' + esc(dur(S.limit * 60)) + ' for today.<br>Programmes resume at 0' + DAY_STARTS_AT + ':00.</div></div></div>' +
+      '<div class="actions">' + markBtn + '</div>';
+  } else {
+    deck = '<div class="note">' + (svc ? 'This opens <b>' + esc(svc.label) + '</b>. SlowTV can’t play the episode itself.' : esc(v.s.note || 'No streaming service is set for this series.')) +
+      '<br>Tapping the button uses <b>' + mins + ' minutes</b> of today’s viewing time (you have ' + esc(dur(left)) + ' left) and marks this episode watched.</div>' +
+      '<div class="actions">' + (svc
+        ? '<a class="btn go" id="b-wk" href="' + esc(svc.url) + '" rel="noopener">' + (seen ? 'Watch again on ' : 'Watch on ') + esc(svc.label) + '</a>'
+        : '<button class="btn go" id="b-wk">' + (seen ? 'I’m watching this again' : 'I’m watching this now') + '</button>') + markBtn + '</div>';
+  }
+  view.innerHTML =
+    '<p class="crumb"><a href="#/">&laquo; TV Guide</a></p>' +
+    '<h2 class="ptitle">' + esc(v.t) + '</h2>' +
+    '<table class="info">' +
+      '<tr><th>Channel</th><td><a href="#/channel/wk">' + esc(WEEKLY.channelName) + '</a></td></tr>' +
+      '<tr><th>Series</th><td>' + esc(v.s.name) + '</td></tr>' +
+      '<tr><th>Episode</th><td>' + esc(v.where) + (v.title ? ': ' + esc(v.title) : '') + '</td></tr>' +
+      '<tr><th>Premiere</th><td>' + whenOf(pr) + '</td></tr>' +
+      '<tr><th>Repeat</th><td>' + whenOf(rp) + '</td></tr>' +
+      '<tr><th>Running time</th><td>about ' + mins + ' minutes</td></tr>' +
+      '<tr><th>Schedule</th><td>Week ' + (v.week + 1) + ' of ' + PLAN.total + '</td></tr>' +
+      '<tr><th>Status</th><td>' + (seen ? '&#10003; Watched' : 'Not yet watched') + '</td></tr>' +
+    '</table>' + deck;
+  const mark = $('#b-mark');
+  if (mark) mark.addEventListener('click', () => {
+    if (S.watched[key]) delete S.watched[key]; else S.watched[key] = Date.now();
+    save();
+    viewWeekly($('#view'), v);
+  });
+  const go = $('#b-wk');
+  if (go) go.addEventListener('click', () => {
+    S.used = Math.min(S.limit * 60, S.used + mins * 60);
+    if (!S.watched[key]) S.watched[key] = Date.now();
+    save();
+    updateMeter();
+    setTimeout(() => { if (location.hash === '#/v/' + v.id) viewWeekly($('#view'), v); }, svc ? 800 : 0);
+  });
+}
+
+function viewSchedule(view) {
+  if (!PLAN) { view.innerHTML = '<h2>Schedule</h2><p>No series are scheduled yet.</p>'; return; }
+  const fmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  const seasonName = b => b.se.name || 'Season ' + b.se.n;
+  const bySeries = {};
+  PLAN.blocks.forEach(b => (bySeries[b.s.key] = bySeries[b.s.key] || []).push(b));
+  let worst = null;
+  for (const k of Object.keys(bySeries)) {
+    const L = bySeries[k].slice().sort((a, b) => a.first - b.first);
+    for (let i = 1; i < L.length; i++) {
+      const gap = L[i].first - (L[i - 1].last + 1);
+      if (!worst || gap > worst.gap) worst = { gap, name: L[i].s.name, from: seasonName(L[i - 1]), to: seasonName(L[i]) };
+    }
+  }
+  const rows = PLAN.blocks.slice().sort((a, b) => a.first - b.first).map((b, i) =>
+    '<tr><td>' + (i + 1) + '</td><td>' + esc(b.s.name) + '</td><td>' + esc(seasonName(b)) + ' (' + esc(b.se.year) + ')' +
+    (b.se.notBefore ? ' <i>not before ' + esc(fmt.format(new Date(b.se.notBefore + 'T00:00:00'))) + '</i>' : '') + '</td><td>' + b.count +
+    '</td><td>' + esc(fmt.format(b.firstDate)) + '</td><td>' + esc(fmt.format(b.lastDate)) + '</td></tr>').join('');
+  const yearly = {};
+  PLAN.runs.forEach(r => (yearly[r.s.key] = yearly[r.s.key] || []).push(r));
+  const yrows = Object.keys(yearly).map(k => {
+    const L = yearly[k], f = L[0], l = L[L.length - 1];
+    return '<tr><td>' + esc(f.s.name) + '</td><td>' + f.count + ' weeks from the first ' + esc(WEEKDAYS[PLAN.at(0).getDay()]) + ' on or after ' + esc(f.s.annual) + ' (MM-DD)</td><td>' +
+      esc(fmt.format(PLAN.at(f.first))) + '</td><td>' + L.length + ' run' + (L.length === 1 ? '' : 's') + ', last starts ' + esc(fmt.format(PLAN.at(l.first))) + '</td></tr>';
+  }).join('');
+  view.innerHTML = '<h2>Schedule</h2>' +
+    '<p><b>' + PLAN.total + ' weeks</b> at ' + (PLAN.per === 1 ? 'one episode a week' : PLAN.per + ' episodes a week (a double bill)') + ': about ' + (PLAN.total / 52).toFixed(1) + ' years. ' +
+    PLAN.mainCount + ' episodes in the main run' + (PLAN.total > Math.ceil(PLAN.mainCount / PLAN.per) ? ' plus ' + (PLAN.total - Math.ceil(PLAN.mainCount / PLAN.per)) + ' weeks of annual rewatches' : '') +
+    '. The last premiere is on <b>' + esc(fmt.format(PLAN.end)) + '</b>.<br>' +
+    'Order: ' + (WEEKLY.order === 'series' ? 'one series at a time' : 'by the year each season first aired') + '.' +
+    (worst ? '<br>Longest wait between seasons of one series: <b>' + worst.gap + ' week' + (worst.gap === 1 ? '' : 's') + '</b> (' + esc(worst.name) + ', ' + esc(worst.from) + ' to ' + esc(worst.to) + ').' : '') + '</p>' +
+    '<div style="overflow-x:auto"><table class="sched"><thead><tr><th>#</th><th>Series</th><th>Season</th><th>Episodes</th><th>First premiere</th><th>Last premiere</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+    (yrows ? '<h3>Annual rewatches</h3><div style="overflow-x:auto"><table class="sched"><thead><tr><th>Series</th><th>Pattern</th><th>First run starts</th><th>Runs</th></tr></thead><tbody>' + yrows + '</tbody></table></div>' : '');
+}
+
+function viewEvent(view, v) {
+  const c = FEED.ch[v.c] || { name: 'Formula 1', id: '' };
+  const seen = !!S.watched[v.id];
+  const ready = Date.now() >= v.ready;
+  const left = leftSec();
+  let deck;
+  if (!ready) {
+    deck = '<div class="note">Highlights aren’t expected yet. Come back from <b>' + esc(readyLabel(v)) + '</b>.</div>';
+  } else if (left <= 0) {
+    deck = '<div class="offair"><div class="bars"></div><div class="msg"><h3>OFF AIR</h3>' +
+      '<div>You have used your ' + esc(dur(S.limit * 60)) + ' for today.<br>Programmes resume at 0' + DAY_STARTS_AT + ':00.</div></div></div>' +
+      '<div class="actions"><button class="btn" id="b-mark">' + (seen ? 'Mark as not watched' : 'Mark as watched') + '</button></div>';
+  } else {
+    deck = '<div class="note">This opens the F1 app’s video section. It can’t jump to this exact highlight, so look for <b>' + esc(v.session) + '</b> from the <b>' + esc(v.round) + '</b>.<br>' +
+      'Tapping the button uses <b>' + EVENT_COST_MIN + ' minutes</b> of today’s viewing time (you have ' + esc(dur(left)) + ' left) and marks this session watched.</div>' +
+      '<div class="actions"><a class="btn go" id="b-f1" href="' + esc(F1_APP_URL) + '">' + (seen ? 'Open the F1 app again' : 'Open in the F1 app') + '</a>' +
+      '<button class="btn" id="b-mark">' + (seen ? 'Mark as not watched' : 'Mark as watched') + '</button></div>';
+  }
+  view.innerHTML =
+    '<p class="crumb"><a href="#/">&laquo; TV Guide</a></p>' +
+    '<h2 class="ptitle">' + esc(v.t) + '</h2>' +
+    '<table class="info">' +
+      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</td></tr>' +
+      '<tr><th>Session</th><td>' + esc(fLong.format(new Date(v.ts))) + ', ' + hm(v.ts) + '</td></tr>' +
+      '<tr><th>Highlights</th><td>' + (ready ? 'Should be available now' : 'Expected from ' + esc(readyLabel(v))) + '</td></tr>' +
+      '<tr><th>Running time</th><td>about ' + EVENT_RUNNING_MIN + ' minutes</td></tr>' +
+      '<tr><th>Status</th><td>' + (seen ? '&#10003; Watched' : 'Not yet watched') + '</td></tr>' +
+    '</table>' + deck;
+  const mark = $('#b-mark');
+  if (mark) mark.addEventListener('click', () => {
+    if (S.watched[v.id]) delete S.watched[v.id]; else S.watched[v.id] = Date.now();
+    save();
+    viewEvent($('#view'), v);
+  });
+  const go = $('#b-f1');
+  if (go) go.addEventListener('click', () => {
+    S.used = Math.min(S.limit * 60, S.used + EVENT_COST_MIN * 60);
+    if (!S.watched[v.id]) S.watched[v.id] = Date.now();
+    save();
+    updateMeter();
+    setTimeout(() => { if (location.hash === '#/v/' + v.id) viewEvent($('#view'), v); }, 800);
+  });
 }
 
 function renderDeck(v) {
@@ -634,7 +928,7 @@ function importCode(text) {
     if (!t.startsWith('SLOWTV1:')) throw 0;
     o = JSON.parse(atob(t.slice(8)));
   } catch (e) { return 'That doesn’t look like a SlowTV transfer code.'; }
-  const okId = id => /^[\w-]{11}$/.test(id);
+  const okId = id => /^[\w-]{11}$/.test(id) || /^(ev|wk)-[a-z0-9-]{3,60}$/.test(id);
   let n = 0;
   for (const id of Object.keys(o.watched || {})) {
     const t = o.watched[id];
@@ -720,13 +1014,16 @@ function route() {
   let nav = 'guide';
   if (a === 'channels' || a === 'channel') nav = 'channels';
   else if (a === 'settings') nav = 'settings';
+  else if (a === 'schedule') nav = 'schedule';
+  document.querySelectorAll('.sch').forEach(x => { x.hidden = !PLAN; });
   document.querySelectorAll('#menu a').forEach(x => x.classList.toggle('on', x.dataset.nav === nav));
 
   if (a === 'v') viewProgramme(view, b);
   else if (a === 'channel') viewChannel(view, b);
   else if (a === 'channels') viewChannels(view);
   else if (a === 'settings') viewSettings(view);
-  else if (a === 'week') viewGuide(view, Math.max(0, Math.min(parseInt(b, 10) || 0, 8)));
+  else if (a === 'schedule') viewSchedule(view);
+  else if (a === 'week') viewGuide(view, Math.max(-weeksAhead(), Math.min(parseInt(b, 10) || 0, 8)));
   else viewGuide(view, 0);
 
   updateMeter();
