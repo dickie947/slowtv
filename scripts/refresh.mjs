@@ -208,16 +208,20 @@ export async function main({ now = Date.now() } = {}) {
   let shorts = 0;
 
   for (const entry of cfg.channels || []) {
-    const handle = String(entry.handle || '').replace(/^@/, '');
+    const handle = String(entry.handle || (entry.playlist ? entry.name : '') || '').replace(/^@/, '');
     if (!handle) continue;
     try {
-      let id = entry.id || state.ids[handle];
+      let id = entry.playlist || entry.id || state.ids[handle];   // a playlist entry uses the playlist ID as its channel ID
       if (!id) {
         id = await resolveChannelId(handle);
         state.ids[handle] = id;
         log(`  resolved @${handle} -> ${id}`);
       }
-      const xml = await getText(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`);
+      const xml = await getText(
+        entry.playlist
+          ? `https://www.youtube.com/feeds/videos.xml?playlist_id=${id}`
+          : `https://www.youtube.com/feeds/videos.xml?channel_id=${id}`
+      );
       const feed = parseFeed(xml);
       channels.push({
         id,
