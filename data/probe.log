@@ -1,17 +1,22 @@
-node:internal/modules/cjs/loader:1433
-  throw err;
-  ^
-
-Error: Cannot find module '/home/runner/work/slowtv/slowtv/scripts/probe3.mjs'
-    at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    at Function._load (node:internal/modules/cjs/loader:1216:25)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    at node:internal/main/run_main_module:36:49 {
-  code: 'MODULE_NOT_FOUND',
-  requireStack: []
-}
-
-Node.js v22.23.4
+RSS 200 title Reuters World News
+2026-11-02T11:34:27+00:00 3xkRdV3rLuE Reuters | Michigan midterms shock, Binance withdrawals, China's bull semen push 
+2026-11-01T15:13:12+00:00 SjKbFspZy8A Reuters | How Trump could govern without Congress after the midterms | Reuters W
+2026-10-31T13:44:09+00:00 -JpcWiX555Q Reuters | Judge blocks Trump administration threats to election officials | Reut
+2026-10-30T23:38:14+00:00 vdwQfu2d8GM Reuters | How did $6 billion vanish from Binance in crypto’s biggest hack? | Reu
+2026-10-30T10:50:35+00:00 qBygQUp4DXo Reuters | Binance reels from $6.3bn crypto hack | Reuters World News
+2026-10-29T21:20:23+00:00 OMgv3ExSceI Reuters | Did Democrats recruit a spoiler candidate in Alaska's Senate race? | R
+2026-10-29T10:59:22+00:00 mtV4jtXuA04 Reuters | Spain's deadly train crash: what we know so far | Reuters World News
+2026-10-28T21:31:04+00:00 Y1hwNMqvn_c Reuters | Bolsonaro declares victory in Brazilian election, after fleeing to Mia
+2026-10-28T10:57:37+00:00 c8xyXeum1uw Reuters | Netanyahu pulls ahead in Israel, but lacks majority | Reuters World Ne
+2026-10-27T22:43:51+00:00 nKPCdZ-lxIM Reuters | What happens next after Israel's razor-thin vote? | Reuters World News
+2026-10-27T10:09:27+00:00 Rp5D5XUiKVQ Reuters | Netanyahu fights for political survival in Israel | Reuters World News
+2026-10-26T22:10:03+00:00 F8CKa7AWrTM Reuters | Anthropic files for IPO as Marine Le Pen launches French presidential 
+2026-10-26T10:27:02+00:00 IyPcHO0ZBOQ Reuters | Lula beats the odds to win a fourth term in Brazil | Reuters World New
+2026-10-25T14:06:29+00:00 0cmWtPqggjM Reuters | France protests: What’s real and what isn’t? | Reuters World News
+PAGE 3xkRdV3rLuE "Michigan midterms shock, Binance withdrawals, China's bull semen push | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"CIsIENTEDBgAIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+PAGE SjKbFspZy8A "How Trump could govern without Congress after the midterms | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"CIEIENTEDBgBIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+PAGE -JpcWiX555Q "Judge blocks Trump administration threats to election officials | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"CPcHENTEDBgCIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+PAGE vdwQfu2d8GM "How did $6 billion vanish from Binance in crypto’s biggest hack? | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"CO0HENTEDBgDIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+PAGE qBygQUp4DXo "Binance hack, Serbia’s next PM, Patrick Stewart | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"COMHENTEDBgEIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+PAGE OMgv3ExSceI "Alaska election probe, Spain train crash, Bolsonaro challenge | Reuters World News" [{"metadataParts":[{"text":{"content":"Reuters","commandRuns":[{"startIndex":0,"length":7,"onTap":{"innertubeCommand":{"clickTrackingParams":"CNkHENTEDBgFIhMI_7vo9erplwMVJx7WAB17wRVjygEE8nyaUw==","com
+pagetotal 100 Reuters World News
