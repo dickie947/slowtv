@@ -350,6 +350,7 @@ async function loadFeed() {
     .filter(v => v.ts >= cutoff).sort((a, b) => b.ts - a.ts);
   const channels = raw.channels || [];
   const f1 = channels.find(c => String(c.handle || '').toLowerCase() === F1_HANDLE);
+  if (f1) videos = videos.filter(v => v.c !== f1.id);   // the F1 row shows calendar sessions only, not channel uploads
   if (f1) videos = videos.concat(buildEvents(f1.id).filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
   const eng = await engineEntries();
   if (eng.length) {
@@ -481,7 +482,7 @@ function pgLink(v, withTime) {
   return '<a class="pg' + (seen ? ' seen' : '') + (soon ? ' soon' : '') + '" href="#/v/' + esc(v.id) + '" title="' + esc(v.t) + '">' +
     (withTime ? '<span class="tm">' + hm(v.ts) + '</span> ' : '') +
     (seen ? '&#10003; ' : '') + '<span class="tt">' + esc(v.t) + '</span>' +
-    (soon ? (v.wk || v.eng ? '' : ' <span class="du">(highlights from ' + esc(readyLabel(v)) + ')</span>') : (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '')) + '</a>';
+    (soon ? (v.wk || v.eng ? '' : ' <span class="du">Highlights available from ' + esc(readyLabel(v)) + '</span>') : (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '')) + '</a>';
 }
 
 function emptyGuideMessage() {
