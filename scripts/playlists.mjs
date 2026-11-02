@@ -26,6 +26,7 @@ function* walk(o) {
 }
 const text = (t) => (t && (t.simpleText || (t.runs || []).map((r) => r.text).join(''))) || '';
 
+const clock = (s) => { const p = String(s).split(':').map(Number); return p.some(isNaN) ? null : p.reduce((a, x) => a * 60 + x, 0); };
 function collect(json, items, seen) {
   let token = null;
   for (const o of walk(json)) {
@@ -34,7 +35,17 @@ function collect(json, items, seen) {
       seen.add(r.videoId);
       items.push({ id: r.videoId, t: text(r.title), d: Number(r.lengthSeconds) || null, ok: r.isPlayable !== false });
     }
-    const c = o.continuationItemRenderer?.continuationEndpoint?.continuationCommand?.token;
+    const l = o.lockupViewModel;
+    if (l && l.contentId && /VIDEO/.test(l.contentType || 'VIDEO') && !seen.has(l.contentId)) {
+      seen.add(l.contentId);
+      let d = null;
+      for (const x of walk(l.contentImage)) {
+        const tx = x.thumbnailBadgeViewModel?.text;
+        if (tx && /^\d+(:\d{2}){1,2}$/.test(tx)) d = clock(tx);
+      }
+      items.push({ id: l.contentId, t: l.metadata?.lockupMetadataViewModel?.title?.content || '', d, ok: true });
+    }
+    const c = o.continuationCommand?.token;
     if (c) token = c;
   }
   return token;
@@ -68,8 +79,8 @@ async function viaRss(id) {
   if (!res.ok) throw new Error('rss ' + res.status);
   const xml = await res.text();
   const items = [...xml.matchAll(/<entry>.*?<yt:videoId>([^<]+)<\/yt:videoId>.*?<title>([^<]*)<\/title>/gs)]
-    .map((m) => ({ id: m[1], t: m[2].replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"'), d: null, ok: true }));
-  const title = (xml.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
+    .map((m) => ({ id: m[1], t: m[2].replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&'), d: null, ok: true }));
+  const title = ((xml.match(/<title>([^<]*)<\/title>/) || [])[1] || '').replace(/&amp;/g, '&');
   if (!items.length) throw new Error('rss had no entries');
   return { title, items, source: 'rss (latest 15 only)' };
 }
