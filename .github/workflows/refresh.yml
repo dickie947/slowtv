@@ -30,6 +30,10 @@ jobs:
         continue-on-error: true   # still publish the site if YouTube refuses; the log shows why
         run: node scripts/refresh.mjs
 
+      - name: Fetch the Engineering playlists
+        continue-on-error: true
+        run: node scripts/playlists.mjs
+
       - name: Save the refreshed data back to the repository
         run: |
           git config user.name "slowtv-bot"
@@ -44,6 +48,7 @@ jobs:
           cp index.html manifest.webmanifest _site/
           cp apple-touch-icon.png icon-192.png icon-512.png _site/
           cp data/feed.json _site/data/
+          cp data/playlists.json _site/data/
 
       - uses: actions/configure-pages@v5
 
