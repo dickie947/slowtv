@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/playlists.mjs 2>&1 | tee data/probe.log
+      - run: node scripts/probe2.mjs 2>&1 | tee data/probe.log
       - run: |
           git config user.name "slowtv-bot"
           git config user.email "slowtv-bot@users.noreply.github.com"
