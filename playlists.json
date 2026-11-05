@@ -1,7 +1,10 @@
 {
   "_note": "The Engineering channel. 'start' videos come first, then every playlist in order, two videos a week. Add a playlist by adding its list= ID (the part after list= in the address).",
   "start": [
-    { "id": "nQlR-TWNsR4", "t": "Secrets of SpaceX with Dan Rasky Complete Interview" }
+    {
+      "id": "nQlR-TWNsR4",
+      "t": "Secrets of SpaceX with Dan Rasky Complete Interview"
+    }
   ],
   "playlists": [
     "PLE067A7397E1AF108",
@@ -14,5 +17,12 @@
     "PLAC8F7A33D3F85C1E",
     "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly",
     "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k"
+  ],
+  "drips": [
+    {
+      "key": "innovation",
+      "handle": "PhilMcKinney",
+      "from": "JViOfYhClyY"
+    }
   ]
 }
