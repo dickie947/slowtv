@@ -101,5 +101,29 @@ for (const id of cfg.playlists) {
   else log(id, 'NOTHING');
   await new Promise((r) => setTimeout(r, 800));
 }
+/* ---- "drips": a channel's whole back catalogue, replayed oldest to newest from a chosen video ---- */
+let prevDrips = {};
+try { prevDrips = JSON.parse(await readFile(OUT, 'utf8')).drips || {}; } catch {}
+const drips = {};
+for (const dr of cfg.drips || []) {
+  try {
+    const page = await (await fetch('https://www.youtube.com/@' + dr.handle, { headers: HEADERS })).text();
+    const cid = (page.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/channel\/(UC[\w-]{22})"/) || page.match(/"externalId":"(UC[\w-]{22})"/) || page.match(/"channelId":"(UC[\w-]{22})"/) || [])[1];
+    if (!cid) throw new Error('no channel ID for @' + dr.handle);
+    let got = null, lastErr;
+    for (const pre of ['UULF', 'UU']) {      // UULF = long videos only (no Shorts or live streams)
+      try { got = await viaPage(pre + cid.slice(2)); break; } catch (e) { lastErr = e; }
+    }
+    if (!got) throw lastErr;
+    const newestFirst = got.items.filter((i) => i.ok);
+    const at = newestFirst.findIndex((i) => i.id === dr.from);
+    if (at < 0) throw new Error('start video ' + dr.from + ' not found among ' + newestFirst.length + ' videos');
+    drips[dr.key] = { title: got.title, total: newestFirst.length, items: newestFirst.slice(0, at + 1).reverse(), fetched: new Date().toISOString() };
+    log('drip', dr.key, newestFirst.length + ' videos on the channel;', at + 1, 'from the start video to the newest');
+  } catch (e) {
+    log('! drip ' + dr.key + ': ' + e.message);
+    if (prevDrips[dr.key]) { drips[dr.key] = prevDrips[dr.key]; log('kept previous drip list'); }
+  }
+}
 await mkdir(path.dirname(OUT), { recursive: true });
-await writeFile(OUT, JSON.stringify({ generated: new Date().toISOString(), start: cfg.start || [], order: cfg.playlists, lists }, null, 1) + '\n');
+await writeFile(OUT, JSON.stringify({ generated: new Date().toISOString(), start: cfg.start || [], order: cfg.playlists, lists, drips }, null, 1) + '\n');

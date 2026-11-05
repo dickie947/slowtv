@@ -210,6 +210,8 @@ const WEEKLY = {
    The videos come from playlists.json (read by the daily refresh into data/playlists.json).
    'start' videos go first, then each playlist in order. days: 1 = Monday ... 0 = Sunday. */
 const ENG = { name: 'Engineering', group: 'Engineering', days: [1, 4], time: '19:00', start: '2026-11-09' };
+/* ---- Innovation: one video a week from Phil McKinney's channel, oldest to newest from a chosen start ---- */
+const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '19:00', start: '2026-11-07' };
 const LOOKAHEAD_WEEKS = 8;
 const WEEKDAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];                             // how far ahead the guide and channel pages look
 
@@ -306,23 +308,9 @@ function updateMeter() {
 /*  Feed data                                                          */
 /* ------------------------------------------------------------------ */
 let FEED = { generated: null, channels: [], videos: [], ch: {}, vid: {}, failed: false };
-async function engineEntries() {
-  let pl;
-  try {
-    const r = await fetch('data/playlists.json', { cache: 'no-cache' });
-    if (!r.ok) return [];
-    pl = await r.json();
-  } catch (e) { return []; }
-  const queue = [], seen = new Set();
-  const add = (it, note) => { if (it && it.id && it.ok !== false && !seen.has(it.id)) { seen.add(it.id); queue.push({ it, note }); } };
-  (pl.start || []).forEach(it => add(it, 'Opening programme'));
-  for (const id of pl.order || []) {
-    const L = pl.lists && pl.lists[id];
-    if (!L) continue;
-    L.items.forEach((it, i) => add(it, (L.title || 'Playlist') + ', part ' + (i + 1) + ' of ' + L.items.length));
-  }
-  const [y, m, d] = ENG.start.split('-').map(Number), [hh, mm] = ENG.time.split(':').map(Number);
-  const days = ENG.days.slice().sort((a, b) => ((a + 6) % 7) - ((b + 6) % 7));   // Monday first
+function dripSchedule(queue, cfg, chId) {
+  const [y, m, d] = cfg.start.split('-').map(Number), [hh, mm] = cfg.time.split(':').map(Number);
+  const days = cfg.days.slice().sort((a, b) => ((a + 6) % 7) - ((b + 6) % 7));   // Monday first
   const mon = new Date(y, m - 1, d - ((new Date(y, m - 1, d).getDay() + 6) % 7));
   const out = [];
   for (let w = 0, n = 0; n < queue.length && w < 1000; w++) {
@@ -331,10 +319,35 @@ async function engineEntries() {
       const when = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + w * 7 + ((dow + 6) % 7), hh, mm);
       if (when < new Date(y, m - 1, d)) continue;
       const q = queue[n++];
-      out.push({ id: q.it.id, c: 'eng', eng: true, t: q.it.t || q.it.id, d: q.it.d || null, x: q.note, ts: when.getTime(), p: when.toISOString(), ready: when.getTime() });
+      out.push({ id: q.it.id, c: chId, eng: true, t: q.it.t || q.it.id, d: q.it.d || null, x: q.note, ts: when.getTime(), p: when.toISOString(), ready: when.getTime() });
     }
   }
   return out;
+}
+
+async function engineEntries() {
+  let pl;
+  try {
+    const r = await fetch('data/playlists.json', { cache: 'no-cache' });
+    if (!r.ok) return [];
+    pl = await r.json();
+  } catch (e) { return []; }
+  const result = [];
+  const queue = [], seen = new Set();
+  const add = (it, note) => { if (it && it.id && it.ok !== false && !seen.has(it.id)) { seen.add(it.id); queue.push({ it, note }); } };
+  (pl.start || []).forEach(it => add(it, 'Opening programme'));
+  for (const id of pl.order || []) {
+    const L = pl.lists && pl.lists[id];
+    if (!L) continue;
+    L.items.forEach((it, i) => add(it, (L.title || 'Playlist') + ', part ' + (i + 1) + ' of ' + L.items.length));
+  }
+  if (queue.length) result.push({ ch: { id: 'eng', handle: 'engineering', name: ENG.name, group: ENG.group }, entries: dripSchedule(queue, ENG, 'eng') });
+  const inno = pl.drips && pl.drips.innovation;
+  if (inno && inno.items && inno.items.length) {
+    const q2 = inno.items.map((it, i) => ({ it, note: 'Programme ' + (i + 1) + ' of ' + inno.items.length }));
+    result.push({ ch: { id: 'inno', handle: 'innovation', name: INNO.name, group: INNO.group }, entries: dripSchedule(q2, INNO, 'inno') });
+  }
+  return result;
 }
 
 async function loadFeed() {
@@ -352,10 +365,9 @@ async function loadFeed() {
   const f1 = channels.find(c => String(c.handle || '').toLowerCase() === F1_HANDLE);
   if (f1) videos = videos.filter(v => v.c !== f1.id);   // the F1 row shows calendar sessions only, not channel uploads
   if (f1) videos = videos.concat(buildEvents(f1.id).filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
-  const eng = await engineEntries();
-  if (eng.length) {
-    channels.push({ id: 'eng', handle: 'engineering', name: ENG.name, group: ENG.group });
-    videos = videos.concat(eng.filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
+  for (const g of await engineEntries()) {
+    channels.push(g.ch);
+    videos = videos.concat(g.entries.filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
   }
   if (weeklyOn()) {
     PLAN = weeklyPlan();
