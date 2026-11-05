@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T13:19:23.840Z",
+ "generated": "2026-11-05T13:37:47.598Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:13.349Z"
+   "fetched": "2026-11-05T13:37:35.252Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:14.439Z"
+   "fetched": "2026-11-05T13:37:36.390Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:15.547Z"
+   "fetched": "2026-11-05T13:37:37.656Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:16.647Z"
+   "fetched": "2026-11-05T13:37:38.753Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:17.731Z"
+   "fetched": "2026-11-05T13:37:39.883Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:18.779Z"
+   "fetched": "2026-11-05T13:37:40.949Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:19.857Z"
+   "fetched": "2026-11-05T13:37:42.067Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:20.905Z"
+   "fetched": "2026-11-05T13:37:43.156Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:21.986Z"
+   "fetched": "2026-11-05T13:37:44.258Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,682 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-05T13:19:23.039Z"
+   "fetched": "2026-11-05T13:37:45.342Z"
+  }
+ },
+ "drips": {
+  "innovation": {
+   "title": "Videos",
+   "total": 157,
+   "items": [
+    {
+     "id": "JViOfYhClyY",
+     "t": "7 Innovations Accelerating The Technological Singularity",
+     "d": 783,
+     "ok": true
+    },
+    {
+     "id": "JOFrjc6u47U",
+     "t": "How to Improve Your Critical Thinking Skills",
+     "d": 1261,
+     "ok": true
+    },
+    {
+     "id": "B6e7OAjM23M",
+     "t": "6 Thinking Mistakes Smart People Make (And Never Notice)",
+     "d": 946,
+     "ok": true
+    },
+    {
+     "id": "ujq23XzB2LA",
+     "t": "Handling Rejection of Your Idea",
+     "d": 695,
+     "ok": true
+    },
+    {
+     "id": "Pfq-ZYhIdDo",
+     "t": "Change How You Think! From Mundane to Creative",
+     "d": 1051,
+     "ok": true
+    },
+    {
+     "id": "J-bYRZum1oU",
+     "t": "STOP Performing Innovation Theater",
+     "d": 1711,
+     "ok": true
+    },
+    {
+     "id": "ohPVk5tgSVA",
+     "t": "Innovation by Acquisition",
+     "d": 1914,
+     "ok": true
+    },
+    {
+     "id": "iVP2YNTuP90",
+     "t": "5 Steps to Overcoming Creative Block",
+     "d": 1136,
+     "ok": true
+    },
+    {
+     "id": "OOq3SJkP5lw",
+     "t": "Mastering Creative Thinking Skills",
+     "d": 682,
+     "ok": true
+    },
+    {
+     "id": "1meEhB6HLWc",
+     "t": "Mastering Divergent Thinking Skills",
+     "d": 1385,
+     "ok": true
+    },
+    {
+     "id": "TW_Rra3phAw",
+     "t": "Mastering Convergent Thinking Skills",
+     "d": 1212,
+     "ok": true
+    },
+    {
+     "id": "behoTy5KgGQ",
+     "t": "Mastering Aesthetic Thinking Skills",
+     "d": 2217,
+     "ok": true
+    },
+    {
+     "id": "2KQEBMkP-Wk",
+     "t": "Mastering Systems Thinking Skills",
+     "d": 1789,
+     "ok": true
+    },
+    {
+     "id": "LYYbc8yD2wQ",
+     "t": "Mastering Inspirational Thinking Skills",
+     "d": 1916,
+     "ok": true
+    },
+    {
+     "id": "JIk0ejIycJo",
+     "t": "How to Start a Career in Innovation",
+     "d": 1843,
+     "ok": true
+    },
+    {
+     "id": "uonh7-eDGu4",
+     "t": "Innovation Career Path",
+     "d": 1624,
+     "ok": true
+    },
+    {
+     "id": "R7xMc7KJH8k",
+     "t": "Best Career Advice Ever Received",
+     "d": 721,
+     "ok": true
+    },
+    {
+     "id": "2jLTLfI27iI",
+     "t": "Worst Career Advice I’ve Ever Received",
+     "d": 963,
+     "ok": true
+    },
+    {
+     "id": "akVwvtcTXac",
+     "t": "How Travel Impacted Our Family and My Career",
+     "d": 672,
+     "ok": true
+    },
+    {
+     "id": "xCrUzM5yP3Q",
+     "t": "Time Away Can Make You More Creative",
+     "d": 677,
+     "ok": true
+    },
+    {
+     "id": "q1pakU_8U0E",
+     "t": "How to Build Your Own Innovation Studio - Intro",
+     "d": 814,
+     "ok": true
+    },
+    {
+     "id": "8wtR4NQ9KK8",
+     "t": "Innovation Studio vs Innovation Lab. What's the Difference?",
+     "d": 593,
+     "ok": true
+    },
+    {
+     "id": "0DsvDFhHtEY",
+     "t": "Mastering the Role of Chief Innovation Officer (CINO, CIO)",
+     "d": 1139,
+     "ok": true
+    },
+    {
+     "id": "6fH4iDpjodc",
+     "t": "How Innovators Think: Key Traits Revealed",
+     "d": 911,
+     "ok": true
+    },
+    {
+     "id": "c3W5tHi1FUA",
+     "t": "Building Innovation Confidence: Tips and Tricks",
+     "d": 1152,
+     "ok": true
+    },
+    {
+     "id": "1IpEjHdSIIs",
+     "t": "How to Improve Your Design Thinking Skills",
+     "d": 1469,
+     "ok": true
+    },
+    {
+     "id": "9WsE2ASi9r0",
+     "t": "Innovation Partnerships - How to make them work",
+     "d": 2108,
+     "ok": true
+    },
+    {
+     "id": "6aNSbkiWbTM",
+     "t": "How to Stop Being Mentally Weak",
+     "d": 673,
+     "ok": true
+    },
+    {
+     "id": "mQwwrtRFOhA",
+     "t": "Thinking About Your Thinking Process - Metacognition",
+     "d": 931,
+     "ok": true
+    },
+    {
+     "id": "kVsbvu--F8E",
+     "t": "A Model Career in Innovation",
+     "d": 2147,
+     "ok": true
+    },
+    {
+     "id": "LSu6YWZmEcQ",
+     "t": "Einstein's Secret to Innovation",
+     "d": 1154,
+     "ok": true
+    },
+    {
+     "id": "SG-KkwTNlGQ",
+     "t": "My Meeting with Elon Musk: Innovate Like a 5-Year-Old",
+     "d": 1067,
+     "ok": true
+    },
+    {
+     "id": "Nnvx9D-lECI",
+     "t": "How I Landed My Dream Innovation Job (And You Can Too)",
+     "d": 343,
+     "ok": true
+    },
+    {
+     "id": "upKcuIRmHzk",
+     "t": "How to Build a Success Mindset | Science-Backed Success Training",
+     "d": 867,
+     "ok": true
+    },
+    {
+     "id": "55S7hWxntlw",
+     "t": "How to Build an Explorer Mindset",
+     "d": 1205,
+     "ok": true
+    },
+    {
+     "id": "zGYcvWiIaDU",
+     "t": "Killer Questions Cards Wide",
+     "d": 37,
+     "ok": true
+    },
+    {
+     "id": "_erTIAPgvZc",
+     "t": "How to Be a Professional Innovator",
+     "d": 629,
+     "ok": true
+    },
+    {
+     "id": "9UyxcoO0z1s",
+     "t": "🔬 The Experimenter Mindset: How to Learn From Every Failure",
+     "d": 1240,
+     "ok": true
+    },
+    {
+     "id": "fyYVlwIXxn8",
+     "t": "Building the Innovation Studio  -  Unboxing New 3d Printer",
+     "d": 265,
+     "ok": true
+    },
+    {
+     "id": "sCaOs8Dcs5w",
+     "t": "15 Innovation Jobs That Don't Require a Degree",
+     "d": 2540,
+     "ok": true
+    },
+    {
+     "id": "fhKNyQJKmFU",
+     "t": "Groupthink - How it Kills Companies!",
+     "d": 2532,
+     "ok": true
+    },
+    {
+     "id": "I8Co2s0kfxY",
+     "t": "Consume Less to Create More: Unlock Your Authentic Creativity",
+     "d": 717,
+     "ok": true
+    },
+    {
+     "id": "KCfggQWmblo",
+     "t": "Google's Failed Innovation Strategy",
+     "d": 1203,
+     "ok": true
+    },
+    {
+     "id": "m5dBenvbgrw",
+     "t": "Stop Overthinking in 90 Seconds",
+     "d": 795,
+     "ok": true
+    },
+    {
+     "id": "73pcZPOHLX8",
+     "t": "Building My Innovation Studio - Part 2",
+     "d": 1015,
+     "ok": true
+    },
+    {
+     "id": "xCgTYRa5K78",
+     "t": "How to Think Like NiKola Tesla",
+     "d": 1259,
+     "ok": true
+    },
+    {
+     "id": "q3lJL1ZpTQs",
+     "t": "How To Think Like Thomas Edison: Turn Every Failure Into Innovation 🧠",
+     "d": 1478,
+     "ok": true
+    },
+    {
+     "id": "GHHa7Yql7Sw",
+     "t": "Tesla vs Edison: The Innovation Methods That Changed The World",
+     "d": 1036,
+     "ok": true
+    },
+    {
+     "id": "L54POxSHZEI",
+     "t": "Pay It Forward: How Three Words Created Podcasting's Longest-Running Show",
+     "d": 920,
+     "ok": true
+    },
+    {
+     "id": "pO_s0r6e3bs",
+     "t": "6 Billion-Dollar Thinking Strategies Steve Jobs Used (That You Can Too)",
+     "d": 2465,
+     "ok": true
+    },
+    {
+     "id": "W0WCAUIie24",
+     "t": "Bill Gates' Problem-Solving Method Explained (6 Steps)",
+     "d": 3182,
+     "ok": true
+    },
+    {
+     "id": "YvZMGcND72g",
+     "t": "7 Genius Thinking Tools that Make You More Creative than ANY AI (Game-Changers)",
+     "d": 1973,
+     "ok": true
+    },
+    {
+     "id": "4Bw-overu30",
+     "t": "5 Critical Thinking Skills For Digital Literacy - Spotting Misinformation & Manipulation",
+     "d": 1505,
+     "ok": true
+    },
+    {
+     "id": "qd4SMRAwbiw",
+     "t": "How To Improve Your Strategic Thinking Skills",
+     "d": 2310,
+     "ok": true
+    },
+    {
+     "id": "uUfOAFpLGtY",
+     "t": "The Five Questions That Unlock Breakthrough Innovation #thinkingskills #creativethinking",
+     "d": 2116,
+     "ok": true
+    },
+    {
+     "id": "UlkeKFqpqec",
+     "t": "Your Brain on AI: The Shocking Decline in Creative Thinking (2025)",
+     "d": 691,
+     "ok": true
+    },
+    {
+     "id": "cDGSSOYmyGM",
+     "t": "5 Daily Exercises to Think More Creatively Than AI",
+     "d": 1392,
+     "ok": true
+    },
+    {
+     "id": "H9X6XQKqq9U",
+     "t": "Creative Thinking Exercises: 10-Minute Daily Brain Workout to Boost Innovation",
+     "d": 1731,
+     "ok": true
+    },
+    {
+     "id": "vmZSaEYrWNU",
+     "t": "The AI Creativity Multiplier: 5 Steps to Amplify Your Innovative Thinking (2025)",
+     "d": 2004,
+     "ok": true
+    },
+    {
+     "id": "UcGIUv_XTbU",
+     "t": "Your Child's Creative Brain on AI: The Emergency Parents Don't See",
+     "d": 1729,
+     "ok": true
+    },
+    {
+     "id": "KLhzTq1ti7o",
+     "t": "How HP Killed a $1.2 Billion Innovation in 49 Days",
+     "d": 1789,
+     "ok": true
+    },
+    {
+     "id": "5XCx36AUANY",
+     "t": "The 'Stupid Ideas' That Made Billions: Hidden Pattern Revealed",
+     "d": 873,
+     "ok": true
+    },
+    {
+     "id": "VziRBO4LbWE",
+     "t": "How to Fix the Hidden Decision Trap in Every Team",
+     "d": 1202,
+     "ok": true
+    },
+    {
+     "id": "QIvr72EhBBg",
+     "t": "Improve Your Intuition with Practical Thinking Skills",
+     "d": 1571,
+     "ok": true
+    },
+    {
+     "id": "Fw2WDoJ1nSo",
+     "t": "The Partnership Mistakes That Created Apple's $50 Billion Opportunity",
+     "d": 1308,
+     "ok": true
+    },
+    {
+     "id": "LKDV2GQR7w0",
+     "t": "Why 'Fail Fast' Innovation Advice Is WRONG (And Costs Billions) | Former HP CTO Reveals Truth",
+     "d": 1341,
+     "ok": true
+    },
+    {
+     "id": "WIu_cC-hBxo",
+     "t": "How to Master Lateral Thinking Skills",
+     "d": 1944,
+     "ok": true
+    },
+    {
+     "id": "WiQEvqAkQQM",
+     "t": "I Evaluated Over 30,000 Innovation Ideas at HP: Here's Why Most Failed",
+     "d": 1223,
+     "ok": true
+    },
+    {
+     "id": "KWOO9pIbADU",
+     "t": "5 Questions to Spot Breakthrough Innovations Before They Happen",
+     "d": 1795,
+     "ok": true
+    },
+    {
+     "id": "qG0rTD-HYO8",
+     "t": "How to See Opportunities That Others Miss (3-Stage Framework)",
+     "d": 2337,
+     "ok": true
+    },
+    {
+     "id": "3pdyE8I7pXs",
+     "t": "How to Get Smarter by Arguing with People Who Disagree with You",
+     "d": 2323,
+     "ok": true
+    },
+    {
+     "id": "65bqZHDIu0k",
+     "t": "The WSJ is Wrong about Quarterly Reporting",
+     "d": 573,
+     "ok": true
+    },
+    {
+     "id": "KgUYcpR5H6Y",
+     "t": "How to Build Innovation Thinking Skills Through Daily Journaling",
+     "d": 1298,
+     "ok": true
+    },
+    {
+     "id": "DPWpZEhSB3c",
+     "t": "Why Thinking Skills Matter Now More than Ever",
+     "d": 1115,
+     "ok": true
+    },
+    {
+     "id": "fiznmk7NhZA",
+     "t": "How to Improve Your Logical Reasoning Skills",
+     "d": 1742,
+     "ok": true
+    },
+    {
+     "id": "9TaG4msX9MY",
+     "t": "How to Master Causal Thinking",
+     "d": 1484,
+     "ok": true
+    },
+    {
+     "id": "X5kaelEdszg",
+     "t": "How to Think Using Analogies",
+     "d": 1600,
+     "ok": true
+    },
+    {
+     "id": "dMr8DZ7Wyjg",
+     "t": "How To Master Thinking In Bets",
+     "d": 1376,
+     "ok": true
+    },
+    {
+     "id": "1FXo4tJpj7c",
+     "t": "Second-Order Thinking: How to Stop Your Decisions From Creating Bigger Problems -Thinking 101 - Ep 6",
+     "d": 1333,
+     "ok": true
+    },
+    {
+     "id": "neWSDaryhTo",
+     "t": "The Clock Is Screaming (and My Grandson Is Listening)",
+     "d": 688,
+     "ok": true
+    },
+    {
+     "id": "kN7nPTEwQwk",
+     "t": "Numerical Thinking: How to Find the Truth When Numbers Lie ",
+     "d": 977,
+     "ok": true
+    },
+    {
+     "id": "0DIy-qSa7p4",
+     "t": "Mental Models — Your Thinking Toolkit (Thinking 101 - Ep 8)",
+     "d": 979,
+     "ok": true
+    },
+    {
+     "id": "e4rghbLaNUY",
+     "t": "I Didn't Expect This to Work",
+     "d": 275,
+     "ok": true
+    },
+    {
+     "id": "Z3xLyH1BLWU",
+     "t": "CES 2026 - Battle of AI Robots",
+     "d": 695,
+     "ok": true
+    },
+    {
+     "id": "dwY-lSaXUVk",
+     "t": "Mindjacking — When Your Opinions Aren't Yours",
+     "d": 845,
+     "ok": true
+    },
+    {
+     "id": "cWt2friLYDk",
+     "t": "How to Stop Overthinking Your Decisions",
+     "d": 826,
+     "ok": true
+    },
+    {
+     "id": "pAl78JTMb78",
+     "t": "How to Beat Decision Fatigue",
+     "d": 909,
+     "ok": true
+    },
+    {
+     "id": "NDEheQLLeMg",
+     "t": "How to Make Better Decisions Under Pressure",
+     "d": 1006,
+     "ok": true
+    },
+    {
+     "id": "rjGQy5nGmaA",
+     "t": "How To Think for Yourself When Everyone Disagrees With You",
+     "d": 1206,
+     "ok": true
+    },
+    {
+     "id": "CfQ0F_ifOmU",
+     "t": "How to Quit Defending Decisions You Know are Wrong",
+     "d": 949,
+     "ok": true
+    },
+    {
+     "id": "jA8v2-34fNc",
+     "t": "How to Build a Decision System that Protects Your Thinking",
+     "d": 1488,
+     "ok": true
+    },
+    {
+     "id": "Lxk6q4xSqRk",
+     "t": "The R&D Metric Mark Hurd and HP got Wrong",
+     "d": 841,
+     "ok": true
+    },
+    {
+     "id": "t1qgg6FU3Dw",
+     "t": "The Innovation Metric Bill Hewlett and Dave Packard Used",
+     "d": 1197,
+     "ok": true
+    },
+    {
+     "id": "ff4NyksXois",
+     "t": "What R&D Spending Doesn't Tell You About Innovation",
+     "d": 988,
+     "ok": true
+    },
+    {
+     "id": "FFWxcw-wWJk",
+     "t": "Why Most Organizations Aren't Funding Innovation",
+     "d": 1259,
+     "ok": true
+    },
+    {
+     "id": "oWRhKPcZG_0",
+     "t": "How to Overcome Confirmation Bias",
+     "d": 883,
+     "ok": true
+    },
+    {
+     "id": "Ed-dhw52CI8",
+     "t": "How to Overcome Expert Bias",
+     "d": 908,
+     "ok": true
+    },
+    {
+     "id": "PKWky_ryLwE",
+     "t": "How to Improve Your First Principles Thinking",
+     "d": 1025,
+     "ok": true
+    },
+    {
+     "id": "IJLBUvEOGHY",
+     "t": "How to Improve Your Inversion Thinking Skills",
+     "d": 942,
+     "ok": true
+    },
+    {
+     "id": "Bqhtk973UKo",
+     "t": "How to Improve Your Second Order Thinking Skills",
+     "d": 881,
+     "ok": true
+    },
+    {
+     "id": "baoHXop3SX8",
+     "t": "Spotting Weak Signals Before They're Obvious",
+     "d": 770,
+     "ok": true
+    },
+    {
+     "id": "0S5kppEQAoE",
+     "t": "How to Tell a Good Decision from a Lucky One",
+     "d": 787,
+     "ok": true
+    },
+    {
+     "id": "m6QoPu2ltSo",
+     "t": "What Half of 13 Reveals About Your Thinking",
+     "d": 312,
+     "ok": true
+    },
+    {
+     "id": "J9NPQDFp8Z0",
+     "t": "How One Word Steers Your Answer",
+     "d": 843,
+     "ok": true
+    },
+    {
+     "id": "eh1Ni8qvV24",
+     "t": "How to Ask Questions That Spark Ideas: The Killer Questions Method",
+     "d": 1429,
+     "ok": true
+    },
+    {
+     "id": "EKrI58yi_FI",
+     "t": "How to Improve Your Abductive Reasoning Skills: The Sherlock Holmes Method",
+     "d": 1123,
+     "ok": true
+    },
+    {
+     "id": "uQ2KzgFBDtk",
+     "t": "How to Recognize Failure Patterns: How HP Quit and Apple Won",
+     "d": 1144,
+     "ok": true
+    },
+    {
+     "id": "FJsp7nx_qLs",
+     "t": "How To Improve Your Analytical Thinking Skills",
+     "d": 1610,
+     "ok": true
+    },
+    {
+     "id": "5clmHzlPYgs",
+     "t": "How To Build Innovation Teams (My Playbook From HP and CableLabs)",
+     "d": 2363,
+     "ok": true
+    },
+    {
+     "id": "SZSRrD1asck",
+     "t": "Succession Plan  - Why I Cried on Stage as a CEO",
+     "d": 812,
+     "ok": true
+    },
+    {
+     "id": "n-Gtvaolbqg",
+     "t": "Mastering Critical Thinking in the Age of AI",
+     "d": 923,
+     "ok": true
+    }
+   ],
+   "fetched": "2026-11-05T13:37:47.597Z"
   }
  }
 }
