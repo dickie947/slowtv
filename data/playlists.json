@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T22:11:25.405Z",
+ "generated": "2026-11-06T22:16:03.894Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:13.360Z"
+   "fetched": "2026-11-06T22:15:52.254Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:14.430Z"
+   "fetched": "2026-11-06T22:15:53.265Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:15.557Z"
+   "fetched": "2026-11-06T22:15:54.403Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:16.688Z"
+   "fetched": "2026-11-06T22:15:55.481Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:17.784Z"
+   "fetched": "2026-11-06T22:15:56.599Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:18.942Z"
+   "fetched": "2026-11-06T22:15:57.630Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:20.035Z"
+   "fetched": "2026-11-06T22:15:58.662Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:21.114Z"
+   "fetched": "2026-11-06T22:15:59.708Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:22.209Z"
+   "fetched": "2026-11-06T22:16:00.785Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:11:23.275Z"
+   "fetched": "2026-11-06T22:16:01.857Z"
   }
  },
  "drips": {
@@ -2004,7 +2004,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-06T22:11:25.404Z"
+   "fetched": "2026-11-06T22:16:03.893Z"
   }
  }
 }
