@@ -199,12 +199,15 @@ const STORE_KEY = 'slowtv.v1';
 const WEEKLY = {
   channelName: 'Weekly Broadcast',
   group: 'Classic TV',
-  start: '2026-11-03',   // first premiere (a Tuesday)
+  start: '2026-11-10',   // first normal Tuesday premiere
+  openerDate: '2026-11-08',   // one opening-night premiere (no repeat) on this earlier Sunday
+  annualFrom: 2028,      // first year of the annual rewatches (2027 is needed for every series to start a season)
+  maxGapWeeks: 52,       // no series waits longer than this between the starts of its seasons
   time: '20:30',
   repeatDay: 0,
   perWeek: 2,            // episodes per week: shown as a double bill, one hour apart
   order: 'broadcast',
-  series: [{"key":"tng","name":"Star Trek: The Next Generation","short":"TNG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1987,"aired":"1987-09-28","episodes":[{"e":1,"t":"Encounter at Farpoint","m":90},"The Naked Now","Code of Honor","The Last Outpost","Where No One Has Gone Before","Lonely Among Us","Justice","The Battle","Hide and Q","Haven","The Big Goodbye","Datalore","Angel One","11001001","Too Short a Season","When the Bough Breaks","Home Soil","Coming of Age","Heart of Glory","The Arsenal of Freedom","Symbiosis","Skin of Evil","We'll Always Have Paris","Conspiracy","The Neutral Zone"]},{"n":2,"year":1988,"aired":"1988-11-21","episodes":["The Child","Where Silence Has Lease","Elementary, Dear Data","The Outrageous Okona","Loud as a Whisper","The Schizoid Man","Unnatural Selection","A Matter of Honor","The Measure of a Man","The Dauphin","Contagion","The Royale","Time Squared","The Icarus Factor","Pen Pals","Q Who","Samaritan Snare","Up the Long Ladder","Manhunt","The Emissary","Peak Performance","Shades of Gray"]},{"n":3,"year":1989,"aired":"1989-09-25","episodes":["Evolution","The Ensigns of Command","The Survivors","Who Watches the Watchers","The Bonding","Booby Trap","The Enemy","The Price","The Vengeance Factor","The Defector","The Hunted","The High Ground","Deja Q","A Matter of Perspective","Yesterday's Enterprise","The Offspring","Sins of the Father","Allegiance","Captain's Holiday","Tin Man","Hollow Pursuits","The Most Toys","Sarek","Ménage à Troi","Transfigurations","The Best of Both Worlds, Part I"]},{"n":4,"year":1990,"aired":"1990-09-24","episodes":["The Best of Both Worlds, Part II","Family","Brothers","Suddenly Human","Remember Me","Legacy","Reunion","Future Imperfect","Final Mission","The Loss","Data's Day","The Wounded","Devil's Due","Clues","First Contact","Galaxy's Child","Night Terrors","Identity Crisis","The Nth Degree","Qpid","The Drumhead","Half a Life","The Host","The Mind's Eye","In Theory","Redemption, Part I"]},{"n":5,"year":1991,"aired":"1991-09-23","episodes":["Redemption, Part II","Darmok","Ensign Ro","Silicon Avatar","Disaster","The Game","Unification, Part I","Unification, Part II","A Matter of Time","New Ground","Hero Worship","Violations","The Masterpiece Society","Conundrum","Power Play","Ethics","The Outcast","Cause and Effect","The First Duty","Cost of Living","The Perfect Mate","Imaginary Friend","I, Borg","The Next Phase","The Inner Light","Time's Arrow, Part I"]},{"n":6,"year":1992,"aired":"1992-09-21","episodes":["Time's Arrow, Part II","Realm of Fear","Man of the People","Relics","Schisms","True Q","Rascals","A Fistful of Datas","The Quality of Life","Chain of Command, Part I","Chain of Command, Part II","Ship in a Bottle","Aquiel","Face of the Enemy","Tapestry","Birthright, Part I","Birthright, Part II","Starship Mine","Lessons","The Chase","Frame of Mind","Suspicions","Rightful Heir","Second Chances","Timescape","Descent, Part I"]},{"n":7,"year":1993,"aired":"1993-09-20","episodes":["Descent, Part II","Liaisons","Interface","Gambit, Part I","Gambit, Part II","Phantasms","Dark Page","Attached","Force of Nature","Inheritance","Parallels","The Pegasus","Homeward","Sub Rosa","Lower Decks","Thine Own Self","Masks","Eye of the Beholder","Genesis","Journey's End","Firstborn","Bloodlines","Emergence","Preemptive Strike",{"e":25,"t":"All Good Things...","m":90}]}]},{"key":"bsg","name":"Battlestar Galactica (2004)","short":"BSG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":90,"year":2003,"aired":"2003-12-08","episodes":[{"e":1,"t":"Night 1","m":87},{"e":2,"t":"Night 2","m":87}],"name":"Miniseries"},{"n":1,"year":2004,"aired":"2004-10-18","episodes":["33","Water","Bastille Day","Act of Contrition","You Can't Go Home Again","Litmus","Six Degrees of Separation","Flesh and Bone","Tigh Me Up, Tigh Me Down","The Hand of God","Colonial Day","Kobol's Last Gleaming (Part 1)","Kobol's Last Gleaming (Part 2)"]},{"n":2,"year":2005,"aired":"2005-07-15","episodes":["Scattered","Valley of Darkness","Fragged","Resistance","The Farm","Home (Part 1)","Home (Part 2)","Final Cut","Flight of the Phoenix","Pegasus","Resurrection Ship (Part 1)","Resurrection Ship (Part 2)","Epiphanies","Black Market","Scar","Sacrifice","The Captain's Hand","Downloaded","Lay Down Your Burdens (Part 1)","Lay Down Your Burdens (Part 2)"]},{"n":3,"year":2006,"aired":"2006-10-06","episodes":["Occupation","Precipice","Exodus (Part 1)","Exodus (Part 2)","Collaborators","Torn","A Measure of Salvation","Hero","Unfinished Business","The Passage","The Eye of Jupiter","Rapture","Taking a Break from All Your Worries","The Woman King","A Day in the Life","Dirty Hands","Maelstrom","The Son Also Rises","Crossroads (Part 1)","Crossroads (Part 2)"]},{"n":91,"year":2007,"aired":"2007-11-24","episodes":[{"e":1,"t":"Razor","m":90}],"name":"Razor"},{"n":4,"year":2008,"aired":"2008-04-04","episodes":["He That Believeth in Me","Six of One","The Ties That Bind","Escape Velocity","The Road Less Traveled","Faith","Guess What's Coming to Dinner?","Sine Qua Non","The Hub","Revelations","Sometimes a Great Notion","A Disquiet Follows My Soul","The Oath","Blood on the Scales","No Exit","Deadlock","Someone to Watch Over Me","Islanded in a Stream of Stars","Daybreak (Part 1)","Daybreak (Part 2)","Daybreak (Part 3)"]},{"n":92,"year":2009,"aired":"2009-10-27","episodes":[{"e":1,"t":"The Plan","m":110}],"name":"The Plan"}]},{"key":"ff","name":"Firefly","short":"Firefly","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2002,"aired":"2002-09-20","episodes":["Serenity","The Train Job","Bushwhacked","Shindig","Safe","Our Mrs. Reynolds","Jaynestown","Out of Gas","Ariel","War Stories","Trash","The Message","Heart of Gold","Objects in Space"]}]},{"key":"hcf","name":"Halt and Catch Fire","short":"HCF","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":2,"year":2015,"aired":"2015-05-31","episodes":["SETI","New Coke","The Way In","Play with Friends","Extract and Defend","10Broad36","Working for the Clampdown","Limbo","Kali","Heaven Is a Place"]},{"n":3,"year":2016,"aired":"2016-08-21","episodes":["Valley of the Heart's Delight","One Way or Another","Flipping the Switch","Rules of Honorable Play","Yerba Buena","And She Was","The Threshold","You Are Not Safe","NIM","NeXT"]},{"n":4,"year":2017,"aired":"2017-08-19","episodes":["So It Goes","Signal to Noise","Miscellaneous","Tonya and Nancy","Nowhere Man","A Connection is Made","Who Needs a Guy","Goodwill","Search","Ten of Swords"]}]},{"key":"bob","name":"Band of Brothers","short":"BoB","mins":60,"annual":"03-01","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2001,"aired":"2001-09-09","episodes":["Currahee","Day of Days","Carentan","Replacements","Crossroads","Bastogne","The Breaking Point","The Last Patrol","Why We Fight","Points"]}]},{"key":"ftm","name":"From the Earth to the Moon","short":"FTEtM","mins":60,"annual":"06-15","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1998,"aired":"1998-04-05","episodes":["Can We Do This?","Apollo One","We Have Cleared the Tower","1968","Spider","Mare Tranquilitatis","That's All There Is","We Interrupt This Program","For Miles and Miles","Galileo Was Right","The Original Wives Club","Le Voyage Dans La Lune"]}]},{"key":"gk","name":"Generation Kill","short":"GK","mins":65,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2008,"aired":"2008-07-13","episodes":["Get Some","The Cradle of Civilization","Screwby","Combat Jack","A Burning Dog","Stay Frosty","Bomb in the Garden"]}]},{"key":"pac","name":"The Pacific","short":"Pacific","mins":60,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2010,"aired":"2010-03-14","episodes":["Part One","Part Two","Part Three","Part Four","Part Five","Part Six","Part Seven","Part Eight","Part Nine","Part Ten"]}]},{"key":"xf","name":"The X-Files (mythology, then Doggett onward)","short":"X-Files","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1993,"aired":"1993-09-10","episodes":[{"e":1,"t":"Pilot"},{"e":2,"t":"Deep Throat"},{"e":10,"t":"Fallen Angel"},{"e":17,"t":"E.B.E."},{"e":24,"t":"The Erlenmeyer Flask"}]},{"n":2,"year":1994,"aired":"1994-09-16","episodes":[{"e":1,"t":"Little Green Men"},{"e":5,"t":"Duane Barry"},{"e":6,"t":"Ascension"},{"e":8,"t":"One Breath"},{"e":10,"t":"Red Museum"},{"e":16,"t":"Colony"},{"e":17,"t":"End Game"},{"e":25,"t":"Anasazi"}]},{"n":3,"year":1995,"aired":"1995-09-22","episodes":[{"e":1,"t":"The Blessing Way"},{"e":2,"t":"Paper Clip"},{"e":9,"t":"Nisei"},{"e":10,"t":"731"},{"e":15,"t":"Piper Maru"},{"e":16,"t":"Apocrypha"},{"e":24,"t":"Talitha Cumi"}]},{"n":4,"year":1996,"aired":"1996-10-04","episodes":[{"e":1,"t":"Herrenvolk"},{"e":7,"t":"Musings of a Cigarette Smoking Man"},{"e":8,"t":"Tunguska"},{"e":9,"t":"Terma"},{"e":14,"t":"Memento Mori"},{"e":17,"t":"Tempus Fugit"},{"e":18,"t":"Max"},{"e":21,"t":"Zero Sum"},{"e":23,"t":"Demons"},{"e":24,"t":"Gethsemane"}]},{"n":5,"year":1997,"aired":"1997-11-02","episodes":[{"e":1,"t":"Redux"},{"e":2,"t":"Redux II"},{"e":6,"t":"Christmas Carol"},{"e":7,"t":"Emily"},{"e":13,"t":"Patient X"},{"e":14,"t":"The Red and the Black"},{"e":20,"t":"The End"}]},{"n":6,"year":1998,"aired":"1998-11-08","episodes":[{"e":1,"t":"The Beginning"},{"e":9,"t":"S.R. 819"},{"e":11,"t":"Two Fathers"},{"e":12,"t":"One Son"},{"e":22,"t":"Biogenesis"}]},{"n":7,"year":1999,"aired":"1999-11-07","episodes":[{"e":1,"t":"The Sixth Extinction"},{"e":2,"t":"The Sixth Extinction II: Amor Fati"},{"e":10,"t":"Sein und Zeit"},{"e":11,"t":"Closure"},{"e":15,"t":"En Ami"},{"e":22,"t":"Requiem"}]},{"n":8,"year":2000,"aired":"2000-11-05","episodes":["Within","Without","Patience","Roadrunners","Invocation","Redrum","Via Negativa","Surekill","Salvage","Badlaa","The Gift","Medusa","Per Manum","This Is Not Happening","Deadalive","Three Words","Empedocles","Vienen","Alone","Essence","Existence"]},{"n":9,"year":2001,"aired":"2001-11-11","episodes":["Nothing Important Happened Today","Nothing Important Happened Today II","Dæmonicus","4-D","Lord of the Flies","Trust No 1","John Doe","Hellbound","Provenance","Providence","Audrey Pauley","Underneath","Improbable","Scary Monsters","Jump the Shark","William","Release","Sunshine Days","The Truth (Part 1)","The Truth (Part 2)"]},{"n":10,"year":2016,"aired":"2016-01-24","episodes":["My Struggle","Founder's Mutation","Mulder and Scully Meet the Were-Monster","Home Again","Babylon","My Struggle II"]},{"n":11,"year":2018,"aired":"2018-01-03","episodes":["My Struggle III","This","Plus One","The Lost Art of Forehead Sweat","Ghouli","Kitten","Rm9sbG93ZXJz","Familiar","Nothing Lasts Forever","My Struggle IV"]}]},{"key":"cos","name":"Cosmos: A Personal Voyage","short":"Cosmos","mins":60,"note":"No UK streaming service carries this. Use the 2009 UK DVD set.","seasons":[{"n":1,"year":1980,"aired":"1980-09-28","episodes":["The Shores of the Cosmic Ocean","One Voice in the Cosmic Fugue","Harmony of the Worlds","Heaven and Hell","Blues for a Red Planet","Travellers' Tales","The Backbone of Night","Journeys in Space and Time","The Lives of the Stars","The Edge of Forever","The Persistence of Memory","Encyclopaedia Galactica","Who Speaks for Earth?"],"notBefore":"2027-01-05"}]}],
+  series: [{"key":"tng","name":"Star Trek: The Next Generation","short":"TNG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1987,"aired":"1987-09-28","episodes":[{"e":1,"t":"Encounter at Farpoint","m":90},"The Naked Now","Code of Honor","The Last Outpost","Where No One Has Gone Before","Lonely Among Us","Justice","The Battle","Hide and Q","Haven","The Big Goodbye","Datalore","Angel One","11001001","Too Short a Season","When the Bough Breaks","Home Soil","Coming of Age","Heart of Glory","The Arsenal of Freedom","Symbiosis","Skin of Evil","We'll Always Have Paris","Conspiracy","The Neutral Zone"]},{"n":2,"year":1988,"aired":"1988-11-21","episodes":["The Child","Where Silence Has Lease","Elementary, Dear Data","The Outrageous Okona","Loud as a Whisper","The Schizoid Man","Unnatural Selection","A Matter of Honor","The Measure of a Man","The Dauphin","Contagion","The Royale","Time Squared","The Icarus Factor","Pen Pals","Q Who","Samaritan Snare","Up the Long Ladder","Manhunt","The Emissary","Peak Performance","Shades of Gray"]},{"n":3,"year":1989,"aired":"1989-09-25","episodes":["Evolution","The Ensigns of Command","The Survivors","Who Watches the Watchers","The Bonding","Booby Trap","The Enemy","The Price","The Vengeance Factor","The Defector","The Hunted","The High Ground","Deja Q","A Matter of Perspective","Yesterday's Enterprise","The Offspring","Sins of the Father","Allegiance","Captain's Holiday","Tin Man","Hollow Pursuits","The Most Toys","Sarek","Ménage à Troi","Transfigurations","The Best of Both Worlds, Part I"]},{"n":4,"year":1990,"aired":"1990-09-24","episodes":["The Best of Both Worlds, Part II","Family","Brothers","Suddenly Human","Remember Me","Legacy","Reunion","Future Imperfect","Final Mission","The Loss","Data's Day","The Wounded","Devil's Due","Clues","First Contact","Galaxy's Child","Night Terrors","Identity Crisis","The Nth Degree","Qpid","The Drumhead","Half a Life","The Host","The Mind's Eye","In Theory","Redemption, Part I"]},{"n":5,"year":1991,"aired":"1991-09-23","episodes":["Redemption, Part II","Darmok","Ensign Ro","Silicon Avatar","Disaster","The Game","Unification, Part I","Unification, Part II","A Matter of Time","New Ground","Hero Worship","Violations","The Masterpiece Society","Conundrum","Power Play","Ethics","The Outcast","Cause and Effect","The First Duty","Cost of Living","The Perfect Mate","Imaginary Friend","I, Borg","The Next Phase","The Inner Light","Time's Arrow, Part I"]},{"n":6,"year":1992,"aired":"1992-09-21","episodes":["Time's Arrow, Part II","Realm of Fear","Man of the People","Relics","Schisms","True Q","Rascals","A Fistful of Datas","The Quality of Life","Chain of Command, Part I","Chain of Command, Part II","Ship in a Bottle","Aquiel","Face of the Enemy","Tapestry","Birthright, Part I","Birthright, Part II","Starship Mine","Lessons","The Chase","Frame of Mind","Suspicions","Rightful Heir","Second Chances","Timescape","Descent, Part I"]},{"n":7,"year":1993,"aired":"1993-09-20","episodes":["Descent, Part II","Liaisons","Interface","Gambit, Part I","Gambit, Part II","Phantasms","Dark Page","Attached","Force of Nature","Inheritance","Parallels","The Pegasus","Homeward","Sub Rosa","Lower Decks","Thine Own Self","Masks","Eye of the Beholder","Genesis","Journey's End","Firstborn","Bloodlines","Emergence","Preemptive Strike",{"e":25,"t":"All Good Things...","m":90}]}]},{"key":"bsg","name":"Battlestar Galactica (2004)","short":"BSG","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":90,"year":2003,"aired":"2003-12-08","episodes":[{"e":1,"t":"Night 1","m":87},{"e":2,"t":"Night 2","m":87}],"name":"Miniseries","bind":"next"},{"n":1,"year":2004,"aired":"2004-10-18","episodes":["33","Water","Bastille Day","Act of Contrition","You Can't Go Home Again","Litmus","Six Degrees of Separation","Flesh and Bone","Tigh Me Up, Tigh Me Down","The Hand of God","Colonial Day","Kobol's Last Gleaming (Part 1)","Kobol's Last Gleaming (Part 2)"]},{"n":2,"year":2005,"aired":"2005-07-15","episodes":["Scattered","Valley of Darkness","Fragged","Resistance","The Farm","Home (Part 1)","Home (Part 2)","Final Cut","Flight of the Phoenix","Pegasus","Resurrection Ship (Part 1)","Resurrection Ship (Part 2)","Epiphanies","Black Market","Scar","Sacrifice","The Captain's Hand","Downloaded","Lay Down Your Burdens (Part 1)","Lay Down Your Burdens (Part 2)"]},{"n":3,"year":2006,"aired":"2006-10-06","episodes":["Occupation","Precipice","Exodus (Part 1)","Exodus (Part 2)","Collaborators","Torn","A Measure of Salvation","Hero","Unfinished Business","The Passage","The Eye of Jupiter","Rapture","Taking a Break from All Your Worries","The Woman King","A Day in the Life","Dirty Hands","Maelstrom","The Son Also Rises","Crossroads (Part 1)","Crossroads (Part 2)"]},{"n":91,"year":2007,"aired":"2007-11-24","episodes":[{"e":1,"t":"Razor","m":90}],"name":"Razor","bind":"next"},{"n":4,"year":2008,"aired":"2008-04-04","episodes":["He That Believeth in Me","Six of One","The Ties That Bind","Escape Velocity","The Road Less Traveled","Faith","Guess What's Coming to Dinner?","Sine Qua Non","The Hub","Revelations","Sometimes a Great Notion","A Disquiet Follows My Soul","The Oath","Blood on the Scales","No Exit","Deadlock","Someone to Watch Over Me","Islanded in a Stream of Stars","Daybreak (Part 1)","Daybreak (Part 2)","Daybreak (Part 3)"]},{"n":92,"year":2009,"aired":"2009-10-27","episodes":[{"e":1,"t":"The Plan","m":110}],"name":"The Plan","bind":"prev"}]},{"key":"ff","name":"Firefly","short":"Firefly","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2002,"aired":"2002-09-20","episodes":["Serenity","The Train Job","Bushwhacked","Shindig","Safe","Our Mrs. Reynolds","Jaynestown","Out of Gas","Ariel","War Stories","Trash","The Message","Heart of Gold","Objects in Space"]}]},{"key":"hcf","name":"Halt and Catch Fire","short":"HCF","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2014,"aired":"2014-06-01","lead":true,"skip":4,"episodes":["I/O","FUD","High Plains Hardware","Close to the Metal","Adventure","Landfall","Giant","The 214s","Up Helly Aa","1984"]},{"n":2,"year":2015,"aired":"2015-05-31","episodes":["SETI","New Coke","The Way In","Play with Friends","Extract and Defend","10Broad36","Working for the Clampdown","Limbo","Kali","Heaven Is a Place"]},{"n":3,"year":2016,"aired":"2016-08-21","episodes":["Valley of the Heart's Delight","One Way or Another","Flipping the Switch","Rules of Honorable Play","Yerba Buena","And She Was","The Threshold","You Are Not Safe","NIM","NeXT"]},{"n":4,"year":2017,"aired":"2017-08-19","episodes":["So It Goes","Signal to Noise","Miscellaneous","Tonya and Nancy","Nowhere Man","A Connection is Made","Who Needs a Guy","Goodwill","Search","Ten of Swords"]}]},{"key":"bob","name":"Band of Brothers","short":"BoB","mins":60,"annual":"03-01","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2001,"aired":"2001-09-09","episodes":["Currahee","Day of Days","Carentan","Replacements","Crossroads","Bastogne","The Breaking Point","The Last Patrol","Why We Fight","Points"]}]},{"key":"ftm","name":"From the Earth to the Moon","short":"FTEtM","mins":60,"annual":"06-15","note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1998,"aired":"1998-04-05","episodes":["Can We Do This?","Apollo One","We Have Cleared the Tower","1968","Spider","Mare Tranquilitatis","That's All There Is","We Interrupt This Program","For Miles and Miles","Galileo Was Right","The Original Wives Club","Le Voyage Dans La Lune"]}]},{"key":"gk","name":"Generation Kill","short":"GK","mins":65,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2008,"aired":"2008-07-13","episodes":["Get Some","The Cradle of Civilization","Screwby","Combat Jack","A Burning Dog","Stay Frosty","Bomb in the Garden"]}]},{"key":"pac","name":"The Pacific","short":"Pacific","mins":60,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":2010,"aired":"2010-03-14","episodes":["Part One","Part Two","Part Three","Part Four","Part Five","Part Six","Part Seven","Part Eight","Part Nine","Part Ten"]}]},{"key":"xf","name":"The X-Files (mythology, then Doggett onward)","short":"X-Files","mins":44,"note":"Open your Apple TV app and find it yourself.","seasons":[{"n":1,"year":1993,"aired":"1993-09-10","episodes":[{"e":1,"t":"Pilot"},{"e":2,"t":"Deep Throat"},{"e":10,"t":"Fallen Angel"},{"e":17,"t":"E.B.E."},{"e":24,"t":"The Erlenmeyer Flask"}]},{"n":2,"year":1994,"aired":"1994-09-16","episodes":[{"e":1,"t":"Little Green Men"},{"e":5,"t":"Duane Barry"},{"e":6,"t":"Ascension"},{"e":8,"t":"One Breath"},{"e":10,"t":"Red Museum"},{"e":16,"t":"Colony"},{"e":17,"t":"End Game"},{"e":25,"t":"Anasazi"}]},{"n":3,"year":1995,"aired":"1995-09-22","episodes":[{"e":1,"t":"The Blessing Way"},{"e":2,"t":"Paper Clip"},{"e":9,"t":"Nisei"},{"e":10,"t":"731"},{"e":15,"t":"Piper Maru"},{"e":16,"t":"Apocrypha"},{"e":24,"t":"Talitha Cumi"}]},{"n":4,"year":1996,"aired":"1996-10-04","episodes":[{"e":1,"t":"Herrenvolk"},{"e":7,"t":"Musings of a Cigarette Smoking Man"},{"e":8,"t":"Tunguska"},{"e":9,"t":"Terma"},{"e":14,"t":"Memento Mori"},{"e":17,"t":"Tempus Fugit"},{"e":18,"t":"Max"},{"e":21,"t":"Zero Sum"},{"e":23,"t":"Demons"},{"e":24,"t":"Gethsemane"}]},{"n":5,"year":1997,"aired":"1997-11-02","episodes":[{"e":1,"t":"Redux"},{"e":2,"t":"Redux II"},{"e":6,"t":"Christmas Carol"},{"e":7,"t":"Emily"},{"e":13,"t":"Patient X"},{"e":14,"t":"The Red and the Black"},{"e":20,"t":"The End"}]},{"n":6,"year":1998,"aired":"1998-11-08","episodes":[{"e":1,"t":"The Beginning"},{"e":9,"t":"S.R. 819"},{"e":11,"t":"Two Fathers"},{"e":12,"t":"One Son"},{"e":22,"t":"Biogenesis"}]},{"n":7,"year":1999,"aired":"1999-11-07","episodes":[{"e":1,"t":"The Sixth Extinction"},{"e":2,"t":"The Sixth Extinction II: Amor Fati"},{"e":10,"t":"Sein und Zeit"},{"e":11,"t":"Closure"},{"e":15,"t":"En Ami"},{"e":22,"t":"Requiem"}]},{"n":8,"year":2000,"aired":"2000-11-05","episodes":["Within","Without","Patience","Roadrunners","Invocation","Redrum","Via Negativa","Surekill","Salvage","Badlaa","The Gift","Medusa","Per Manum","This Is Not Happening","Deadalive","Three Words","Empedocles","Vienen","Alone","Essence","Existence"]},{"n":9,"year":2001,"aired":"2001-11-11","episodes":["Nothing Important Happened Today","Nothing Important Happened Today II","Dæmonicus","4-D","Lord of the Flies","Trust No 1","John Doe","Hellbound","Provenance","Providence","Audrey Pauley","Underneath","Improbable","Scary Monsters","Jump the Shark","William","Release","Sunshine Days","The Truth (Part 1)","The Truth (Part 2)"]},{"n":10,"year":2016,"aired":"2016-01-24","episodes":["My Struggle","Founder's Mutation","Mulder and Scully Meet the Were-Monster","Home Again","Babylon","My Struggle II"]},{"n":11,"year":2018,"aired":"2018-01-03","episodes":["My Struggle III","This","Plus One","The Lost Art of Forehead Sweat","Ghouli","Kitten","Rm9sbG93ZXJz","Familiar","Nothing Lasts Forever","My Struggle IV"]}]},{"key":"cos","name":"Cosmos: A Personal Voyage","short":"Cosmos","mins":60,"note":"No UK streaming service carries this. Use the 2009 UK DVD set.","seasons":[{"n":1,"year":1980,"aired":"1980-09-28","episodes":["The Shores of the Cosmic Ocean","One Voice in the Cosmic Fugue","Harmony of the Worlds","Heaven and Hell","Blues for a Red Planet","Travellers' Tales","The Backbone of Night","Journeys in Space and Time","The Lives of the Stars","The Edge of Forever","The Persistence of Memory","Encyclopaedia Galactica","Who Speaks for Earth?"],"notBefore":"2027-01-05"}]}],
 };
 /* ---- Engineering: playlists dripped out on the quietest days ---------------
    The videos come from playlists.json (read by the daily refresh into data/playlists.json).
@@ -388,15 +391,6 @@ let PLAN = null;
 const weeklyOn = () => WEEKLY.series.length > 0;
 function weeklyPlan() {
   const norm = (x, i) => (typeof x === 'string' ? { e: i + 1, t: x } : { e: x.e == null ? i + 1 : x.e, t: x.t || '', m: x.m });
-  const blocks = [], yearly = [];
-  WEEKLY.series.forEach((sr, si) => {
-    if (sr.annual) yearly.push(sr);
-    else (sr.seasons || []).forEach(se => blocks.push({ s: sr, si, se, eps: se.episodes.map(norm) }));
-  });
-  const key = b => b.se.aired || (b.se.year + '-01-01');
-  blocks.sort(WEEKLY.order === 'series'
-    ? (a, b) => a.si - b.si || a.se.n - b.se.n
-    : (a, b) => (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : a.si - b.si || a.se.n - b.se.n));
   const [y, m, d] = WEEKLY.start.split('-').map(Number);
   const [hh, mm] = WEEKLY.time.split(':').map(Number);
   const startDow = new Date(y, m - 1, d).getDay();
@@ -404,13 +398,43 @@ function weeklyPlan() {
   const PER = Math.max(1, WEEKLY.perWeek || 1);
   const at = (week, extra, slot) => new Date(y, m - 1, d + week * 7 + (extra || 0), hh, mm + 60 * (slot || 0));
   const day0 = Date.UTC(y, m - 1, d) / 864e5;
+  const WEEK = 7 * 864e5, GAP = (WEEKLY.maxGapWeeks || 0) * WEEK;
+  const startMs = at(0).getTime();
 
-  // weeks given over to annual rewatches: each starts on the first broadcast day on or after MM-DD
+  // ---- build the blocks: one block = one season (specials ride along with their neighbour)
+  const yearly = [], states = [], blocks = [];
+  const akey = se => se.aired || (se.year + '-01-01');
+  WEEKLY.series.forEach((sr, si) => {
+    if (sr.annual) { yearly.push(sr); return; }
+    const seasons = (sr.seasons || []).slice().sort((a, b) => (b.lead ? 1 : 0) - (a.lead ? 1 : 0) || (akey(a) < akey(b) ? -1 : akey(a) > akey(b) ? 1 : a.n - b.n));
+    const list = []; let carry = [];
+    for (const se of seasons) {
+      if (se.bind === 'next') { carry.push(se); continue; }
+      if (se.bind === 'prev' && list.length) { list[list.length - 1].parts.push(se); continue; }
+      list.push({ s: sr, si, se, parts: carry.concat([se]) }); carry = [];
+    }
+    if (carry.length && list.length) list[list.length - 1].parts.push(...carry);
+    list.forEach(b => {
+      b.items = [];
+      b.parts.forEach(pt => pt.episodes.map(norm).slice(pt.skip || 0).forEach(ep => b.items.push({ se: pt, ep })));
+      b.lead = !!b.se.lead;
+      b.notBefore = b.parts.map(x => x.notBefore).filter(Boolean).sort()[0] || null;
+      b.nbMs = b.notBefore ? new Date(b.notBefore + 'T00:00:00').getTime() : 0;
+      b.label = b.parts.map(pt => pt.name || 'Season ' + pt.n).join(' + ');
+      b.key = akey(b.parts[0]);
+      b.count = b.items.length;
+      blocks.push(b);
+    });
+    states.push({ si, rem: list.slice(), due: GAP ? Math.max(startMs, list[0] && list[0].nbMs || 0) + GAP : Infinity });
+  });
+  const mainCount = blocks.reduce((a, b) => a + b.count, 0);
+
+  // ---- weeks given over to annual rewatches: each starts on the first broadcast day on or after MM-DD
   const taken = {}, runs = [];
   for (const sr of yearly) {
     const [am, ad] = sr.annual.split('-').map(Number);
     const eps = sr.seasons[0].episodes.map(norm);
-    for (let yr = y; yr <= y + 40; yr++) {
+    for (let yr = Math.max(y, WEEKLY.annualFrom || 0); yr <= y + 40; yr++) {
       const dow = new Date(Date.UTC(yr, am - 1, ad)).getUTCDay();
       const w0 = (Date.UTC(yr, am - 1, ad) / 864e5 + (startDow - dow + 7) % 7 - day0) / 7;
       if (w0 < 0) continue;
@@ -419,18 +443,63 @@ function weeklyPlan() {
     }
   }
 
-  const queue = [];
-  blocks.forEach(b => b.eps.forEach(ep => queue.push({ b, ep })));
-  const mainCount = queue.length;
+  // ---- which season goes next: broadcast order, unless that would make some series wait too long
+  const free = s => { while (taken[s]) s++; return s; };                       // next slot not given to a rewatch
+  const advance = (s, n) => { s = free(s); for (let i = 0; i < n; i++) s = free(s + 1); return s; };   // slot after n episodes
+  const slotOf = ms => Math.max(0, Math.ceil((ms - startMs) / WEEK)) * PER;
+  const pick = (now, slot) => {
+    const lead = states.find(s => s.rem[0] && s.rem[0].lead);
+    if (lead) return lead;
+    const ok = states.filter(s => s.rem[0] && s.rem[0].nbMs <= now);
+    if (!ok.length) return null;
+    const byAir = ok.slice().sort((a, b) => (a.rem[0].key < b.rem[0].key ? -1 : a.rem[0].key > b.rem[0].key ? 1 : a.si - b.si))[0];
+    if (!GAP) return byAir;
+    const byDue = ok.slice().sort((a, b) => a.due - b.due || (a.rem[0].key < b.rem[0].key ? -1 : 1) || a.si - b.si)[0];
+    if (byAir === byDue) return byAir;
+    // would broadcast order still let every series start its next season in time (rewatch weeks included)?
+    let t = advance(slot, byAir.rem[0].count), fine = true;
+    const rest = states.filter(s => s.rem.length > (s === byAir ? 1 : 0))
+      .map(s => ({ due: slotOf(s === byAir ? now + GAP : s.due), b: s === byAir ? s.rem[1] : s.rem[0] }))
+      .sort((a, b) => a.due - b.due);
+    for (const r of rest) { t = free(Math.max(t, slotOf(r.b.nbMs))); if (t > r.due) { fine = false; break; } t = advance(t, r.b.count); }
+    return fine ? byAir : byDue;
+  };
+
   const entries = [], byId = {};
-  const push = (wk, id, label, sr, mins, meta, slot) => {
+  const push = (wk, id, label, sr, mins, meta, slot, o) => {
+    o = o || {};
+    let first = null;
     for (const rep of [false, true]) {
-      const when = at(wk, rep ? repOff : 0, slot);
+      if (rep && o.noRepeat) continue;
+      const when = o.when && !rep ? o.when : at(wk, rep ? repOff : 0, slot);
       const e = Object.assign({ id: rep ? id + '-r' : id, base: id, c: 'wk', wk: true, rep, ts: when.getTime(), p: when.toISOString(),
         t: (rep ? 'Repeat: ' : '') + label, d: mins * 60, x: '', ready: when.getTime(), s: sr, week: wk }, meta);
       entries.push(e); byId[e.id] = e;
+      if (!rep) first = when;
     }
+    return first;
   };
+  let cur = null, ci = 0;
+  const air = (w, k, o) => {
+    const it = cur.items[ci++], se = it.se, ep = it.ep, b = cur;
+    const tag = se.name ? se.name : 'S' + se.n + 'E' + p2(ep.e);
+    const when = push(w, 'wk-' + b.s.key + '-s' + p2(se.n) + 'e' + p2(ep.e), b.s.short + ' ' + tag + (ep.t ? ' · ' + ep.t : ''), b.s, ep.m || b.s.mins || 44,
+      { where: (se.name || 'Season ' + se.n) + ', episode ' + ep.e, title: ep.t }, k, o);
+    if (b.first == null) { b.first = w; b.firstDate = when; }
+    b.last = w; b.lastDate = when;
+  };
+  const begin = (now, slot) => {
+    const st = pick(now, slot);
+    if (!st) return false;
+    cur = st.rem.shift(); ci = 0;
+    if (!cur.lead && GAP) st.due = now + GAP;
+    return true;
+  };
+  if (WEEKLY.openerDate) {                       // opening night: one premiere, no repeat, before the first normal week
+    const [oy, om, od] = WEEKLY.openerDate.split('-').map(Number);
+    const when = new Date(oy, om - 1, od, hh, mm);
+    if (begin(when.getTime(), 0)) air(-1, 0, { when, noRepeat: true });
+  }
   let w = 0, sl = 0;
   while (sl < 20000) {
     w = Math.floor(sl / PER);
@@ -440,23 +509,16 @@ function weeklyPlan() {
       push(w, 'wk-' + t.s.key + '-y' + t.year + '-e' + p2(t.ep.e),
         t.s.short + ' ' + t.year + ' E' + p2(t.ep.e) + (t.ep.t ? ' · ' + t.ep.t : ''), t.s, t.ep.m || t.s.mins || 44,
         { where: t.year + ' rewatch, episode ' + t.ep.e, title: t.ep.t }, k);
-    } else if (queue.length) {
-      const now = at(w).getTime();
-      const idx = queue.findIndex(q => !q.b.se.notBefore || new Date(q.b.se.notBefore + 'T00:00:00').getTime() <= now);
-      if (idx >= 0) {
-        const { b, ep } = queue.splice(idx, 1)[0];
-        const se = b.se;
-        const tag = se.name ? se.name : 'S' + se.n + 'E' + p2(ep.e);
-        push(w, 'wk-' + b.s.key + '-s' + p2(se.n) + 'e' + p2(ep.e), b.s.short + ' ' + tag + (ep.t ? ' · ' + ep.t : ''), b.s, ep.m || b.s.mins || 44,
-          { where: (se.name || 'Season ' + se.n) + ', episode ' + ep.e, title: ep.t }, k);
-        if (b.first == null) b.first = w;
-        b.last = w;
+    } else {
+      if (!cur || ci >= cur.items.length) {
+        if (!states.some(s => s.rem.length)) break;
+        if (!begin(at(w, 0, k).getTime(), sl)) { sl++; continue; }
       }
-    } else break;
+      air(w, k);
+    }
     sl++;
   }
   w = Math.floor((sl - 1) / PER) + 1;
-  for (const b of blocks) { b.count = b.eps.length; b.firstDate = at(b.first); b.lastDate = at(b.last); }
   return { per: PER, blocks, runs: runs.filter(r => r.first < w), total: w, mainCount, entries, byId, at, end: at(w - 1) };
 }
 
@@ -664,9 +726,9 @@ function viewWeekly(view, v) {
       '<tr><th>Series</th><td>' + esc(v.s.name) + '</td></tr>' +
       '<tr><th>Episode</th><td>' + esc(v.where) + (v.title ? ': ' + esc(v.title) : '') + '</td></tr>' +
       '<tr><th>Premiere</th><td>' + whenOf(pr) + '</td></tr>' +
-      '<tr><th>Repeat</th><td>' + whenOf(rp) + '</td></tr>' +
+      (rp ? '<tr><th>Repeat</th><td>' + whenOf(rp) + '</td></tr>' : '') +
       '<tr><th>Running time</th><td>about ' + mins + ' minutes</td></tr>' +
-      '<tr><th>Schedule</th><td>Week ' + (v.week + 1) + ' of ' + PLAN.total + '</td></tr>' +
+      '<tr><th>Schedule</th><td>' + (v.week < 0 ? 'Opening night' : 'Week ' + (v.week + 1) + ' of ' + PLAN.total) + '</td></tr>' +
       '<tr><th>Status</th><td>' + (seen ? '&#10003; Watched' : 'Not yet watched') + '</td></tr>' +
     '</table>' + deck;
   const mark = $('#b-mark');
@@ -688,20 +750,20 @@ function viewWeekly(view, v) {
 function viewSchedule(view) {
   if (!PLAN) { view.innerHTML = '<h2>Schedule</h2><p>No series are scheduled yet.</p>'; return; }
   const fmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-  const seasonName = b => b.se.name || 'Season ' + b.se.n;
+  const seasonName = b => b.label;
   const bySeries = {};
-  PLAN.blocks.forEach(b => (bySeries[b.s.key] = bySeries[b.s.key] || []).push(b));
+  PLAN.blocks.filter(b => b.first != null).forEach(b => (bySeries[b.s.key] = bySeries[b.s.key] || []).push(b));
   let worst = null;
   for (const k of Object.keys(bySeries)) {
     const L = bySeries[k].slice().sort((a, b) => a.first - b.first);
     for (let i = 1; i < L.length; i++) {
-      const gap = L[i].first - (L[i - 1].last + 1);
+      const gap = L[i].first - L[i - 1].first;             // weeks between the starts of two seasons
       if (!worst || gap > worst.gap) worst = { gap, name: L[i].s.name, from: seasonName(L[i - 1]), to: seasonName(L[i]) };
     }
   }
-  const rows = PLAN.blocks.slice().sort((a, b) => a.first - b.first).map((b, i) =>
+  const rows = PLAN.blocks.filter(b => b.first != null).sort((a, b) => a.firstDate - b.firstDate).map((b, i) =>
     '<tr><td>' + (i + 1) + '</td><td>' + esc(b.s.name) + '</td><td>' + esc(seasonName(b)) + ' (' + esc(b.se.year) + ')' +
-    (b.se.notBefore ? ' <i>not before ' + esc(fmt.format(new Date(b.se.notBefore + 'T00:00:00'))) + '</i>' : '') + '</td><td>' + b.count +
+    (b.notBefore ? ' <i>not before ' + esc(fmt.format(new Date(b.notBefore + 'T00:00:00'))) + '</i>' : '') + '</td><td>' + b.count +
     '</td><td>' + esc(fmt.format(b.firstDate)) + '</td><td>' + esc(fmt.format(b.lastDate)) + '</td></tr>').join('');
   const yearly = {};
   PLAN.runs.forEach(r => (yearly[r.s.key] = yearly[r.s.key] || []).push(r));
@@ -714,8 +776,8 @@ function viewSchedule(view) {
     '<p><b>' + PLAN.total + ' weeks</b> at ' + (PLAN.per === 1 ? 'one episode a week' : PLAN.per + ' episodes a week (a double bill)') + ': about ' + (PLAN.total / 52).toFixed(1) + ' years. ' +
     PLAN.mainCount + ' episodes in the main run' + (PLAN.total > Math.ceil(PLAN.mainCount / PLAN.per) ? ' plus ' + (PLAN.total - Math.ceil(PLAN.mainCount / PLAN.per)) + ' weeks of annual rewatches' : '') +
     '. The last premiere is on <b>' + esc(fmt.format(PLAN.end)) + '</b>.<br>' +
-    'Order: ' + (WEEKLY.order === 'series' ? 'one series at a time' : 'by the year each season first aired') + '.' +
-    (worst ? '<br>Longest wait between seasons of one series: <b>' + worst.gap + ' week' + (worst.gap === 1 ? '' : 's') + '</b> (' + esc(worst.name) + ', ' + esc(worst.from) + ' to ' + esc(worst.to) + ').' : '') + '</p>' +
+    'Order: by the year each season first aired, but no series waits more than ' + (WEEKLY.maxGapWeeks || 0) + ' weeks between the starts of its seasons.' +
+    (worst ? '<br>Longest gap between the starts of two seasons of one series: <b>' + worst.gap + ' week' + (worst.gap === 1 ? '' : 's') + '</b> (' + esc(worst.name) + ', ' + esc(worst.from) + ' to ' + esc(worst.to) + ').' : '') + '</p>' +
     '<div style="overflow-x:auto"><table class="sched"><thead><tr><th>#</th><th>Series</th><th>Season</th><th>Episodes</th><th>First premiere</th><th>Last premiere</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
     (yrows ? '<h3>Annual rewatches</h3><div style="overflow-x:auto"><table class="sched"><thead><tr><th>Series</th><th>Pattern</th><th>First run starts</th><th>Runs</th></tr></thead><tbody>' + yrows + '</tbody></table></div>' : '');
 }
