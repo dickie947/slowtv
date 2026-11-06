@@ -96,7 +96,7 @@ WEEKLY BROADCAST CHANNEL
 
 A channel called Weekly Broadcast simulates an old TV schedule: two episodes a week (a double bill, 20:30 and 21:30), premiering Tuesday with a repeat on Sunday. It opened on Sunday 8 November 2026 with Halt and Catch Fire season 1 episode 5 (episodes 1 to 4 were already seen), then carried on with the rest of that season, then the main plan. Missed episodes stay on the guide for 30 days. A "Schedule" link in the menu shows the whole plan.
 
-Order: seasons run in the order they first aired, with one rule on top. No series waits more than 52 weeks between the starts of its seasons, so every series gets at least one season a year until it is finished. When broadcast order would break that, the series that has waited longest goes next.
+Order: seasons run in the order they first aired, with one rule on top. No series waits more than 52 weeks between the starts of its seasons, so every series gets at least one season a year until it is finished. When broadcast order would break that, the series that has waited longest goes next. With many series running at two episodes a week, the early years do not have room for this, so some gaps run longer (the Schedule page shows the longest). Raising perWeek in index.html fixes that.
 
 The list of series is typed into index.html (look for WEEKLY and "series:"). SlowTV does not link to any streaming service; each episode page tells you to open your own app. Tapping an episode's button deducts its running time from today's viewing time and marks it watched. Watching the Sunday repeat counts as watching the premiere.
 
