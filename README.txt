@@ -94,11 +94,13 @@ The F1 app link cannot open a specific highlight, only the app's video section.
 WEEKLY BROADCAST CHANNEL
 ------------------------
 
-A channel called Weekly Broadcast simulates an old TV schedule: two episodes a week (a double bill, 20:30 and 21:30), premiering Tuesday with a repeat on Sunday, starting Tuesday 3 November 2026. Seasons run in the order they were first broadcast (so one series' season 2 can follow another series' season 1). Missed episodes stay on the guide for 30 days. A "Schedule" link in the menu shows the whole plan.
+A channel called Weekly Broadcast simulates an old TV schedule: two episodes a week (a double bill, 20:30 and 21:30), premiering Tuesday with a repeat on Sunday. It opened on Sunday 8 November 2026 with Halt and Catch Fire season 1 episode 5 (episodes 1 to 4 were already seen), then carried on with the rest of that season, then the main plan. Missed episodes stay on the guide for 30 days. A "Schedule" link in the menu shows the whole plan.
 
-The list of series is typed into index.html (look for WEEKLY and "series:"). Each series has a short note telling you to open your own streaming app; SlowTV does not link to any service. Tapping an episode's button deducts its running time from today's viewing time and marks it watched. Watching the Sunday repeat counts as watching the premiere.
+Order: seasons run in the order they first aired, with one rule on top. No series waits more than 52 weeks between the starts of its seasons, so every series gets at least one season a year until it is finished. When broadcast order would break that, the series that has waited longest goes next.
 
-Band of Brothers (from 1 March) and From the Earth to the Moon (from 15 June) are rewatched every year and pause the main run while they play. Cosmos is held until 5 January 2027 so you have time to find the DVD.
+The list of series is typed into index.html (look for WEEKLY and "series:"). SlowTV does not link to any streaming service; each episode page tells you to open your own app. Tapping an episode's button deducts its running time from today's viewing time and marks it watched. Watching the Sunday repeat counts as watching the premiere.
+
+Band of Brothers (from 1 March) and From the Earth to the Moon (from 15 June) are rewatched every year from 2028 and pause the main run while they play. Cosmos is held until 5 January 2027 so you have time to find the DVD.
 
 
 HOW THE VIEWING LIMIT WORKS
