@@ -105,7 +105,31 @@ for (const id of cfg.playlists) {
 let prevDrips = {};
 try { prevDrips = JSON.parse(await readFile(OUT, 'utf8')).drips || {}; } catch {}
 const drips = {};
+const isShort = (i) => (i.d != null && i.d <= 61) || /#shorts?\b/i.test(i.t);
 for (const dr of cfg.drips || []) {
+  if (dr.playlist) {                       // an ordered playlist: explicit opening videos, then everything from one video towards the newest, then the rest
+    try {
+      const got = await viaPage(dr.playlist);
+      const list = got.items.filter((i) => i.ok && !isShort(i));          // newest first
+      const byId = new Map(list.map((i) => [i.id, i]));
+      const used = new Set(), q = [];
+      const take = (i) => { if (i && !used.has(i.id)) { used.add(i.id); q.push(i); } };
+      (dr.first || []).forEach((id) => take(byId.get(id)));
+      if (dr.fromId) {
+        const at = list.findIndex((i) => i.id === dr.fromId);
+        if (at < 0) throw new Error('start video ' + dr.fromId + ' not found');
+        list.slice(0, at + 1).reverse().forEach(take);
+      }
+      (dr.then || []).forEach((id) => take(byId.get(id)));
+      list.forEach(take);
+      drips[dr.key] = { title: got.title, total: list.length, items: q, fetched: new Date().toISOString() };
+      log('drip', dr.key, q.length, 'videos from the playlist (' + got.items.length + ' listed, Shorts removed)');
+    } catch (e) {
+      log('! drip ' + dr.key + ': ' + e.message);
+      if (prevDrips[dr.key]) { drips[dr.key] = prevDrips[dr.key]; log('kept previous drip list'); }
+    }
+    continue;
+  }
   try {
     const page = await (await fetch('https://www.youtube.com/@' + dr.handle, { headers: HEADERS })).text();
     const cid = (page.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/channel\/(UC[\w-]{22})"/) || page.match(/"externalId":"(UC[\w-]{22})"/) || page.match(/"channelId":"(UC[\w-]{22})"/) || [])[1];

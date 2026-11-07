@@ -215,6 +215,8 @@ const WEEKLY = {
 const ENG = { name: 'Engineering', group: 'Engineering', days: [1, 4], time: '19:00', start: '2026-11-09' };
 /* ---- Innovation: one video a week from Phil McKinney's channel, oldest to newest from a chosen start ---- */
 const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '19:00', start: '2026-11-07' };
+/* ---- Driving: an ordered playlist, one video a week on Mondays ---- */
+const DRV = { name: 'Driving', group: 'Driving', days: [1], time: '18:00', start: '2026-11-09' };
 const LOOKAHEAD_WEEKS = 8;
 const WEEKDAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];                             // how far ahead the guide and channel pages look
 
@@ -345,10 +347,11 @@ async function engineEntries() {
     L.items.forEach((it, i) => add(it, (L.title || 'Playlist') + ', part ' + (i + 1) + ' of ' + L.items.length));
   }
   if (queue.length) result.push({ ch: { id: 'eng', handle: 'engineering', name: ENG.name, group: ENG.group }, entries: dripSchedule(queue, ENG, 'eng') });
-  const inno = pl.drips && pl.drips.innovation;
-  if (inno && inno.items && inno.items.length) {
-    const q2 = inno.items.map((it, i) => ({ it, note: 'Programme ' + (i + 1) + ' of ' + inno.items.length }));
-    result.push({ ch: { id: 'inno', handle: 'innovation', name: INNO.name, group: INNO.group }, entries: dripSchedule(q2, INNO, 'inno') });
+  for (const [key, cfg, id] of [['innovation', INNO, 'inno'], ['driving', DRV, 'drv']]) {
+    const dr = pl.drips && pl.drips[key];
+    if (!dr || !dr.items || !dr.items.length) continue;
+    const q2 = dr.items.map((it, i) => ({ it, note: 'Programme ' + (i + 1) + ' of ' + dr.items.length }));
+    result.push({ ch: { id, handle: key, name: cfg.name, group: cfg.group }, entries: dripSchedule(q2, cfg, id) });
   }
   return result;
 }
