@@ -34,6 +34,10 @@ jobs:
         continue-on-error: true
         run: node scripts/playlists.mjs
 
+      - name: Fill in running times
+        continue-on-error: true
+        run: node scripts/durations.mjs
+
       - name: Save the refreshed data back to the repository
         run: |
           git config user.name "slowtv-bot"

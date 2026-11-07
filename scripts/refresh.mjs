@@ -206,6 +206,7 @@ export async function main({ now = Date.now() } = {}) {
   let ok = 0;
   let failed = 0;
   let shorts = 0;
+  const onlyBy = new Map();
 
   for (const entry of cfg.channels || []) {
     const handle = String(entry.handle || (entry.playlist ? entry.name : '') || '').replace(/^@/, '');
@@ -231,9 +232,11 @@ export async function main({ now = Date.now() } = {}) {
       });
       ok++;
 
+      if (entry.only) onlyBy.set(id, new RegExp(entry.only, 'i'));
       for (const e of feed.entries) {
         const ts = Date.parse(e.published);
         if (!(ts >= cutoff)) continue;
+        if (entry.only && !onlyBy.get(id).test(e.title)) continue;
         if (state.skip[e.id]) continue;
         if (/\/shorts\//.test(e.link)) {
           state.skip[e.id] = e.published;
@@ -290,6 +293,7 @@ export async function main({ now = Date.now() } = {}) {
   const keep = new Set(channels.map((c) => c.id));
   const videos = [...known.values()]
     .filter((v) => keep.has(v.c) && Date.parse(v.p) >= cutoff)
+    .filter((v) => !onlyBy.has(v.c) || onlyBy.get(v.c).test(v.t))
     .sort((a, b) => Date.parse(b.p) - Date.parse(a.p));
 
   for (const k of Object.keys(state.skip)) {
