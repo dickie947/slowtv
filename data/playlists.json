@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07T11:45:45.229Z",
+ "generated": "2026-11-07T11:48:45.394Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:32.939Z"
+   "fetched": "2026-11-07T11:48:33.684Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -146,96 +146,96 @@
     {
      "id": "1GZtShToroc",
      "t": "DOHC vs SOHC vs OHV - Which Is Best?",
-     "d": 352,
+     "d": null,
      "ok": true
     },
     {
      "id": "G6S4D14VS7w",
      "t": "How VTEC Works - Honda Horsepower!",
-     "d": 240,
+     "d": null,
      "ok": true
     },
     {
      "id": "Ol3nWQbatrQ",
      "t": "3 Stage VTEC - Explained",
-     "d": 221,
+     "d": null,
      "ok": true
     },
     {
      "id": "1lZqsZq23pU",
      "t": "Ignition Systems - Explained",
-     "d": 326,
+     "d": null,
      "ok": true
     },
     {
      "id": "oIU-lGc3DL4",
      "t": "Carburetors - Explained",
-     "d": 213,
+     "d": null,
      "ok": true
     },
     {
      "id": "nbCe68ck6qg",
      "t": "How Fuel Injection Works - Direct vs Port Injectors",
-     "d": 263,
+     "d": null,
      "ok": true
     },
     {
      "id": "9v2ld2u2lKQ",
      "t": "Cylinder Deactivation - Explained",
-     "d": 155,
+     "d": null,
      "ok": true
     },
     {
      "id": "Q56k37FsRcA",
      "t": "Radiators - Explained",
-     "d": 181,
+     "d": null,
      "ok": true
     },
     {
      "id": "sn4yszblY4s",
      "t": "Starting a Car - Explained",
-     "d": 139,
+     "d": null,
      "ok": true
     },
     {
      "id": "7K4W4hA6aV4",
      "t": "Flywheel - Explained",
-     "d": 183,
+     "d": null,
      "ok": true
     },
     {
      "id": "e72Xkf_5VXo",
      "t": "Exhaust Systems - Explained",
-     "d": 201,
+     "d": null,
      "ok": true
     },
     {
      "id": "HADOcrcMikA",
      "t": "Catalytic Converters - Explained",
-     "d": 278,
+     "d": null,
      "ok": true
     },
     {
      "id": "-JOyjuBwaBE",
      "t": "Oxygen Sensor - Explained",
-     "d": 235,
+     "d": null,
      "ok": true
     },
     {
      "id": "30JJSXWKIC8",
      "t": "Mufflers - Explained",
-     "d": 206,
+     "d": null,
      "ok": true
     },
     {
      "id": "BYOYeQeznmY",
      "t": "Why Doesn't My Car Have Heat?",
-     "d": 623,
+     "d": null,
      "ok": true
     }
    ],
-   "source": "page",
-   "fetched": "2026-11-07T11:45:33.947Z"
+   "source": "rss (latest 15 only)",
+   "fetched": "2026-11-07T11:48:34.756Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:35.339Z"
+   "fetched": "2026-11-07T11:48:36.207Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:36.369Z"
+   "fetched": "2026-11-07T11:48:37.217Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:37.422Z"
+   "fetched": "2026-11-07T11:48:38.245Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:38.486Z"
+   "fetched": "2026-11-07T11:48:39.244Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:39.537Z"
+   "fetched": "2026-11-07T11:48:40.256Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:40.576Z"
+   "fetched": "2026-11-07T11:48:41.265Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:41.603Z"
+   "fetched": "2026-11-07T11:48:42.271Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-07T11:45:42.678Z"
+   "fetched": "2026-11-07T11:48:43.315Z"
   }
  },
  "drips": {
@@ -2004,7 +2004,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-07T11:45:44.810Z"
+   "fetched": "2026-11-07T11:48:44.998Z"
   },
   "driving": {
    "title": "Advanced Driving Videos",
@@ -2509,7 +2509,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-07T11:45:45.228Z"
+   "fetched": "2026-11-07T11:48:45.394Z"
   }
  }
 }
