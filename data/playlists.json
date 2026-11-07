@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T22:16:03.894Z",
+ "generated": "2026-11-07T08:46:18.409Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:52.254Z"
+   "fetched": "2026-11-07T08:46:06.675Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:53.265Z"
+   "fetched": "2026-11-07T08:46:07.667Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:54.403Z"
+   "fetched": "2026-11-07T08:46:08.739Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:55.481Z"
+   "fetched": "2026-11-07T08:46:09.831Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:56.599Z"
+   "fetched": "2026-11-07T08:46:10.919Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:57.630Z"
+   "fetched": "2026-11-07T08:46:11.922Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:58.662Z"
+   "fetched": "2026-11-07T08:46:12.966Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:15:59.708Z"
+   "fetched": "2026-11-07T08:46:13.987Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:16:00.785Z"
+   "fetched": "2026-11-07T08:46:15.000Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-06T22:16:01.857Z"
+   "fetched": "2026-11-07T08:46:16.030Z"
   }
  },
  "drips": {
@@ -2004,7 +2004,512 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-06T22:16:03.893Z"
+   "fetched": "2026-11-07T08:46:17.982Z"
+  },
+  "driving": {
+   "title": "Advanced Driving Videos",
+   "total": 83,
+   "items": [
+    {
+     "id": "BUIILLlTO2I",
+     "t": "All the Detail - System Part 1, The Information Phase",
+     "d": 1575,
+     "ok": true
+    },
+    {
+     "id": "eIfKsKsUM3c",
+     "t": "All the Detail - System Part 2, the Position Phase",
+     "d": 1150,
+     "ok": true
+    },
+    {
+     "id": "H5PZIi_HnG8",
+     "t": "All the Detail - System Part 3, the Speed Phase",
+     "d": 1565,
+     "ok": true
+    },
+    {
+     "id": "lDYDMxAHFXY",
+     "t": "All the Detail - System Part 5, the Acceleration Phase",
+     "d": 1184,
+     "ok": true
+    },
+    {
+     "id": "7yVqdYunYbc",
+     "t": "All The Detail - Limit Points: The Secret to Reading Corners",
+     "d": 1705,
+     "ok": true
+    },
+    {
+     "id": "O8bvj4lF-K8",
+     "t": "All the Detail - Vehicle Balance",
+     "d": 983,
+     "ok": true
+    },
+    {
+     "id": "PkE0q1s-lng",
+     "t": "01 Introduction & Braking",
+     "d": 1359,
+     "ok": true
+    },
+    {
+     "id": "A4rs09AKBc8",
+     "t": "02 Changing Gear - Manual Transmission",
+     "d": 759,
+     "ok": true
+    },
+    {
+     "id": "1u5ksf29ylI",
+     "t": "03 An Introduction to the System of Car Control",
+     "d": 1207,
+     "ok": true
+    },
+    {
+     "id": "nJgll4p9QJc",
+     "t": "04 Cornering",
+     "d": 2075,
+     "ok": true
+    },
+    {
+     "id": "eaootQjPpGc",
+     "t": "05 An Introduction to Commentary",
+     "d": 1279,
+     "ok": true
+    },
+    {
+     "id": "92zNVC_qKBE",
+     "t": "06 How to avoid Brake/Gear Overlap (BGOL)",
+     "d": 968,
+     "ok": true
+    },
+    {
+     "id": "SjFWKVYfkpE",
+     "t": "07 Overtaking",
+     "d": 1934,
+     "ok": true
+    },
+    {
+     "id": "5M13T2rhYf8",
+     "t": "08 Steering",
+     "d": 734,
+     "ok": true
+    },
+    {
+     "id": "L13E7ou-BhY",
+     "t": "09 Cornering Revisited",
+     "d": 1844,
+     "ok": true
+    },
+    {
+     "id": "6NeXYVmUWg0",
+     "t": "10 A run from Lancashire to North West Scotland",
+     "d": 668,
+     "ok": true
+    },
+    {
+     "id": "DrX-9zD1FEo",
+     "t": "11 Single Track Roads",
+     "d": 916,
+     "ok": true
+    },
+    {
+     "id": "0wFfd5g13J4",
+     "t": "12 Night Driving",
+     "d": 808,
+     "ok": true
+    },
+    {
+     "id": "4w5IjyNIFbE",
+     "t": "13 Cornering Lines",
+     "d": 447,
+     "ok": true
+    },
+    {
+     "id": "cn85aXnuhs8",
+     "t": "14 Acceleration Sense",
+     "d": 1282,
+     "ok": true
+    },
+    {
+     "id": "bwbALc4PgSE",
+     "t": "15 Following Position",
+     "d": 824,
+     "ok": true
+    },
+    {
+     "id": "iMamqeEN0yc",
+     "t": "16 Advanced Demonstration Drive",
+     "d": 1284,
+     "ok": true
+    },
+    {
+     "id": "SPhbZ33eU-I",
+     "t": "17 Advanced Driving in a Tesla Model S 90D - Full Electric Car",
+     "d": 1049,
+     "ok": true
+    },
+    {
+     "id": "pp4rzmCQAgM",
+     "t": "18 Scottish Overtakes",
+     "d": 1369,
+     "ok": true
+    },
+    {
+     "id": "9owdffLKES4",
+     "t": "20 Heel & Toe",
+     "d": 534,
+     "ok": true
+    },
+    {
+     "id": "NGJLNKQxZ98",
+     "t": "21 Cornering Balance",
+     "d": 833,
+     "ok": true
+    },
+    {
+     "id": "6_y2N6hnM3g",
+     "t": "22 Flow",
+     "d": 683,
+     "ok": true
+    },
+    {
+     "id": "ZUlWBrRE_LA",
+     "t": "23 Point of View Drive - Onboard in my BMW M135i in Northern Scotland",
+     "d": 2029,
+     "ok": true
+    },
+    {
+     "id": "NLB_C7HgG3Q",
+     "t": "24 More Scottish Overtakes",
+     "d": 1589,
+     "ok": true
+    },
+    {
+     "id": "sfxY8hT2BQs",
+     "t": "25. UK Winter Driving - How to Drive in Snow, Slush & Typical British Winter Conditions",
+     "d": 1417,
+     "ok": true
+    },
+    {
+     "id": "kWQzlWZG-lI",
+     "t": "26 Motorway Driving - UK motorway driving for advanced, new & learner drivers",
+     "d": 1114,
+     "ok": true
+    },
+    {
+     "id": "moJKWetL5O0",
+     "t": "28 High Speed Autobahn Driving - Flat Out in my BMW M135i",
+     "d": 1290,
+     "ok": true
+    },
+    {
+     "id": "xs04E3MabNU",
+     "t": "31 Emergency Braking",
+     "d": 964,
+     "ok": true
+    },
+    {
+     "id": "_9v6tk1HivI",
+     "t": "35 Observations & Planning",
+     "d": 1800,
+     "ok": true
+    },
+    {
+     "id": "zGwmWYDjG6k",
+     "t": "36 Parking",
+     "d": 821,
+     "ok": true
+    },
+    {
+     "id": "qHFi26xB-OQ",
+     "t": "37 Be Wary of Rules!",
+     "d": 1117,
+     "ok": true
+    },
+    {
+     "id": "BsJU3bRXM-A",
+     "t": "38 Progress Vs Restraint",
+     "d": 1136,
+     "ok": true
+    },
+    {
+     "id": "ujwVkxDeim0",
+     "t": "39 Automatic Gearboxes",
+     "d": 2581,
+     "ok": true
+    },
+    {
+     "id": "RGV9EuEfmdU",
+     "t": "40 Courtesy",
+     "d": 1307,
+     "ok": true
+    },
+    {
+     "id": "IUdZoUxwGiI",
+     "t": "47 Dual Clutch (Semi-Automatic) Gearboxes - M-DCT, DSG, PDK etc.",
+     "d": 2017,
+     "ok": true
+    },
+    {
+     "id": "YWgfQ7sW5F0",
+     "t": "49 Offsiding",
+     "d": 1530,
+     "ok": true
+    },
+    {
+     "id": "OWD7SNU4eXs",
+     "t": "52 Limit Points",
+     "d": 1243,
+     "ok": true
+    },
+    {
+     "id": "UOMRCK22HV4",
+     "t": "48 Driving A (Very) Fast Car On UK Roads",
+     "d": 1373,
+     "ok": true
+    },
+    {
+     "id": "pV6cNxfzq1M",
+     "t": "M2 Competition Update - It's run in!",
+     "d": 772,
+     "ok": true
+    },
+    {
+     "id": "OObwgbqcEgs",
+     "t": "M2 Competition - Drive Modes",
+     "d": 1738,
+     "ok": true
+    },
+    {
+     "id": "H9boDxN3KRM",
+     "t": "Tips to Help You Pass Your Advanced Driving Test",
+     "d": 3164,
+     "ok": true
+    },
+    {
+     "id": "kVUaZgVN7E0",
+     "t": "Advanced Demonstration Drive - Full Length (1 Hour +) version",
+     "d": 3778,
+     "ok": true
+    },
+    {
+     "id": "-yJLv0MK_MU",
+     "t": "5 Tips to Stop You From Having an Accident",
+     "d": 1008,
+     "ok": true
+    },
+    {
+     "id": "UqyO2AGf2ug",
+     "t": "5 Tips For Driving Fast, Safely",
+     "d": 611,
+     "ok": true
+    },
+    {
+     "id": "VFxSVl3wLVQ",
+     "t": "5 Tips to Improve Your Cornering",
+     "d": 606,
+     "ok": true
+    },
+    {
+     "id": "BD630v5Uv0E",
+     "t": "M2 Competition -  Manual or M-DCT - Which is Best?",
+     "d": 1169,
+     "ok": true
+    },
+    {
+     "id": "0sZuKWKHnXY",
+     "t": "Left Foot Braking",
+     "d": 1755,
+     "ok": true
+    },
+    {
+     "id": "iWQl46-Y8Tc",
+     "t": "Driving on Unfamiliar Roads",
+     "d": 1659,
+     "ok": true
+    },
+    {
+     "id": "RcrC7RDMLAw",
+     "t": "5 Tips to Improve Your Smoothness",
+     "d": 922,
+     "ok": true
+    },
+    {
+     "id": "Y8b0uvbG6uI",
+     "t": "5 Tips to Improve Your Observations",
+     "d": 555,
+     "ok": true
+    },
+    {
+     "id": "VK2bEC1eqBc",
+     "t": "5 Tips for the Best Seating Position",
+     "d": 597,
+     "ok": true
+    },
+    {
+     "id": "HXxohSRNi8I",
+     "t": "Is This the Best Driver's Road in the UK? BMW M2 Competition to Kinlochleven",
+     "d": 817,
+     "ok": true
+    },
+    {
+     "id": "lcJvyDK7uDg",
+     "t": "How to Drive With Finesse",
+     "d": 425,
+     "ok": true
+    },
+    {
+     "id": "2WHhn_NWE4k",
+     "t": "I Have Some Exciting News!",
+     "d": 202,
+     "ok": true
+    },
+    {
+     "id": "oM25BCDVHSw",
+     "t": "5 Tips for Smoother Gear Changing",
+     "d": 1663,
+     "ok": true
+    },
+    {
+     "id": "7hHEvnefcIE",
+     "t": "How to Drive in Mist & Fog",
+     "d": 1193,
+     "ok": true
+    },
+    {
+     "id": "b2JZfTxx-us",
+     "t": "Skid Control Part 1: Braking With & Without ABS",
+     "d": 974,
+     "ok": true
+    },
+    {
+     "id": "R_xJI0tRSZQ",
+     "t": "Skid Control Part 2: Acceleration",
+     "d": 712,
+     "ok": true
+    },
+    {
+     "id": "T_lU8KwiDWE",
+     "t": "Skid Control Part 3: Understeer",
+     "d": 677,
+     "ok": true
+    },
+    {
+     "id": "4Nt_KNDUNKU",
+     "t": "Skid Control Part 4: Oversteer",
+     "d": 953,
+     "ok": true
+    },
+    {
+     "id": "B2WXw5nZhoo",
+     "t": "2021 Mini John Cooper Works (JCW) Review",
+     "d": 1457,
+     "ok": true
+    },
+    {
+     "id": "nU0GSXgEf1Q",
+     "t": "Advanced Driving for People With a Disability",
+     "d": 1247,
+     "ok": true
+    },
+    {
+     "id": "nLYWWloF594",
+     "t": "Winter Tyres In The UK - Are They Worth It?",
+     "d": 1384,
+     "ok": true
+    },
+    {
+     "id": "PfVWNk1BXlA",
+     "t": "A Drive along the B723 in the Mini JCW",
+     "d": 1112,
+     "ok": true
+    },
+    {
+     "id": "3BWYB4A7Zxo",
+     "t": "NC500 A894 Through the Highlands in the M2 Competition - Best Road in the World?",
+     "d": 1149,
+     "ok": true
+    },
+    {
+     "id": "cO3V_gZzsIM",
+     "t": "Driving to Save Fuel",
+     "d": 1429,
+     "ok": true
+    },
+    {
+     "id": "abTt4Fnaw10",
+     "t": "IAM Masters Part 1: Introduction",
+     "d": 1355,
+     "ok": true
+    },
+    {
+     "id": "FreYTNnI9zE",
+     "t": "IAM Masters Part 2: Demonstration Drive",
+     "d": 2301,
+     "ok": true
+    },
+    {
+     "id": "QwbheQd9Cts",
+     "t": "How to Prepare for Police Driving Courses - Part 1, Introduction",
+     "d": 782,
+     "ok": true
+    },
+    {
+     "id": "BFOT7V5vnZg",
+     "t": "How to Prepare for Police Driving Courses - Part 2, the Basic Driving Assessment",
+     "d": 1058,
+     "ok": true
+    },
+    {
+     "id": "fOZ4E455K0k",
+     "t": "How to Prepare for Police driving Courses - Part 3. the Standard/Response Course",
+     "d": 942,
+     "ok": true
+    },
+    {
+     "id": "V_PhzMy6QtQ",
+     "t": "How to Prepare for Police Driving Courses - Part 4, the Advanced Driving Course",
+     "d": 1023,
+     "ok": true
+    },
+    {
+     "id": "vujioypYfPA",
+     "t": "New Car! Toyota GR Yaris",
+     "d": 1400,
+     "ok": true
+    },
+    {
+     "id": "WtFcY0MeHaE",
+     "t": "A Drive Through Amritsar, India",
+     "d": 1118,
+     "ok": true
+    },
+    {
+     "id": "UPN_XvaYU2k",
+     "t": "How to Deal With Cyclists",
+     "d": 1111,
+     "ok": true
+    },
+    {
+     "id": "UjeWByYQ-hs",
+     "t": "Toyota GR Yaris on Michelin CrossClimate 2 Tyres - Are They Any Good?",
+     "d": 1936,
+     "ok": true
+    },
+    {
+     "id": "grsa9Pi5DJI",
+     "t": "Limit Points? We've Been Teaching Them Wrong!",
+     "d": 1515,
+     "ok": true
+    },
+    {
+     "id": "06Qjf20mAGw",
+     "t": "Where Have I Been?!",
+     "d": 801,
+     "ok": true
+    }
+   ],
+   "fetched": "2026-11-07T08:46:18.408Z"
   }
  }
 }
