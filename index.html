@@ -608,10 +608,16 @@ function viewGuide(view, off) {
     cells[v.c][dow].push(v);
   }
 
-  const head = days.map(d => {
+  const daySec = [0, 0, 0, 0, 0, 0, 0];
+  for (const v of FEED.videos) {
+    if (v.ts < mon.getTime() || v.ts >= nextMon.getTime() || !v.d || /^Repeat: /.test(v.t)) continue;
+    daySec[(new Date(v.ts).getDay() + 6) % 7] += v.d;
+  }
+  const weekSec = daySec.reduce((x, y) => x + y, 0);
+  const head = days.map((d, i) => {
     const isToday = d.getTime() === today.getTime();
     const parts = fDay.format(d).split(' ');
-    return '<th class="' + (isToday ? 'today' : '') + '">' + esc(parts[0].replace(',', '')) + '<br>' + esc(parts.slice(1).join(' ')) + '</th>';
+    return '<th class="' + (isToday ? 'today' : '') + '">' + esc(parts[0].replace(',', '')) + '<br>' + esc(parts.slice(1).join(' ')) + (daySec[i] ? '<br><small class="tot">' + esc(dur(daySec[i])) + '</small>' : '') + '</th>';
   }).join('');
 
   const rows = FEED.channels.map(c => {
@@ -629,10 +635,10 @@ function viewGuide(view, off) {
   const total = FEED.videos.filter(v => v.ts >= mon.getTime() && v.ts < nextMon.getTime()).length;
 
   view.innerHTML = '<h2>TV Guide</h2>' +
-    '<div class="weeknav">' + earlier + '<span class="cur">' + (off === 0 ? 'This week: ' : 'Week of ') + esc(fDay.format(mon)) + ' &ndash; ' + esc(fDay.format(sun)) + '</span>' + later + '</div>' +
+    '<div class="weeknav">' + earlier + '<span class="cur">' + (off === 0 ? 'This week: ' : 'Week of ') + esc(fDay.format(mon)) + ' &ndash; ' + esc(fDay.format(sun)) + (weekSec ? ' &middot; ' + esc(dur(weekSec)) + ' of viewing' : '') + '</span>' + later + '</div>' +
     (total ? '' : '<p class="muted">Nothing was broadcast on your channels this week.</p>') +
     '<table class="guide"><thead><tr><th class="corner">Channel</th>' + head + '</tr></thead><tbody>' + rows + '</tbody></table>' +
-    '<p class="legend"><b>Bold</b> = not yet watched &nbsp;&middot;&nbsp; <span style="color:#777">&#10003; grey</span> = watched &nbsp;&middot;&nbsp; times are when each programme was broadcast, running time in brackets &nbsp;&middot;&nbsp; Shorts are hidden &nbsp;&middot;&nbsp; <i>Italic</i> = highlights not expected yet. Formula 1 sessions come from the race calendar and open the F1 app.</p>';
+    '<p class="legend"><b>Bold</b> = not yet watched &nbsp;&middot;&nbsp; <span style="color:#777">&#10003; grey</span> = watched &nbsp;&middot;&nbsp; times are when each programme was broadcast, running time in brackets, daily and weekly totals add up everything shown (repeats not counted) &nbsp;&middot;&nbsp; Shorts are hidden &nbsp;&middot;&nbsp; <i>Italic</i> = highlights not expected yet. Formula 1 sessions come from the race calendar and open the F1 app.</p>';
 }
 
 function viewChannels(view) {

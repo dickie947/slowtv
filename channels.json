@@ -44,6 +44,7 @@
     {
       "handle": "FIAWEC",
       "name": "FIA WEC",
+      "only": "highlights",
       "group": "Motorsport"
     },
     {
