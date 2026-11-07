@@ -114,6 +114,12 @@ for (const dr of cfg.drips || []) {
       const byId = new Map(list.map((i) => [i.id, i]));
       const used = new Set(), q = [];
       const take = (i) => { if (i && !used.has(i.id)) { used.add(i.id); q.push(i); } };
+      for (const id of dr.before || []) {      // single videos from outside the playlist, shown before everything else
+        let t = id, d = null;
+        try { const o = await (await fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + id), { headers: HEADERS })).json(); t = o.title || t; } catch (e) { log('! no title for ' + id + ': ' + e.message); }
+        try { const pg = await (await fetch('https://www.youtube.com/watch?v=' + id, { headers: HEADERS })).text(); d = Number((pg.match(/"lengthSeconds":"(\d+)"/) || [])[1]) || null; } catch {}
+        take({ id, t, d, ok: true });
+      }
       (dr.first || []).forEach((id) => take(byId.get(id)));
       if (dr.fromId) {
         const at = list.findIndex((i) => i.id === dr.fromId);
