@@ -69,7 +69,7 @@ h3{font:bold 15px Georgia,"Times New Roman",serif;color:var(--navy);margin:16px 
 .sched{border-collapse:collapse;font-size:13px;min-width:560px;width:100%;max-width:900px}
 .sched th,.sched td{border:1px solid var(--line);padding:4px 6px;text-align:left}
 .sched th{background:var(--navy);color:#fff}
-.tm,.du{color:var(--muted);font-weight:normal;font-size:11px}
+.tm,.du,.src{color:var(--muted);font-weight:normal;font-size:11px}
 .pg .tt{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .legend{margin:10px 0 0;font-size:12px;color:var(--muted)}
 
@@ -217,6 +217,14 @@ const ENG = { name: 'Engineering', group: 'Engineering', days: [1, 4], time: '19
 const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '19:00', start: '2026-11-07' };
 /* ---- Driving: an ordered playlist, one video a week on Mondays ---- */
 const DRV = { name: 'Driving', group: 'Driving', days: [1], time: '18:00', start: '2026-11-09' };
+/* ---- Combined rows: several channels share one row in the guide. Each member is [handle, short label]. ---- */
+const MERGE = [
+  { id: 'm-space', name: 'Space', group: 'Space', members: [['nasa', 'NASA'], ['europeanspaceagency', 'ESA']] },
+  { id: 'm-gcn', name: 'GCN', group: 'Cycling and Triathlon', members: [['gcn', 'GCN'], ['gcntech', 'GCN Tech'], ['gmbn', 'GMBN']] },
+  { id: 'm-motorsport', name: 'Motorsport', group: 'Motorsport', members: [['formula1', 'F1'], ['fiawec', 'WEC']] },
+  { id: 'm-science', name: 'Science and Innovation', group: 'Science', members: [['britishantarcticsurvey', 'BAS'], ['drbenmiles', 'Ben Miles'], ['3blue1brown', '3B1B'], ['sabinehossenfelder', 'Sabine'], ['innovation', 'Innovation']] },
+  { id: 'm-driving', name: 'Driving Performance', group: 'Driving', members: [['driving', 'Driving'], ['engineering', 'Engineering']] },
+];
 const LOOKAHEAD_WEEKS = 8;
 const WEEKDAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];                             // how far ahead the guide and channel pages look
 
@@ -380,9 +388,21 @@ async function loadFeed() {
     channels.push({ id: 'wk', handle: 'weekly', name: WEEKLY.channelName, group: WEEKLY.group });
     videos = videos.concat(PLAN.entries.filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
   }
+  const lc = c => String(c.handle || '').toLowerCase();
+  const rows = [], done = new Set();
+  for (const c of channels) {
+    const g = MERGE.find(m => m.members.some(([h]) => h === lc(c)));
+    if (!g) { rows.push(c); continue; }
+    if (done.has(g.id)) continue;
+    done.add(g.id);
+    rows.push({ id: g.id, handle: g.id, name: g.name, group: g.group });
+    const label = {};
+    for (const [h, s] of g.members) { const m = channels.find(x => lc(x) === h); if (m) label[m.id] = s; }
+    videos.forEach(v => { if (label[v.c]) { v.src = label[v.c]; v.c = g.id; } });
+  }
   FEED = {
-    generated: raw.generated || null, channels, videos, failed,
-    ch: Object.fromEntries(channels.map(c => [c.id, c])),
+    generated: raw.generated || null, channels: rows, videos, failed,
+    ch: Object.fromEntries(rows.map(c => [c.id, c])),
     vid: Object.fromEntries(videos.map(v => [v.id, v])),
   };
 }
@@ -558,7 +578,7 @@ function pgLink(v, withTime) {
   const soon = !!(v.ev || v.wk || v.eng) && Date.now() < v.ready;
   return '<a class="pg' + (seen ? ' seen' : '') + (soon ? ' soon' : '') + '" href="#/v/' + esc(v.id) + '" title="' + esc(v.t) + '">' +
     (withTime ? '<span class="tm">' + hm(v.ts) + '</span> ' : '') +
-    (seen ? '&#10003; ' : '') + '<span class="tt">' + esc(v.t) + '</span>' +
+    (seen ? '&#10003; ' : '') + (v.src ? '<span class="src">' + esc(v.src) + '</span> ' : '') + '<span class="tt">' + esc(v.t) + '</span>' +
     (soon ? (v.wk || v.eng ? '' : ' <span class="du">Highlights available from ' + esc(readyLabel(v)) + '</span>') : (v.d ? ' <span class="du">(' + dur(v.d) + ')</span>' : '')) + '</a>';
 }
 
@@ -689,7 +709,7 @@ function viewProgramme(view, id) {
     '<p class="crumb"><a href="#/">&laquo; TV Guide</a></p>' +
     '<h2 class="ptitle">' + esc(v.t) + '</h2>' +
     '<table class="info">' +
-      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</td></tr>' +
+      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + (v.src ? ' (' + esc(v.src) + ')' : '') + '</td></tr>' +
       '<tr><th>Broadcast</th><td>' + esc(fLong.format(new Date(v.ts))) + ', ' + hm(v.ts) + '</td></tr>' +
       (v.d ? '<tr><th>Running time</th><td>' + dur(v.d) + '</td></tr>' : '') +
       '<tr><th>Status</th><td>' + (seen ? '&#10003; Watched' : 'Not yet watched') + '</td></tr>' +
@@ -807,7 +827,7 @@ function viewEvent(view, v) {
     '<p class="crumb"><a href="#/">&laquo; TV Guide</a></p>' +
     '<h2 class="ptitle">' + esc(v.t) + '</h2>' +
     '<table class="info">' +
-      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</td></tr>' +
+      '<tr><th>Channel</th><td>' + (c.id ? '<a href="#/channel/' + esc(c.id) + '">' + esc(c.name) + '</a>' : esc(c.name)) + (v.src ? ' (' + esc(v.src) + ')' : '') + '</td></tr>' +
       '<tr><th>Session</th><td>' + esc(fLong.format(new Date(v.ts))) + ', ' + hm(v.ts) + '</td></tr>' +
       '<tr><th>Highlights</th><td>' + (ready ? 'Should be available now' : 'Expected from ' + esc(readyLabel(v))) + '</td></tr>' +
       '<tr><th>Running time</th><td>about ' + EVENT_RUNNING_MIN + ' minutes</td></tr>' +
