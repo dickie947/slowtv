@@ -218,6 +218,14 @@ const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '19:00'
 /* ---- Driving: an ordered playlist, one video a week on Mondays ---- */
 const DRV = { name: 'Driving', group: 'Driving', days: [1], time: '18:00', start: '2026-11-09' };
 /* ---- Combined rows: several channels share one row in the guide. Each member is [handle, short label]. ---- */
+// Four recorded parent sessions from Non-Perfect Dad, one per Friday in the Weekly Broadcast row.
+const SESS = { days: [5], time: '20:30', start: '2026-11-13' };
+const SESSIONS = [
+  { id: 'ahJqz_YAVc8', t: 'Non-Perfect Dad: Parent Session 1', note: 'Session 1 of 4 (live replay, October 2024). Guest: Eboni.' },
+  { id: 'GNjShVP4IB4', t: 'Non-Perfect Dad: Parent Session 2', note: 'Session 2 of 4 (live replay, November 2024). How can sporting success fuel a lifetime of impacting results?' },
+  { id: '2YAVslcbPwU', t: 'Non-Perfect Dad: Parent Session 3', note: 'Session 3 of 4 (live replay, February 2025). Guest: Dr Thomas Curran, on perfectionism.' },
+  { id: 'A6GLvCMu1xQ', t: 'Non-Perfect Dad: Parent Session 4', note: 'Session 4 of 4 (live replay, March 2025). Guest: Dr Ed Hall, on adaptability.' },
+];
 const MERGE = [
   { id: 'm-space', name: 'Space', group: 'Space', members: [['nasa', 'NASA'], ['europeanspaceagency', 'ESA']] },
   { id: 'm-gcn', name: 'GCN', group: 'Cycling and Triathlon', members: [['gcn', 'GCN'], ['gcntech', 'GCN Tech'], ['gmbn', 'GMBN']] },
@@ -386,6 +394,7 @@ async function loadFeed() {
   }
   if (weeklyOn()) {
     PLAN = weeklyPlan();
+    PLAN.entries = PLAN.entries.concat(dripSchedule(SESSIONS.map(it => ({ it: { id: it.id, t: it.t, d: null }, note: it.note })), SESS, 'wk'));
     channels.push({ id: 'wk', handle: 'weekly', name: WEEKLY.channelName, group: WEEKLY.group });
     videos = videos.concat(PLAN.entries.filter(e => e.ts >= cutoff)).sort((a, b) => b.ts - a.ts);
   }
