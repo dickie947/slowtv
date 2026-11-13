@@ -292,7 +292,7 @@ const PLAY = '&#9654;&#xFE0E;';
 /* ------------------------------------------------------------------ */
 /*  Saved state (watched list, resume points, today's viewing time)    */
 /* ------------------------------------------------------------------ */
-const defaults = () => ({ watched: {}, pos: {}, day: '', used: 0, limit: 120, pending: null, thumbs: false, cutEnd: false });
+const defaults = () => ({ watched: {}, pos: {}, day: '', used: 0, limit: 120, pending: null, thumbs: false, cutEnd: false, sync: null, wipe: 0 });
 function load() {
   try {
     const raw = JSON.parse(localStorage.getItem(STORE_KEY));
@@ -300,7 +300,11 @@ function load() {
   } catch (e) { return defaults(); }
 }
 let S = load();
-function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) { /* private mode etc. */ } }
+const SYNC = { timer: null, busy: false, last: '', status: '' };
+function save(quiet) {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch (e) { /* private mode etc. */ }
+  if (!quiet && S.sync && S.sync.token && !SYNC.timer) SYNC.timer = setTimeout(() => { SYNC.timer = null; syncNow(); }, 30000);   // at most one sync every 30 seconds
+}
 
 function rollover() {
   const k = dayKey();
@@ -1083,6 +1087,27 @@ window.addEventListener('pagehide', () => { if (P) { accumulate(); savePos(); } 
 function exportCode() {
   return 'SLOWTV1:' + btoa(JSON.stringify({ v: 1, watched: S.watched, pos: S.pos, day: S.day, used: Math.round(S.used) }));
 }
+function mergeData(o) {
+  const okId = id => /^[\w-]{11}$/.test(id) || /^(ev|wk)-[a-z0-9-]{3,60}$/.test(id);
+  let n = 0;
+  if (typeof o.wipe === 'number' && o.wipe > (S.wipe || 0)) { S.watched = {}; S.pos = {}; S.wipe = o.wipe; n++; }   // "Clear all watched marks" on another device
+  const w = S.wipe || 0;
+  for (const id of Object.keys(o.watched || {})) {
+    const t = o.watched[id];
+    if (okId(id) && typeof t === 'number' && t > w && t > (S.watched[id] || 0)) { S.watched[id] = t; n++; }
+  }
+  for (const id of Object.keys(o.pos || {})) {
+    const p = o.pos[id];
+    if (okId(id) && p && typeof p.s === 'number' && typeof p.t === 'number' && p.t > w && (!S.pos[id] || p.t > S.pos[id].t)) { S.pos[id] = { s: p.s, t: p.t }; n++; }
+  }
+  if (o.day === S.day && typeof o.used === 'number' && o.used > S.used && o.used < 86400) { S.used = o.used; n++; }
+  if (o.day === S.day) {
+    if (typeof o.limit === 'number' && LIMITS.includes(o.limit) && o.limit < S.limit) { S.limit = o.limit; S.pending = null; n++; }   // lowering always wins
+    if (o.pending && LIMITS.includes(o.pending.minutes) && typeof o.pending.from === 'string' && !S.pending && o.pending.minutes > S.limit) { S.pending = { minutes: o.pending.minutes, from: o.pending.from }; n++; }
+  }
+  save(true); updateMeter();
+  return n;
+}
 function importCode(text) {
   let o;
   try {
@@ -1090,20 +1115,48 @@ function importCode(text) {
     if (!t.startsWith('SLOWTV1:')) throw 0;
     o = JSON.parse(atob(t.slice(8)));
   } catch (e) { return 'That doesn’t look like a SlowTV transfer code.'; }
-  const okId = id => /^[\w-]{11}$/.test(id) || /^(ev|wk)-[a-z0-9-]{3,60}$/.test(id);
-  let n = 0;
-  for (const id of Object.keys(o.watched || {})) {
-    const t = o.watched[id];
-    if (okId(id) && typeof t === 'number' && t > (S.watched[id] || 0)) { S.watched[id] = t; n++; }
-  }
-  for (const id of Object.keys(o.pos || {})) {
-    const p = o.pos[id];
-    if (okId(id) && p && typeof p.s === 'number' && typeof p.t === 'number' && (!S.pos[id] || p.t > S.pos[id].t)) S.pos[id] = { s: p.s, t: p.t };
-  }
-  if (o.day === S.day && typeof o.used === 'number' && o.used > S.used && o.used < 86400) S.used = o.used;
-  save(); updateMeter();
+  mergeData({ watched: o.watched, pos: o.pos, day: o.day, used: o.used });
   return 'Imported. Watched marks and resume points merged; today’s viewing time is now the higher of the two devices.';
 }
+
+/* ---------- sync through a private GitHub gist ---------- */
+const GIST_FILE = 'slowtv-sync.json';
+const syncOn = () => !!(S.sync && S.sync.token && S.sync.gist);
+const syncPayload = () => ({ v: 2, watched: S.watched, pos: S.pos, day: S.day, used: Math.round(S.used), limit: S.limit, pending: S.pending, wipe: S.wipe || 0 });
+async function gistCall(method, body) {
+  const r = await fetch('https://api.github.com/gists/' + encodeURIComponent(S.sync.gist), {
+    method, cache: 'no-store', keepalive: !!body && body.length < 60000, body,
+    headers: Object.assign({ Authorization: 'Bearer ' + S.sync.token, Accept: 'application/vnd.github+json' }, body ? { 'Content-Type': 'application/json' } : {}),
+  });
+  if (!r.ok) throw new Error(r.status === 401 ? 'GitHub rejected the token' : r.status === 404 ? 'gist not found (check the ID, and that the token has gist access)' : 'GitHub error ' + r.status);
+  return r.json();
+}
+function showSyncStatus() { const el = document.getElementById('s-sync'); if (el) el.textContent = SYNC.status; }
+async function syncNow(pushOnly) {
+  if (!syncOn() || SYNC.busy) return;
+  SYNC.busy = true;
+  let changed = 0;
+  try {
+    if (!pushOnly) {
+      const g = await gistCall('GET');
+      const f = g.files && g.files[GIST_FILE];
+      if (f) {
+        let txt = f.content;
+        if (f.truncated && f.raw_url) txt = await (await fetch(f.raw_url, { cache: 'no-store' })).text();
+        let o = null; try { o = JSON.parse(txt); } catch (e) {}
+        if (o && typeof o === 'object') changed = mergeData(o);
+      }
+    }
+    const out = JSON.stringify(syncPayload());
+    if (out !== SYNC.last) { await gistCall('PATCH', JSON.stringify({ files: { [GIST_FILE]: { content: out } } })); SYNC.last = out; }
+    SYNC.status = 'Synced at ' + hm(Date.now()) + '.';
+  } catch (e) { SYNC.status = 'Sync failed: ' + (e.message || e); }
+  SYNC.busy = false;
+  showSyncStatus();
+  if (changed && !P && !/^#\/?(settings)/.test(location.hash)) route();
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') syncNow(); });
+window.addEventListener('pagehide', () => { syncNow(true); });
 
 function viewSettings(view) {
   const shown = S.pending ? S.pending.minutes : S.limit;
@@ -1118,8 +1171,15 @@ function viewSettings(view) {
       '<label><input type="checkbox" id="s-thumbs"' + (S.thumbs ? ' checked' : '') + '> Show a thumbnail on the programme page (off by default; thumbnails are what make you click)</label>' +
       '<label><input type="checkbox" id="s-cut"' + (S.cutEnd ? ' checked' : '') + '> End each programme 15 seconds early to hide YouTube’s end cards (this cuts off the last few seconds)</label>' +
     '</fieldset>' +
-    '<fieldset><legend>Move your data between devices</legend>' +
-      '<p class="small muted">Your watched list, resume points and today’s viewing time live only on this device. To carry them to another device, copy the code below and paste it into Settings there.</p>' +
+    '<fieldset><legend>Sync between devices</legend>' +
+      '<p class="small muted">Keeps your watched list, resume points and today’s viewing time the same on every device, through a private GitHub gist. Enter the same two things on each device.</p>' +
+      '<label class="small">GitHub token (gist access only)<br><input id="s-gtoken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:100%" value="' + esc((S.sync && S.sync.token) || '') + '"></label>' +
+      '<label class="small">Gist ID<br><input id="s-ggist" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:100%" value="' + esc((S.sync && S.sync.gist) || '') + '"></label>' +
+      '<div class="actions"><button class="btn" id="s-gsave">' + (syncOn() ? 'Save and sync now' : 'Connect and sync') + '</button> <button class="btn" id="s-goff">Disconnect this device</button></div>' +
+      '<p id="s-sync" class="small">' + esc(syncOn() ? (SYNC.status || 'Connected.') : 'Not connected.') + '</p>' +
+    '</fieldset>' +
+    '<fieldset><legend>Move your data by hand</legend>' +
+      '<p class="small muted">Without sync, your data lives only on this device. To carry it across once, copy the code below and paste it into Settings there.</p>' +
       '<div class="actions"><button class="btn" id="s-export">Show my transfer code</button></div>' +
       '<textarea id="s-code" placeholder="Transfer code appears here, or paste one from another device" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>' +
       '<div class="actions"><button class="btn" id="s-import">Import pasted code</button></div>' +
@@ -1147,9 +1207,16 @@ function viewSettings(view) {
     const t = $('#s-code'); t.value = exportCode(); t.focus(); t.select();
     $('#s-msg').textContent = 'Copy this code, then paste it into Settings on your other device.';
   });
+  $('#s-gsave').addEventListener('click', () => {
+    const t = $('#s-gtoken').value.trim(), g = $('#s-ggist').value.trim().replace(/^.*\//, '');
+    if (!t || !/^[0-9a-f]{20,40}$/i.test(g)) { SYNC.status = 'Enter both the token and the gist ID (a long string of letters and numbers).'; showSyncStatus(); return; }
+    S.sync = { token: t, gist: g }; SYNC.last = ''; save(true);
+    SYNC.status = 'Connecting…'; showSyncStatus(); syncNow();
+  });
+  $('#s-goff').addEventListener('click', () => { S.sync = null; SYNC.status = ''; save(true); viewSettings(view); });
   $('#s-import').addEventListener('click', () => { $('#s-msg').textContent = importCode($('#s-code').value); });
   $('#s-clear').addEventListener('click', () => {
-    if (confirm('Clear every watched mark and resume point?')) { S.watched = {}; S.pos = {}; save(); $('#s-msg').textContent = 'Cleared.'; }
+    if (confirm('Clear every watched mark and resume point?')) { S.watched = {}; S.pos = {}; S.wipe = Date.now(); save(); $('#s-msg').textContent = 'Cleared.'; }
   });
 }
 
@@ -1193,7 +1260,7 @@ function route() {
 }
 
 window.addEventListener('hashchange', route);
-loadFeed().then(() => { renderFooter(); route(); });
+loadFeed().then(() => { renderFooter(); route(); syncNow(); });
 })();
 </script>
 </body>
