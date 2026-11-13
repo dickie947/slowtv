@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12T13:51:31.942Z",
+ "generated": "2026-11-13T13:14:16.290Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:18.507Z"
+   "fetched": "2026-11-13T13:14:03.158Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:19.543Z"
+   "fetched": "2026-11-13T13:14:04.265Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:20.716Z"
+   "fetched": "2026-11-13T13:14:05.427Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:21.802Z"
+   "fetched": "2026-11-13T13:14:06.497Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:22.922Z"
+   "fetched": "2026-11-13T13:14:07.586Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -816,90 +816,90 @@
     {
      "id": "WwMYGF2avrs",
      "t": "Front Wheel Drive - FWD - Explained",
-     "d": null,
+     "d": 280,
      "ok": true
     },
     {
      "id": "mWtFkEwF61I",
      "t": "Rear Wheel Drive - RWD - Explained",
-     "d": null,
+     "d": 214,
      "ok": true
     },
     {
      "id": "oYMMdjbmQXc",
      "t": "Ackerman Steering - Explained",
-     "d": null,
+     "d": 225,
      "ok": true
     },
     {
      "id": "ZN6xHc7Nz-E",
      "t": "How 4WD Works - Four Wheel Drive",
-     "d": null,
+     "d": 474,
      "ok": true
     },
     {
      "id": "K1qj8dHTmP4",
      "t": "Transfer Case - Explained",
-     "d": null,
+     "d": 653,
      "ok": true
     },
     {
      "id": "UL9LmT3fzbQ",
      "t": "AWD Cars - All Wheel Drive - Explained",
-     "d": null,
+     "d": 352,
      "ok": true
     },
     {
      "id": "Z1Y14AejfQU",
      "t": "How Car Steering Works - Rack & Pinion",
-     "d": null,
+     "d": 390,
      "ok": true
     },
     {
      "id": "1TBoEqqcbf0",
      "t": "Active Rear Steering - 4 Wheel Steering - Explained",
-     "d": null,
+     "d": 181,
      "ok": true
     },
     {
      "id": "5p4NiX4A8hw",
      "t": "Front Engine Cars - FWD vs RWD vs AWD",
-     "d": null,
+     "d": 518,
      "ok": true
     },
     {
      "id": "M_ZVf6KfqiY",
      "t": "Mid Engine Cars - RWD vs AWD",
-     "d": null,
+     "d": 238,
      "ok": true
     },
     {
      "id": "qGr61sGjY6A",
      "t": "Rear Engine Cars - RWD vs AWD",
-     "d": null,
+     "d": 240,
      "ok": true
     },
     {
      "id": "ia463NahG5Q",
      "t": "4Hi vs 4Lo vs 2Hi - 4X4 Offroad Testing",
-     "d": null,
+     "d": 512,
      "ok": true
     },
     {
      "id": "EjYrHQ83mbM",
      "t": "Toyota GR Corolla's Brilliant AWD System - How It Splits Torque!",
-     "d": null,
+     "d": 744,
      "ok": true
     },
     {
      "id": "_IMH-2eai54",
      "t": "2,300 Horsepower - How Koenigsegg Gemera's Insane Powertrain Works!",
-     "d": null,
+     "d": 877,
      "ok": true
     }
    ],
-   "source": "rss (latest 15 only)",
-   "fetched": "2026-11-12T13:51:24.090Z"
+   "source": "page",
+   "fetched": "2026-11-13T13:14:08.616Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:25.191Z"
+   "fetched": "2026-11-13T13:14:09.714Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:26.333Z"
+   "fetched": "2026-11-13T13:14:10.788Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:27.364Z"
+   "fetched": "2026-11-13T13:14:11.815Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-12T13:51:28.437Z"
+   "fetched": "2026-11-13T13:14:12.905Z"
   }
  },
  "drips": {
@@ -2004,7 +2004,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-12T13:51:30.522Z"
+   "fetched": "2026-11-13T13:14:15.131Z"
   },
   "driving": {
    "title": "Advanced Driving Videos",
@@ -2515,7 +2515,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-12T13:51:31.941Z"
+   "fetched": "2026-11-13T13:14:16.289Z"
   }
  }
 }
