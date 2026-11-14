@@ -203,7 +203,7 @@ const WEEKLY = {
   openerDate: '2026-11-15',   // one opening-night premiere (no repeat) on this earlier Sunday
   annualFrom: 2028,      // first year of the annual rewatches (2027 is needed for every series to start a season)
   maxGapWeeks: 52,       // no series waits longer than this between the starts of its seasons
-  time: '20:30',
+  time: '20:00',
   repeatDay: 0,
   perWeek: 2,            // episodes per week: shown as a double bill, one hour apart
   order: 'broadcast',
@@ -212,11 +212,11 @@ const WEEKLY = {
 /* ---- Engineering: playlists dripped out on the quietest days ---------------
    The videos come from playlists.json (read by the daily refresh into data/playlists.json).
    'start' videos go first, then each playlist in order. days: 1 = Monday ... 0 = Sunday. */
-const ENG = { name: 'Engineering', group: 'Engineering', days: [1, 4], time: '19:00', start: '2026-11-16' };
+const ENG = { name: 'Engineering', group: 'Engineering', days: [1, 4], time: '12:00', start: '2026-11-16' };
 /* ---- Innovation: one video a week from Phil McKinney's channel, oldest to newest from a chosen start ---- */
-const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '19:00', start: '2026-11-07' };
+const INNO = { name: 'Innovation', group: 'Innovation', days: [6], time: '12:00', start: '2026-11-07' };
 /* ---- Driving: an ordered playlist, one video a week on Mondays ---- */
-const DRV = { name: 'Driving', group: 'Driving', days: [1], time: '18:00', start: '2026-11-16' };
+const DRV = { name: 'Driving', group: 'Driving', days: [1], time: '12:00', start: '2026-11-16' };
 /* ---- Combined rows: several channels share one row in the guide. Each member is [handle, short label]. ---- */
 // Four recorded parent sessions from Non-Perfect Dad, one per Friday in the Weekly Broadcast row.
 const SESS = { days: [5], time: '12:00', start: '2026-11-20' };
