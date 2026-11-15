@@ -142,6 +142,8 @@ footer{border-top:1px solid var(--line);background:var(--grey);padding:8px 14px;
   main{padding:10px}
   .btn.go{width:100%;text-align:center}
 }
+  .latest { margin: 0 0 12px; padding: 8px 10px; border: 1px solid #bbb; background: #f5f5f0; }
+  .latest a.pg { display: inline; }
 </style>
 </head>
 <body>
@@ -229,7 +231,6 @@ const SESSIONS = [
 const MERGE = [
   { id: 'm-space', name: 'Space', group: 'Space', members: [['nasa', 'NASA'], ['europeanspaceagency', 'ESA']] },
   { id: 'm-gcn', name: 'GCN', group: 'Cycling and Triathlon', members: [['gcn', 'GCN'], ['gcntech', 'GCN Tech'], ['gmbn', 'GMBN']] },
-  { id: 'm-news', name: 'News', group: 'News', members: [['news', 'Reuters'], ['theeconomist', 'Economist']] },
   { id: 'm-motorsport', name: 'Motorsport', group: 'Motorsport', members: [['formula1', 'F1'], ['fiawec', 'WEC']] },
   { id: 'm-science', name: 'Science and Innovation', group: 'Science', members: [['britishantarcticsurvey', 'BAS'], ['drbenmiles', 'Ben Miles'], ['3blue1brown', '3B1B'], ['sabinehossenfelder', 'Sabine'], ['innovation', 'Innovation']] },
   { id: 'm-driving', name: 'Performance Driving', group: 'Driving', members: [['driving', 'Driving'], ['engineering', 'Engineering']] },
@@ -414,9 +415,17 @@ async function loadFeed() {
     for (const [h, s] of g.members) { const m = channels.find(x => lc(x) === h); if (m) label[m.id] = s; }
     videos.forEach(v => { if (label[v.c]) { v.src = label[v.c]; v.c = g.id; } });
   }
+  // Reuters publishes far too much to list: keep only its newest video, shown as a single link above the guide.
+  const reutersCh = rows.find(c => lc(c) === 'news');
+  let latest = null;
+  if (reutersCh) {
+    latest = videos.filter(v => v.c === reutersCh.id).sort((a, b) => b.ts - a.ts)[0] || null;
+    videos = videos.filter(v => v.c !== reutersCh.id || v === latest);
+    rows.splice(rows.indexOf(reutersCh), 1);
+  }
   FEED = {
-    generated: raw.generated || null, channels: rows, videos, failed,
-    ch: Object.fromEntries(rows.map(c => [c.id, c])),
+    generated: raw.generated || null, channels: rows, videos, failed, latest,
+    ch: Object.fromEntries(rows.concat(reutersCh ? [reutersCh] : []).map(c => [c.id, c])),
     vid: Object.fromEntries(videos.map(v => [v.id, v])),
   };
 }
@@ -647,7 +656,9 @@ function viewGuide(view, off) {
   const later = off > -weeksAhead() ? '<a href="#/week/' + (off - 1) + '">Later week &raquo;</a>' : '<span class="off">Later week &raquo;</span>';
   const total = FEED.videos.filter(v => v.ts >= mon.getTime() && v.ts < nextMon.getTime()).length;
 
-  view.innerHTML = '<h2>TV Guide</h2>' +
+  const L = FEED.latest;
+  const latestBox = L ? '<p class="latest"><b>Latest from Reuters:</b> ' + pgLink(L, false) + ' <span class="muted small">' + esc(fDay.format(new Date(L.ts))) + ', ' + hm(L.ts) + (S.watched[L.id] ? ' &middot; you are up to date' : '') + '</span></p>' : '';
+  view.innerHTML = '<h2>TV Guide</h2>' + latestBox +
     '<div class="weeknav">' + earlier + '<span class="cur">' + (off === 0 ? 'This week: ' : 'Week of ') + esc(fDay.format(mon)) + ' &ndash; ' + esc(fDay.format(sun)) + (weekSec ? ' &middot; ' + esc(dur(weekSec)) + ' of viewing' : '') + '</span>' + later + '</div>' +
     (total ? '' : '<p class="muted">Nothing was broadcast on your channels this week.</p>') +
     '<table class="guide"><thead><tr><th class="corner">Channel</th>' + head + '</tr></thead><tbody>' + rows + '</tbody></table>' +
