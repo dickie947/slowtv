@@ -177,6 +177,7 @@ footer{border-top:1px solid var(--line);background:var(--grey);padding:8px 14px;
 const PLAYER_HOST = 'https://www.youtube-nocookie.com'; // use https://www.youtube.com if embeds misbehave
 const DAY_STARTS_AT = 4;            // the "viewing day" rolls over at 04:00 local time
 const LIMITS = [30, 60, 90, 120, 150, 180, 240];
+const BUILD = 'dev';   // stamped with the commit id when the site is built
 const STORE_KEY = 'slowtv.v1';
 
 /* ---- Formula 1 calendar entries ----------------------------------------
@@ -380,6 +381,15 @@ async function engineEntries() {
 
 async function loadFeed() {
   let raw = { generated: null, channels: [], videos: [] };
+  // If this page is an old cached copy, reload once so the newest version is fetched.
+  try {
+    const bj = await (await fetch('data/build.json', { cache: 'no-store' })).json();
+    if (BUILD !== 'dev' && bj.build && bj.build !== BUILD && sessionStorage.getItem('slowtv.rl') !== bj.build) {
+      sessionStorage.setItem('slowtv.rl', bj.build);
+      location.replace(location.pathname + '?v=' + bj.build + location.hash);
+      return;
+    }
+  } catch (e) { /* offline, or running from a file */ }
   let failed = false;
   try {
     const r = await fetch('data/feed.json', { cache: 'no-cache' });
