@@ -53,6 +53,9 @@ jobs:
           cp apple-touch-icon.png icon-192.png icon-512.png _site/
           cp data/feed.json _site/data/
           cp data/playlists.json _site/data/
+          # stamp this build so an old cached copy of the page can notice and reload itself
+          sed -i "s/const BUILD = 'dev';/const BUILD = '${GITHUB_SHA::10}';/" _site/index.html
+          echo "{\"build\":\"${GITHUB_SHA::10}\"}" > _site/data/build.json
 
       - uses: actions/configure-pages@v5
 
