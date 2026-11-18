@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T14:39:37.648Z",
+ "generated": "2026-11-18T14:16:28.121Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:24.729Z"
+   "fetched": "2026-11-18T14:16:14.970Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:25.842Z"
+   "fetched": "2026-11-18T14:16:16.087Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:27.021Z"
+   "fetched": "2026-11-18T14:16:17.234Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:28.143Z"
+   "fetched": "2026-11-18T14:16:18.308Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:29.265Z"
+   "fetched": "2026-11-18T14:16:19.363Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:30.329Z"
+   "fetched": "2026-11-18T14:16:20.389Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:31.403Z"
+   "fetched": "2026-11-18T14:16:21.438Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:32.473Z"
+   "fetched": "2026-11-18T14:16:22.503Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:33.592Z"
+   "fetched": "2026-11-18T14:16:23.506Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,13 +1329,13 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-17T14:39:34.716Z"
+   "fetched": "2026-11-18T14:16:24.563Z"
   }
  },
  "drips": {
   "innovation": {
    "title": "Videos",
-   "total": 157,
+   "total": 158,
    "items": [
     {
      "id": "JViOfYhClyY",
@@ -2002,9 +2002,15 @@
      "t": "Mastering Critical Thinking in the Age of AI",
      "d": 923,
      "ok": true
+    },
+    {
+     "id": "-ScBIymekZo",
+     "t": "How to Improve Your Problem Solving Skills",
+     "d": 1528,
+     "ok": true
     }
    ],
-   "fetched": "2026-11-17T14:39:36.693Z"
+   "fetched": "2026-11-18T14:16:26.737Z"
   },
   "driving": {
    "title": "Advanced Driving Videos",
@@ -2515,7 +2521,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-17T14:39:37.647Z"
+   "fetched": "2026-11-18T14:16:28.120Z"
   }
  }
 }
