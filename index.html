@@ -375,7 +375,13 @@ async function engineEntries() {
     const dr = pl.drips && pl.drips[key];
     if (!dr || !dr.items || !dr.items.length) continue;
     const q2 = dr.items.map((it, i) => ({ it, note: 'Programme ' + (i + 1) + ' of ' + dr.items.length }));
-    result.push({ ch: { id, handle: key, name: cfg.name, group: cfg.group }, entries: dripSchedule(q2, cfg, id) });
+    const ents = dripSchedule(q2, cfg, id);
+    for (const x of dr.extra || []) {      // single videos placed on a chosen quiet day
+      const [y, m, d] = x.on.split('-').map(Number), [hh, mm] = cfg.time.split(':').map(Number), when = new Date(y, m - 1, d, hh, mm);
+      ents.push({ id: x.id, c: id, eng: true, t: x.t || x.id, d: x.d || null, x: 'Special programme', ts: when.getTime(), p: when.toISOString(), ready: when.getTime() });
+    }
+    ents.sort((a, b) => a.ts - b.ts);
+    result.push({ ch: { id, handle: key, name: cfg.name, group: cfg.group }, entries: ents });
   }
   return result;
 }

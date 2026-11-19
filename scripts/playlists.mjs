@@ -155,5 +155,20 @@ for (const dr of cfg.drips || []) {
     if (prevDrips[dr.key]) { drips[dr.key] = prevDrips[dr.key]; log('kept previous drip list'); }
   }
 }
+/* ---- "extra": single videos placed on a chosen day (on = YYYY-MM-DD), outside the weekly drip ---- */
+for (const dr of cfg.drips || []) {
+  if (!dr.extra || !drips[dr.key]) continue;
+  const out = [];
+  for (const x of dr.extra) {
+    const old = ((prevDrips[dr.key] || {}).extra || []).find((e) => e.id === x.id);
+    if (old && old.d && old.t !== x.id) { out.push({ ...old, on: x.on }); continue; }
+    let t = x.id, d = null;
+    try { const o = await (await fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + x.id), { headers: HEADERS })).json(); t = o.title || t; } catch (e) { log('! no title for ' + x.id + ': ' + e.message); }
+    try { const pg = await (await fetch('https://www.youtube.com/watch?v=' + x.id, { headers: HEADERS })).text(); d = Number((pg.match(/"lengthSeconds":"(\d+)"/) || [])[1]) || null; } catch {}
+    out.push({ id: x.id, t, d, ok: true, on: x.on });
+  }
+  drips[dr.key].extra = out;
+  log('extra', dr.key, out.length, 'single videos');
+}
 await mkdir(path.dirname(OUT), { recursive: true });
 await writeFile(OUT, JSON.stringify({ generated: new Date().toISOString(), start: cfg.start || [], order: cfg.playlists, lists, drips }, null, 1) + '\n');
