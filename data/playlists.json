@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T14:31:07.332Z",
+ "generated": "2026-11-19T20:23:19.732Z",
  "start": [
   {
    "id": "nQlR-TWNsR4",
@@ -138,7 +138,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:52.746Z"
+   "fetched": "2026-11-19T20:23:05.975Z"
   },
   "PL1C4B9B13E1EAC364": {
    "title": "Engine Components and Features",
@@ -235,7 +235,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:53.801Z"
+   "fetched": "2026-11-19T20:23:07.018Z"
   },
   "PL30C950600B683799": {
    "title": "Engines",
@@ -482,7 +482,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:54.924Z"
+   "fetched": "2026-11-19T20:23:08.150Z"
   },
   "PL08CEA57427415959": {
    "title": "Turbochargers and Superchargers - Forced Induction",
@@ -639,7 +639,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:56.033Z"
+   "fetched": "2026-11-19T20:23:09.267Z"
   },
   "PL7B5B6479699EB204": {
    "title": "Transmissions, Clutches, and Torque Converters",
@@ -808,7 +808,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:57.109Z"
+   "fetched": "2026-11-19T20:23:10.362Z"
   },
   "PLF4308E6ED64AEE88": {
    "title": "Drivetrain",
@@ -899,7 +899,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:58.177Z"
+   "fetched": "2026-11-19T20:23:11.410Z"
   },
   "PLB85E2FB44D430CDE": {
    "title": "Brakes, Safety, and Control Systems",
@@ -996,7 +996,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:30:59.263Z"
+   "fetched": "2026-11-19T20:23:12.466Z"
   },
   "PLAC8F7A33D3F85C1E": {
    "title": "Formula 1",
@@ -1111,7 +1111,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:31:00.365Z"
+   "fetched": "2026-11-19T20:23:13.523Z"
   },
   "PL2ir4svMoaYim-RSNWEh-aIfdcM6plSly": {
    "title": "Differentials",
@@ -1190,7 +1190,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:31:01.413Z"
+   "fetched": "2026-11-19T20:23:14.577Z"
   },
   "PL2ir4svMoaYhu36bYSFHLstK7EFcSrO-k": {
    "title": "Vehicle Dynamics, Tires, & Aerodynamics",
@@ -1329,7 +1329,7 @@
     }
    ],
    "source": "page",
-   "fetched": "2026-11-19T14:31:02.515Z"
+   "fetched": "2026-11-19T20:23:15.676Z"
   }
  },
  "drips": {
@@ -2010,8 +2010,16 @@
      "ok": true
     }
    ],
-   "extra": [{"id":"F3EILxCkm4U","t":"F3EILxCkm4U","d":null,"ok":true,"on":"2026-11-25"}],
-   "fetched": "2026-11-19T14:31:04.568Z"
+   "fetched": "2026-11-19T20:23:17.774Z",
+   "extra": [
+    {
+     "id": "F3EILxCkm4U",
+     "t": "Kenneth Stanley Open-Endedness | ARC Prize Research Summit 2026",
+     "d": null,
+     "ok": true,
+     "on": "2026-11-25"
+    }
+   ]
   },
   "driving": {
    "title": "Advanced Driving Videos",
@@ -2522,7 +2530,7 @@
      "ok": true
     }
    ],
-   "fetched": "2026-11-19T14:31:07.331Z"
+   "fetched": "2026-11-19T20:23:19.045Z"
   }
  }
 }
