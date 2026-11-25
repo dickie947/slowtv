@@ -44,6 +44,7 @@ jobs:
           git config user.email "slowtv-bot@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "Refresh guide $(date -u +%F)"
+          git pull --rebase -q origin main || true   # another change may have landed while this run was working
           git push
 
       - name: Assemble the website
