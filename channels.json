@@ -17,6 +17,16 @@
       "group": "Space"
     },
     {
+      "handle": "ESAScienceHub",
+      "name": "ESA Science Hub",
+      "group": "Space"
+    },
+    {
+      "handle": "esaspacesolutions",
+      "name": "ESA Space Solutions",
+      "group": "Space"
+    },
+    {
       "handle": "gcn",
       "name": "GCN",
       "group": "Cycling and Triathlon"
