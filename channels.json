@@ -27,6 +27,11 @@
       "group": "Space"
     },
     {
+      "handle": "esaextras",
+      "name": "ESA Extras",
+      "group": "Space"
+    },
+    {
       "handle": "gcn",
       "name": "GCN",
       "group": "Cycling and Triathlon"
