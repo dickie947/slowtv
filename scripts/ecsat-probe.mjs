@@ -37,16 +37,16 @@ async function all(url, max = 60) {
   return items;
 }
 const out = {};
-for (const h of ['ESAScienceHub', 'esaspacesolutions']) {
+for (const h of ['EuropeanSpaceAgency', 'esaextras']) {
   const o = out[h] = {};
   try {
     const { html } = await page('https://www.youtube.com/@' + h + '/videos?hl=en-GB');
     const cid = (html.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/channel\/(UC[\w-]{22})"/) || html.match(/"channelId":"(UC[\w-]{22})"/) || [])[1];
     o.cid = cid; log(h, cid);
-    for (const pre of ['UULF', 'UU']) { try { o.uploads = await all('https://www.youtube.com/playlist?list=' + pre + cid.slice(2) + '&hl=en-GB'); o.pre = pre; break; } catch (e) { log('! ' + pre + ' ' + e.message); } }
+    for (const pre of ['UULF', 'UU']) { try { o.uploads = await all('https://www.youtube.com/playlist?list=' + pre + cid.slice(2) + '&hl=en-GB', h === 'esaextras' ? 60 : 1); o.pre = pre; break; } catch (e) { log('! ' + pre + ' ' + e.message); } }
     log(h, 'uploads', (o.uploads || []).length);
   } catch (e) { log('! ' + h + ' ' + e.message); }
-  for (const q of ['ECSAT', 'Harwell']) {
+  for (const q of ['ECSAT', 'Harwell', 'ESA UK', 'Roy Gibson']) {
     try { o['search_' + q] = await all('https://www.youtube.com/@' + h + '/search?query=' + q + '&hl=en-GB', 5); log(h, 'search', q, o['search_' + q].length); } catch (e) { log('! search ' + q + ' ' + e.message); }
   }
 }
